@@ -49,6 +49,12 @@ LABEL_COL = 38             # room for Mon/Wed/Fri left of the grid
 HEADER_FONT = 14
 LABEL_FONT = 12
 
+# GitHub standard 5-step contribution greens (level 0..4)
+GREEN_RAMPS = {
+    "dark": ("#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"),
+    "light": ("#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"),
+}
+
 # Share of the way from the card's background to its foreground, per level.
 LEVEL_MIX = (0.10, 0.30, 0.50, 0.72, 1.0)
 
@@ -347,7 +353,7 @@ def month_labels(weeks: list[list]) -> list[tuple[int, str]]:
 def build(theme: str, cal: dict) -> str:
     c = THEMES[theme]
     weeks = cal["weeks"]
-    ramp = [mix(c["bg"], c["fg"], t) for t in LEVEL_MIX]
+    ramp = GREEN_RAMPS[theme]
 
     left = MARGIN + LABEL_COL
     header_y = MARGIN + HEADER_FONT

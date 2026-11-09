@@ -32,6 +32,77 @@ TOKEN = os.environ.get("GITHUB_TOKEN")
 session = requests.Session()
 
 
+def fetch_linkedin_stats() -> dict:
+    """Fetch live public profile telemetry & category stats from LinkedIn."""
+    url = "https://il.linkedin.com/in/0ferchen"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+        "Accept-Language": "en-US,en;q=0.9",
+    }
+    stats = {
+        "followers": "3,232",
+        "connections": "500+",
+        "headline": "Sr. DevOps, Platform & AI Infra",
+        "top_certs": ["CKA", "CKAD", "Vault", "Terraform", "AWS-SAA", "PCAP"],
+    }
+    try:
+        import urllib.request
+        import re
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=12) as resp:
+            html_text = resp.read().decode("utf-8", errors="ignore")
+
+        # Extract from JSON-LD schema
+        m = re.findall(r'<script type="application/ld\+json">\s*({.*?})\s*</script>', html_text, re.DOTALL)
+        for raw in m:
+            try:
+                data = json.loads(raw)
+                for item in data.get("@graph", []):
+                    if item.get("@type") == "Person":
+                        inter = item.get("interactionStatistic", {})
+                        if inter.get("userInteractionCount"):
+                            count = inter["userInteractionCount"]
+                            stats["followers"] = f"{count:,}"
+                        if item.get("description"):
+                            stats["headline"] = item["description"].split("…")[0].strip()
+            except Exception:
+                pass
+
+        # Extract connection count from meta
+        meta_m = re.search(r'<meta\s+property="og:description"\s+content="(.*?)"', html_text)
+        if meta_m:
+            desc = meta_m.group(1)
+            conn_m = re.search(r'(\d+\+?)\s*(?:חיבורים|connections)', desc)
+            if conn_m:
+                stats["connections"] = conn_m.group(1)
+
+        # Extract certifications from profile H3 headings
+        all_h3 = re.findall(r'<h3[^>]*>\s*(.*?)\s*</h3>', html_text, re.DOTALL)
+        found_certs = []
+        for h in all_h3:
+            clean = re.sub(r'<[^>]+>', '', h).strip()
+            if "CKA:" in clean:
+                found_certs.append("CKA")
+            elif "CKAD:" in clean:
+                found_certs.append("CKAD")
+            elif "Vault" in clean:
+                found_certs.append("Vault")
+            elif "Terraform" in clean:
+                found_certs.append("Terraform")
+            elif "AWS Certified" in clean or "Solutions Architect" in clean:
+                found_certs.append("AWS-SAA")
+            elif "PCAP" in clean:
+                found_certs.append("PCAP")
+        if found_certs:
+            stats["top_certs"] = list(dict.fromkeys(found_certs))
+
+        print(f"  linkedin: {stats['followers']} followers | {stats['connections']} connections | {len(stats['top_certs'])} certs")
+    except Exception as exc:
+        print(f"  warning: could not fetch live LinkedIn data: {exc}", file=sys.stderr)
+
+    return stats
+
+
 def query(document: str, variables: dict, attempt: int = 0) -> dict:
     resp = session.post(
         ENDPOINT,
@@ -297,6 +368,7 @@ def main() -> None:
     commits = fetch_commit_total(meta["createdAt"])
     added, deleted = fetch_loc(repos, meta["id"])
     calendar, streak_cur, streak_max = fetch_calendar()
+    li_stats = fetch_linkedin_stats()
 
     stats = {
         "repos": meta["repos"],
@@ -315,6 +387,10 @@ def main() -> None:
         "rsync_ver": rsync_ver,
         "streak_current": streak_cur,
         "streak_longest": streak_max,
+        "linkedin_followers": li_stats.get("followers", "3,232"),
+        "linkedin_connections": li_stats.get("connections", "500+"),
+        "linkedin_certs": ", ".join(li_stats.get("top_certs", ["CKA", "CKAD", "Vault", "Terraform", "AWS-SAA", "PCAP"])),
+        "linkedin_headline": li_stats.get("headline", "Sr. DevOps, Platform & AI Infra"),
         "avatar_url": meta.get("avatarUrl", f"https://github.com/{LOGIN}.png?size=460"),
         "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }

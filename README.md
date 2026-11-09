@@ -34,7 +34,7 @@
     <img src="https://img.shields.io/github/last-commit/oferchen/rsync?style=for-the-badge&logo=git&label=Last%20Commit&color=58a6ff" alt="Last Commit" />
   </a>
   <a href="https://www.linkedin.com/in/0ferchen/">
-    <img src="https://img.shields.io/badge/LinkedIn-0ferchen-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-3.2k%20Followers-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn 3.2k Followers" />
   </a>
 </p>
 

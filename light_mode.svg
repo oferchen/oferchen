@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1018px" height="615px"
-     viewBox="0 0 1018 615" font-family="ConsolasFallback,Consolas,Menlo,monospace">
+<svg xmlns="http://www.w3.org/2000/svg" width="1018px" height="634px"
+     viewBox="0 0 1018 634" font-family="ConsolasFallback,Consolas,Menlo,monospace">
 <style>
 @font-face {
   src: local('Consolas'), local('Consolas Bold');
@@ -18,7 +18,7 @@
 text, tspan {white-space: pre;}
 </style>
 <!-- Outer Card Background & Border -->
-<rect x="0.5" y="0.5" width="1017px" height="614px" fill="#ffffff" stroke="#d0d7de" stroke-width="1" rx="14"/>
+<rect x="0.5" y="0.5" width="1017px" height="633px" fill="#ffffff" stroke="#d0d7de" stroke-width="1" rx="14"/>
 <!-- Terminal Chrome Header Bar -->
 <path d="M14 1h990a13 13 0 0 1 13 13v20H1V14A13 13 0 0 1 14 1z" fill="#f6f8fa"/>
 <line x1="1" y1="34" x2="1017" y2="34" stroke="#d0d7de" stroke-width="1"/>
@@ -28,56 +28,56 @@ text, tspan {white-space: pre;}
 <circle cx="62" cy="17" r="6" fill="#27c93f"/>
 <text x="509" y="21.5" font-size="13px" fill="#8c959f" text-anchor="middle">ofer@chen: ~/infrastructure — neofetch --live-telemetry (zsh)</text>
 <!-- Subtle Vertical Column Divider -->
-<line x1="440" y1="46" x2="440" y2="603" stroke="#d0d7de" stroke-width="1" stroke-dasharray="3,4"/>
+<line x1="440" y1="46" x2="440" y2="622" stroke="#d0d7de" stroke-width="1" stroke-dasharray="3,4"/>
 <!-- Left Column: 87x47 ASCII Artwork / Portrait -->
 <text fill="#0550ae" font-size="7.94px" class="ascii">
-<tspan x="16" y="124.42">```````````````````````````````````````````````````````````````````````````````````````</tspan>
-<tspan x="16" y="133.23">```````````````````````````````````````````````````````````````````````````````````````</tspan>
-<tspan x="16" y="142.05">````````````````````````````````````````````...````````````````````````````````````````</tspan>
-<tspan x="16" y="150.86">``````````````````````````````````````````.`````.``````````````````````````````````````</tspan>
-<tspan x="16" y="159.67">`````````````````````````````````..````````"~-!````````````````````````````````````````</tspan>
-<tspan x="16" y="168.48">`````````````````````````````````````````,cpWB8ou'`````````````````````````````````````</tspan>
-<tspan x="16" y="177.29">```````````````````````````````.`i&gt;;````^Laqpo8$$J..```````.`.`````````````````````````</tspan>
-<tspan x="16" y="186.11">``````````````````````````..```.')wv``.`ibQZmbM%@8I`.`````^````.```````````````````````</tspan>
-<tspan x="16" y="194.92">````````````````````````.`````.```x8{```'ukbd#@$$c,'`^^"::~)~!.````````````````````````</tspan>
-<tspan x="16" y="203.73">``````````````````````````;l:``...^MW{^...}UdabOjl::I!&gt;&lt;_{LqJCn[;'``'.`````````````````</tspan>
-<tspan x="16" y="212.54">```````````````````````'nh&amp;BWb}`'`'C$Wri^'``'`",;!i&lt;_-}|zkhJm0CCuj|-\&lt;i&gt;;^.````````````</tspan>
-<tspan x="16" y="221.36">`````````````````````..U$$@%&amp;$B~'l:v@$$bu\[~&gt;_-?[(xzcQQ**QwJLLLcnQqYLmCYU\`````````````</tspan>
-<tspan x="16" y="230.17">``````````````````````.h$B8W&amp;8$/'i!b$W&amp;%BpmmCChdYZ&amp;dd*wbqqwYuZwUvtOqY#mbOu\````````````</tspan>
-<tspan x="16" y="238.98">``````````````..`````..[&amp;$@$$$M_!-X%*qpooJmwwLbaqbQ0bJCL0qZQ0OLOoxUkmmLbdLX\..`````````</tspan>
-<tspan x="16" y="247.79">`````````````````````'^"-LhbpU[1XqhhdZkpLcJCz0OpdwLqLOOdOJJXpWpa*QCQbkapbocY]'`````````</tspan>
-<tspan x="16" y="256.61">````````````.,_!````."Ii-(jnfvQ0JQLCLJOYzrwZLYZmqwpCmkhdwO0mkWM*phhbbdddhqwQ]..````````</tspan>
-<tspan x="16" y="265.42">``````````.'1YvUn}]}}}]1jXqZYXk#mzYCYXwL0Ow0ZqkUOpkdmOQOqk#&amp;88&amp;*aph%#**Moh*h&lt;`.````````</tspan>
-<tspan x="16" y="274.23">``````````^/YxxL0bkmnmdvzXLYLvxk#cL0adO0wo*b%dMoW&amp;kMoa#88&amp;h*MM*###%$$$8Z[i?-```````````</tspan>
-<tspan x="16" y="283.04">```````.`'!YnLaxCwZCzCdaLLuYYJJYhhcYbmCXb#a8&amp;aMBB@%&amp;&amp;%%WMM&amp;%W%%@$$$$$@BpLZ^`.``````````</tspan>
-<tspan x="16" y="291.85">`````````~Xqd&amp;0vrvYcXmZw#Mqv0QJqmOwJbMmk8B&amp;B%%&amp;&amp;88W88%@B@@@$$$$$$$$$$$$$@#v"```````````</tspan>
-<tspan x="16" y="300.67">``````.~~|cu#mtut\YLZqZLOUL0bmOq&amp;bdMM#hMoh#WM88%B8&amp;$@@$$$$$$$$$$$$$$$$$$$@Mv}I`````````</tspan>
-<tspan x="16" y="309.48">````.`;CQjrfnrxcQYCpab0UXQqdoMkhoddqdbhdh*WW%B@$$$$$$$$$$$$$$$$$$$$$$$$$$$@#OC+`.``````</tspan>
-<tspan x="16" y="318.29">````,uqOvcLvzLnLmLOpaakaMoho*#WMaka*&amp;8B@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$BZm_`.`````</tspan>
-<tspan x="16" y="327.10">```,f00vuqkdJqZwbZLhho*M%*aW8%&amp;B@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$bn"``````</tspan>
-<tspan x="16" y="335.92">```_#B*wCvaadwCb*dkmk*#WBBB$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@@$$$$O_`.````</tspan>
-<tspan x="16" y="344.73">``.-xXqObLmJCQkOhqab&amp;B$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@&amp;Jj``````</tspan>
-<tspan x="16" y="353.54">.`~v[/Od0mQCCqkO##%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ooa$$$dCC;`.```</tspan>
-<tspan x="16" y="362.35">``;dzrmbCb0zUdO#@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$B/!?~|b#JUC-`.```</tspan>
-<tspan x="16" y="371.16">``"_fcwCkopp0*8@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@q+&lt;{}++|Lz:".````</tspan>
-<tspan x="16" y="379.98">``.._YZZ%$&amp;MWB$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@@$O;~[_-?i~}^`.````</tspan>
-<tspan x="16" y="388.79">``..;}cCd@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@@@$$$$$$$$$$$$@$$@J-I_+,;!~~&lt;&lt;```.``</tspan>
-<tspan x="16" y="397.60">`'I_cc|zCB$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@$$$@@@@@$$mzx'+~i-??&lt;i&gt;!l&lt;I````</tspan>
-<tspan x="16" y="406.41">```^&lt;}uzO&amp;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@$&amp;c(ZhB$$$$$$$$$$Mr_!I&gt;1]tCfXCj?1_i&gt;+i``</tspan>
-<tspan x="16" y="415.23">```'.-wbJL@$@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@$o_;I,&lt;?XmM$$hwpqJI`I!,!1-(f(fO#d00X|}t/:</tspan>
-<tspan x="16" y="424.04">````!)/cUzOB$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@B]:~+_~&lt;jQvX}&gt;l~!&lt;:I&lt;~&lt;~}_][vujph*aaMWobU</tspan>
-<tspan x="16" y="432.85">``.^+jz0ujXXLpMB$$$@@@$$$$$$$$@$$$$$$$$$$$$$$$b"&lt;+?~!~_tf[i_)~!+z1/1[{\~]-f)?|qwbd*@@oa</tspan>
-<tspan x="16" y="441.66">``.'"/qOzXXJjvXJd%@$$$$$$$$$$$$$$$$$$@@@@@%8&amp;Bj^&gt;_][l;&gt;~&lt;&lt;1I!!!:?[)-__i-_---j+faMMobMMO</tspan>
-<tspan x="16" y="450.47">````I?[nvuUmw0XUXzOmOd##MM8W8*h#*Maaodmqqkho#M-II&lt;--&lt;!_&gt;&lt;iIi!&lt;&lt;II&lt;ii~!"I!?_]Xndhw#8*BoL</tspan>
-<tspan x="16" y="459.29">`````'&gt;jc\z0UzXQXnYYcnUuCYUmOJYCmqkppaddmdkh8d!~i~&gt;-+&lt;&gt;&lt;i;l&lt;-\jj|[~-_&lt;:i?|{fjdOpCmp%%ko</tspan>
-<tspan x="16" y="468.10">``'i{xnjfvXLcjUJU00wdOwYUvJbbwOum*mZOhphWpq#8#i!__&gt;_~_&gt;&gt;i&lt;&lt;&lt;[LvX0Uzj))}\/|}tcv0qLpa*dh$</tspan>
-<tspan x="16" y="476.91">```lxppUrvUvXCXXXU0YvnrzLd*hm0mc0awkaah&amp;MoW@$$?i_i&gt;+!i!i_[?))v0LdpmbwJcvxvcrf\ZqmZkpk*a</tspan>
-<tspan x="16" y="485.72">`'I|/JOuzczvcCUvYJpQUZqppwppqbbjpW#o*B$@$B&amp;@##u~}_[&lt;:~)_i]l?fYh&amp;*88aW%8&amp;MMMawbk#WahdhMW</tspan>
-<tspan x="16" y="494.54">.!}fCU0QUXcUXJmQp#B$$$hM*qwhW#Qa$$B&amp;%$$$$@%ah@W&lt;-~lIl&gt;~}1|)|\jUpdwb&amp;MWWB&amp;$8$$@$@%%a8%@$</tspan>
-<tspan x="16" y="503.35">.I{jUUzQ0XXUzLCYQd@B$#a$$*M%$8%$$$$$$$$$$$$@@$@Xi&gt;i&lt;__]~tpQqbbwwabwbWMW8aWW*h*aohkdZo$8</tspan>
-<tspan x="16" y="512.16">`"]rncYCCQZYmp0pOZ%#aB$@B$B&amp;@W%@$$$$$$$$$$$$$@$Wii&lt;&gt;i--&gt;ut1rzXJpMB88%#8%#WMha*ao#ahbC&amp;$</tspan>
-<tspan x="16" y="520.97">I1rtnzZ0QZa&amp;o0q*ZaM#Q%@@$@@BB%&amp;$$$$$$$$@@$$@@$$$);i&gt;_]_?{[_}11?/ch$@@WB8BBBW%$B*ko8@Mo@</tspan>
-<tspan x="16" y="529.79">?vj|jJOQLd#W*%@bwqdk&amp;W@@$$$B@$$$$$$$$$@B#%@BB8kqX/YYULOmC/_/{jc(|/k@#88BW8%a*&amp;qpdO*o#*&amp;</tspan>
+<tspan x="16" y="133.92">```````````````````````````````````````````````````````````````````````````````````````</tspan>
+<tspan x="16" y="142.73">```````````````````````````````````````````````````````````````````````````````````````</tspan>
+<tspan x="16" y="151.55">````````````````````````````````````````````...````````````````````````````````````````</tspan>
+<tspan x="16" y="160.36">``````````````````````````````````````````.`````.``````````````````````````````````````</tspan>
+<tspan x="16" y="169.17">`````````````````````````````````..````````"~-!````````````````````````````````````````</tspan>
+<tspan x="16" y="177.98">`````````````````````````````````````````,cpWB8ou'`````````````````````````````````````</tspan>
+<tspan x="16" y="186.79">```````````````````````````````.`i&gt;;````^Laqpo8$$J..```````.`.`````````````````````````</tspan>
+<tspan x="16" y="195.61">``````````````````````````..```.')wv``.`ibQZmbM%@8I`.`````^````.```````````````````````</tspan>
+<tspan x="16" y="204.42">````````````````````````.`````.```x8{```'ukbd#@$$c,'`^^"::~)~!.````````````````````````</tspan>
+<tspan x="16" y="213.23">``````````````````````````;l:``...^MW{^...}UdabOjl::I!&gt;&lt;_{LqJCn[;'``'.`````````````````</tspan>
+<tspan x="16" y="222.04">```````````````````````'nh&amp;BWb}`'`'C$Wri^'``'`",;!i&lt;_-}|zkhJm0CCuj|-\&lt;i&gt;;^.````````````</tspan>
+<tspan x="16" y="230.86">`````````````````````..U$$@%&amp;$B~'l:v@$$bu\[~&gt;_-?[(xzcQQ**QwJLLLcnQqYLmCYU\`````````````</tspan>
+<tspan x="16" y="239.67">``````````````````````.h$B8W&amp;8$/'i!b$W&amp;%BpmmCChdYZ&amp;dd*wbqqwYuZwUvtOqY#mbOu\````````````</tspan>
+<tspan x="16" y="248.48">``````````````..`````..[&amp;$@$$$M_!-X%*qpooJmwwLbaqbQ0bJCL0qZQ0OLOoxUkmmLbdLX\..`````````</tspan>
+<tspan x="16" y="257.29">`````````````````````'^"-LhbpU[1XqhhdZkpLcJCz0OpdwLqLOOdOJJXpWpa*QCQbkapbocY]'`````````</tspan>
+<tspan x="16" y="266.11">````````````.,_!````."Ii-(jnfvQ0JQLCLJOYzrwZLYZmqwpCmkhdwO0mkWM*phhbbdddhqwQ]..````````</tspan>
+<tspan x="16" y="274.92">``````````.'1YvUn}]}}}]1jXqZYXk#mzYCYXwL0Ow0ZqkUOpkdmOQOqk#&amp;88&amp;*aph%#**Moh*h&lt;`.````````</tspan>
+<tspan x="16" y="283.73">``````````^/YxxL0bkmnmdvzXLYLvxk#cL0adO0wo*b%dMoW&amp;kMoa#88&amp;h*MM*###%$$$8Z[i?-```````````</tspan>
+<tspan x="16" y="292.54">```````.`'!YnLaxCwZCzCdaLLuYYJJYhhcYbmCXb#a8&amp;aMBB@%&amp;&amp;%%WMM&amp;%W%%@$$$$$@BpLZ^`.``````````</tspan>
+<tspan x="16" y="301.35">`````````~Xqd&amp;0vrvYcXmZw#Mqv0QJqmOwJbMmk8B&amp;B%%&amp;&amp;88W88%@B@@@$$$$$$$$$$$$$@#v"```````````</tspan>
+<tspan x="16" y="310.17">``````.~~|cu#mtut\YLZqZLOUL0bmOq&amp;bdMM#hMoh#WM88%B8&amp;$@@$$$$$$$$$$$$$$$$$$$@Mv}I`````````</tspan>
+<tspan x="16" y="318.98">````.`;CQjrfnrxcQYCpab0UXQqdoMkhoddqdbhdh*WW%B@$$$$$$$$$$$$$$$$$$$$$$$$$$$@#OC+`.``````</tspan>
+<tspan x="16" y="327.79">````,uqOvcLvzLnLmLOpaakaMoho*#WMaka*&amp;8B@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$BZm_`.`````</tspan>
+<tspan x="16" y="336.60">```,f00vuqkdJqZwbZLhho*M%*aW8%&amp;B@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$bn"``````</tspan>
+<tspan x="16" y="345.42">```_#B*wCvaadwCb*dkmk*#WBBB$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@@$$$$O_`.````</tspan>
+<tspan x="16" y="354.23">``.-xXqObLmJCQkOhqab&amp;B$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@&amp;Jj``````</tspan>
+<tspan x="16" y="363.04">.`~v[/Od0mQCCqkO##%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ooa$$$dCC;`.```</tspan>
+<tspan x="16" y="371.85">``;dzrmbCb0zUdO#@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$B/!?~|b#JUC-`.```</tspan>
+<tspan x="16" y="380.66">``"_fcwCkopp0*8@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@q+&lt;{}++|Lz:".````</tspan>
+<tspan x="16" y="389.48">``.._YZZ%$&amp;MWB$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@@$O;~[_-?i~}^`.````</tspan>
+<tspan x="16" y="398.29">``..;}cCd@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@@@$$$$$$$$$$$$@$$@J-I_+,;!~~&lt;&lt;```.``</tspan>
+<tspan x="16" y="407.10">`'I_cc|zCB$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@$$$@@@@@$$mzx'+~i-??&lt;i&gt;!l&lt;I````</tspan>
+<tspan x="16" y="415.91">```^&lt;}uzO&amp;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@$&amp;c(ZhB$$$$$$$$$$Mr_!I&gt;1]tCfXCj?1_i&gt;+i``</tspan>
+<tspan x="16" y="424.73">```'.-wbJL@$@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@$o_;I,&lt;?XmM$$hwpqJI`I!,!1-(f(fO#d00X|}t/:</tspan>
+<tspan x="16" y="433.54">````!)/cUzOB$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@B]:~+_~&lt;jQvX}&gt;l~!&lt;:I&lt;~&lt;~}_][vujph*aaMWobU</tspan>
+<tspan x="16" y="442.35">``.^+jz0ujXXLpMB$$$@@@$$$$$$$$@$$$$$$$$$$$$$$$b"&lt;+?~!~_tf[i_)~!+z1/1[{\~]-f)?|qwbd*@@oa</tspan>
+<tspan x="16" y="451.16">``.'"/qOzXXJjvXJd%@$$$$$$$$$$$$$$$$$$@@@@@%8&amp;Bj^&gt;_][l;&gt;~&lt;&lt;1I!!!:?[)-__i-_---j+faMMobMMO</tspan>
+<tspan x="16" y="459.97">````I?[nvuUmw0XUXzOmOd##MM8W8*h#*Maaodmqqkho#M-II&lt;--&lt;!_&gt;&lt;iIi!&lt;&lt;II&lt;ii~!"I!?_]Xndhw#8*BoL</tspan>
+<tspan x="16" y="468.79">`````'&gt;jc\z0UzXQXnYYcnUuCYUmOJYCmqkppaddmdkh8d!~i~&gt;-+&lt;&gt;&lt;i;l&lt;-\jj|[~-_&lt;:i?|{fjdOpCmp%%ko</tspan>
+<tspan x="16" y="477.60">``'i{xnjfvXLcjUJU00wdOwYUvJbbwOum*mZOhphWpq#8#i!__&gt;_~_&gt;&gt;i&lt;&lt;&lt;[LvX0Uzj))}\/|}tcv0qLpa*dh$</tspan>
+<tspan x="16" y="486.41">```lxppUrvUvXCXXXU0YvnrzLd*hm0mc0awkaah&amp;MoW@$$?i_i&gt;+!i!i_[?))v0LdpmbwJcvxvcrf\ZqmZkpk*a</tspan>
+<tspan x="16" y="495.22">`'I|/JOuzczvcCUvYJpQUZqppwppqbbjpW#o*B$@$B&amp;@##u~}_[&lt;:~)_i]l?fYh&amp;*88aW%8&amp;MMMawbk#WahdhMW</tspan>
+<tspan x="16" y="504.04">.!}fCU0QUXcUXJmQp#B$$$hM*qwhW#Qa$$B&amp;%$$$$@%ah@W&lt;-~lIl&gt;~}1|)|\jUpdwb&amp;MWWB&amp;$8$$@$@%%a8%@$</tspan>
+<tspan x="16" y="512.85">.I{jUUzQ0XXUzLCYQd@B$#a$$*M%$8%$$$$$$$$$$$$@@$@Xi&gt;i&lt;__]~tpQqbbwwabwbWMW8aWW*h*aohkdZo$8</tspan>
+<tspan x="16" y="521.66">`"]rncYCCQZYmp0pOZ%#aB$@B$B&amp;@W%@$$$$$$$$$$$$$@$Wii&lt;&gt;i--&gt;ut1rzXJpMB88%#8%#WMha*ao#ahbC&amp;$</tspan>
+<tspan x="16" y="530.47">I1rtnzZ0QZa&amp;o0q*ZaM#Q%@@$@@BB%&amp;$$$$$$$$@@$$@@$$$);i&gt;_]_?{[_}11?/ch$@@WB8BBBW%$B*ko8@Mo@</tspan>
+<tspan x="16" y="539.29">?vj|jJOQLd#W*%@bwqdk&amp;W@@$$$B@$$$$$$$$$@B#%@BB8kqX/YYULOmC/_/{jc(|/k@#88BW8%a*&amp;qpdO*o#*&amp;</tspan>
 </text>
 <!-- Right Column: Neofetch Telemetry Panel -->
 <text fill="#24292f" font-size="15px">
@@ -91,23 +91,24 @@ text, tspan {white-space: pre;}
 <tspan x="450" y="198"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">IaC</tspan>:<tspan class="cc"> </tspan><tspan class="cc">............</tspan><tspan class="cc"> </tspan><tspan class="value">Terraform, OpenTofu, Crossplane</tspan></tspan>
 <tspan x="450" y="217"><tspan class="cc">. </tspan><tspan class="key">Focus</tspan>.<tspan class="key">Cloud</tspan>:<tspan class="cc"> </tspan><tspan class="cc">................</tspan><tspan class="cc"> </tspan><tspan class="value">K8s (CKA/CKAD), Cilium, Vault</tspan></tspan>
 <tspan x="450" y="236"><tspan class="cc">. </tspan><tspan class="key">Focus</tspan>.<tspan class="key">Net</tspan>:<tspan class="cc"> </tspan><tspan class="cc">................</tspan><tspan class="cc"> </tspan><tspan class="value">EVPN-VXLAN, GoBGP/RTBH, Juniper</tspan></tspan>
-<tspan x="450" y="255" class="cc">.</tspan>
-<tspan x="450" y="274"><tspan class="section">- Production Impact &amp; Scale</tspan> -<tspan class="cc">———————————————————————————————</tspan>-</tspan>
-<tspan x="450" y="293"><tspan class="cc">. </tspan><tspan class="key">Impact</tspan>.<tspan class="key">BUM_Filter</tspan>:<tspan class="cc"> </tspan><tspan class="cc">......</tspan><tspan class="cc"> </tspan><tspan class="value">-90% Traffic (GoBGP/RTBH IPv4/v6)</tspan></tspan>
-<tspan x="450" y="312"><tspan class="cc">. </tspan><tspan class="key">Impact</tspan>.<tspan class="key">AI_Inference</tspan>:<tspan class="cc"> </tspan><tspan class="cc">......</tspan><tspan class="cc"> </tspan><tspan class="value">Multi-GPU LLM &amp; Diffusion WebUI</tspan></tspan>
-<tspan x="450" y="331"><tspan class="cc">. </tspan><tspan class="key">Impact</tspan>.<tspan class="key">IaC_Fleet</tspan>:<tspan class="cc"> </tspan><tspan class="cc">.......</tspan><tspan class="cc"> </tspan><tspan class="value">Zero Drift (100s HVs / 1000s VMs)</tspan></tspan>
-<tspan x="450" y="350" class="cc">.</tspan>
-<tspan x="450" y="369"><tspan class="section">- Contact &amp; Flagship Engine</tspan> -<tspan class="cc">———————————————————————————————</tspan>-</tspan>
-<tspan x="450" y="388"><tspan class="cc">. </tspan><tspan class="key">Email</tspan>:<tspan class="cc"> </tspan><tspan class="cc">.................................</tspan><tspan class="cc"> </tspan><tspan class="value">oferchen@gmail.com</tspan></tspan>
-<tspan x="450" y="407"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> </tspan><tspan class="cc">........................</tspan><tspan class="cc"> </tspan><tspan class="value">linkedin.com/in/0ferchen</tspan></tspan>
-<tspan x="450" y="426"><tspan class="cc">. </tspan><tspan class="key">Flagship</tspan>:<tspan class="cc"> </tspan><tspan class="cc">................</tspan><tspan class="cc"> </tspan><tspan class="value">github.com/oferchen/rsync (Rust)</tspan></tspan>
-<tspan x="450" y="445"><tspan class="cc">. </tspan><tspan class="key">oc-rsync</tspan>.<tspan class="key">Spec</tspan>:<tspan class="cc"> </tspan><tspan class="cc">...........</tspan><tspan class="cc"> </tspan><tspan class="addColor">113★ 5⑂</tspan><tspan class="value"> | SIMD • io_uring • QUIC</tspan></tspan>
-<tspan x="450" y="464" class="cc">.</tspan>
-<tspan x="450" y="483"><tspan class="section">- Live GitHub Telemetry</tspan> -<tspan class="cc">———————————————————————————————————</tspan>-</tspan>
-<tspan x="450" y="502"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="repo_data_dots">.........</tspan><tspan class="cc"> </tspan><tspan class="value" id="repo_data">11</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value" id="contrib_data">3</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="star_data_dots">.........</tspan><tspan class="cc"> </tspan><tspan class="value" id="star_data">184</tspan></tspan>
-<tspan x="450" y="521"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="commit_data_dots">......</tspan><tspan class="cc"> </tspan><tspan class="value" id="commit_data">20,035</tspan> | <tspan class="key">PRs</tspan>: <tspan class="value" id="pr_data">10,053</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="follower_data_dots">......</tspan><tspan class="cc"> </tspan><tspan class="value" id="follower_data">55</tspan></tspan>
-<tspan x="450" y="540"><tspan class="cc">. </tspan><tspan class="key">Streak</tspan>.<tspan class="key">Active</tspan>:<tspan class="cc"> </tspan><tspan class="cc">........</tspan><tspan class="cc"> </tspan><tspan class="addColor">2d</tspan> (<tspan class="key">Max</tspan>: <tspan class="value">26d</tspan>) | <tspan class="key">Issues</tspan>:<tspan class="cc"> </tspan><tspan class="cc">........</tspan><tspan class="cc"> </tspan><tspan class="value">67</tspan></tspan>
-<tspan x="450" y="559"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="loc_data_dots">.......</tspan><tspan class="cc"> </tspan><tspan class="value" id="loc_data">1,168,972</tspan> ( <tspan class="addColor" id="loc_add">1,720,742</tspan><tspan class="addColor">++</tspan>, <tspan class="delColor" id="loc_del">551,770</tspan><tspan class="delColor">--</tspan> )</tspan>
-<tspan x="450" y="594.15"><tspan class="key">ofer@chen</tspan><tspan class="cc">:</tspan><tspan class="value">~/infra</tspan><tspan class="cc">$ </tspan><tspan class="addColor">cargo test --release &amp;&amp; kubectl get nodes </tspan><tspan class="value">█<animate attributeName="opacity" values="1;0" dur="1.06s" calcMode="discrete" repeatCount="indefinite"/></tspan></tspan>
+<tspan x="450" y="255"><tspan class="cc">. </tspan><tspan class="key">Certs</tspan>.<tspan class="key">Verified</tspan>:<tspan class="cc"> </tspan><tspan class="cc">.......</tspan><tspan class="cc"> </tspan><tspan class="value">CKA, CKAD, Vault, TF, AWS-SAA, PCAP</tspan></tspan>
+<tspan x="450" y="274" class="cc">.</tspan>
+<tspan x="450" y="293"><tspan class="section">- Production Impact &amp; Scale</tspan> -<tspan class="cc">———————————————————————————————</tspan>-</tspan>
+<tspan x="450" y="312"><tspan class="cc">. </tspan><tspan class="key">Impact</tspan>.<tspan class="key">BUM_Filter</tspan>:<tspan class="cc"> </tspan><tspan class="cc">......</tspan><tspan class="cc"> </tspan><tspan class="value">-90% Traffic (GoBGP/RTBH IPv4/v6)</tspan></tspan>
+<tspan x="450" y="331"><tspan class="cc">. </tspan><tspan class="key">Impact</tspan>.<tspan class="key">AI_Inference</tspan>:<tspan class="cc"> </tspan><tspan class="cc">......</tspan><tspan class="cc"> </tspan><tspan class="value">Multi-GPU LLM &amp; Diffusion WebUI</tspan></tspan>
+<tspan x="450" y="350"><tspan class="cc">. </tspan><tspan class="key">Impact</tspan>.<tspan class="key">IaC_Fleet</tspan>:<tspan class="cc"> </tspan><tspan class="cc">.......</tspan><tspan class="cc"> </tspan><tspan class="value">Zero Drift (100s HVs / 1000s VMs)</tspan></tspan>
+<tspan x="450" y="369" class="cc">.</tspan>
+<tspan x="450" y="388"><tspan class="section">- Contact &amp; Flagship Engine</tspan> -<tspan class="cc">———————————————————————————————</tspan>-</tspan>
+<tspan x="450" y="407"><tspan class="cc">. </tspan><tspan class="key">Email</tspan>:<tspan class="cc"> </tspan><tspan class="cc">.................................</tspan><tspan class="cc"> </tspan><tspan class="value">oferchen@gmail.com</tspan></tspan>
+<tspan x="450" y="426"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> </tspan><tspan class="cc">.......</tspan><tspan class="cc"> </tspan><tspan class="value">in/0ferchen</tspan><tspan class="addColor"> (3,232 followers</tspan> | <tspan class="value">500+ conn</tspan>)</tspan>
+<tspan x="450" y="445"><tspan class="cc">. </tspan><tspan class="key">Flagship</tspan>:<tspan class="cc"> </tspan><tspan class="cc">................</tspan><tspan class="cc"> </tspan><tspan class="value">github.com/oferchen/rsync (Rust)</tspan></tspan>
+<tspan x="450" y="464"><tspan class="cc">. </tspan><tspan class="key">oc-rsync</tspan>.<tspan class="key">Spec</tspan>:<tspan class="cc"> </tspan><tspan class="cc">...........</tspan><tspan class="cc"> </tspan><tspan class="addColor">113★ 5⑂</tspan><tspan class="value"> | SIMD • io_uring • QUIC</tspan></tspan>
+<tspan x="450" y="483" class="cc">.</tspan>
+<tspan x="450" y="502"><tspan class="section">- Live GitHub Telemetry</tspan> -<tspan class="cc">———————————————————————————————————</tspan>-</tspan>
+<tspan x="450" y="521"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="repo_data_dots">.........</tspan><tspan class="cc"> </tspan><tspan class="value" id="repo_data">11</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value" id="contrib_data">3</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="star_data_dots">.........</tspan><tspan class="cc"> </tspan><tspan class="value" id="star_data">184</tspan></tspan>
+<tspan x="450" y="540"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="commit_data_dots">......</tspan><tspan class="cc"> </tspan><tspan class="value" id="commit_data">20,035</tspan> | <tspan class="key">PRs</tspan>: <tspan class="value" id="pr_data">10,053</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="follower_data_dots">......</tspan><tspan class="cc"> </tspan><tspan class="value" id="follower_data">55</tspan></tspan>
+<tspan x="450" y="559"><tspan class="cc">. </tspan><tspan class="key">Streak</tspan>.<tspan class="key">Active</tspan>:<tspan class="cc"> </tspan><tspan class="cc">........</tspan><tspan class="cc"> </tspan><tspan class="addColor">2d</tspan> (<tspan class="key">Max</tspan>: <tspan class="value">26d</tspan>) | <tspan class="key">Issues</tspan>:<tspan class="cc"> </tspan><tspan class="cc">........</tspan><tspan class="cc"> </tspan><tspan class="value">67</tspan></tspan>
+<tspan x="450" y="578"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="loc_data_dots">.......</tspan><tspan class="cc"> </tspan><tspan class="value" id="loc_data">1,168,972</tspan> ( <tspan class="addColor" id="loc_add">1,720,742</tspan><tspan class="addColor">++</tspan>, <tspan class="delColor" id="loc_del">551,770</tspan><tspan class="delColor">--</tspan> )</tspan>
+<tspan x="450" y="613.15"><tspan class="key">ofer@chen</tspan><tspan class="cc">:</tspan><tspan class="value">~/infra</tspan><tspan class="cc">$ </tspan><tspan class="addColor">cargo test --release &amp;&amp; kubectl get nodes </tspan><tspan class="value">█<animate attributeName="opacity" values="1;0" dur="1.06s" calcMode="discrete" repeatCount="indefinite"/></tspan></tspan>
 </text>
 </svg>

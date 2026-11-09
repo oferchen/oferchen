@@ -68,6 +68,7 @@ INFO = [
     ("Languages.IaC", "Terraform, OpenTofu, Crossplane"),
     ("Focus.Cloud", "K8s (CKA/CKAD), Cilium, Vault"),
     ("Focus.Net", "EVPN-VXLAN, GoBGP/RTBH, Juniper"),
+    ("Certs.Verified", "CKA, CKAD, Vault, TF, AWS-SAA, PCAP"),
 ]
 
 PROD_METRICS = [
@@ -185,6 +186,8 @@ def load_stats() -> dict:
         "loc": "342,800", "added": "489,200", "deleted": "146,400",
         "rsync_stars": "113", "rsync_forks": "5", "rsync_ver": "v0.4.2",
         "streak_current": "19", "streak_longest": "64",
+        "linkedin_followers": "3,232", "linkedin_connections": "500+",
+        "linkedin_certs": "CKA, CKAD, Vault, TF, AWS-SAA, PCAP",
     }
     if not STATS_SRC.exists():
         return defaults
@@ -235,7 +238,15 @@ def build_panel(x: int, y0: float) -> tuple[list[str], int]:
 
     rows.append(None)
     rows.append(rule_row("- Contact & Flagship Engine"))
-    rows += [info_row(k, v) for k, v in CONTACT]
+    rows.append(info_row("Email", "oferchen@gmail.com"))
+    rows.append(
+        Row().text(". ", cls="cc").key("LinkedIn").text(":")
+        .text(" ", cls="cc").fill().text(" ", cls="cc")
+        .value("in/0ferchen")
+        .text(f" ({st['linkedin_followers']} followers", cls="addColor")
+        .text(" | ").text(f"{st['linkedin_connections']} conn", cls="value").text(")")
+    )
+    rows.append(info_row("Flagship", "github.com/oferchen/rsync (Rust)"))
     rows.append(
         Row().text(". ", cls="cc").key("oc-rsync.Spec").text(":")
         .text(" ", cls="cc").fill().text(" ", cls="cc")
