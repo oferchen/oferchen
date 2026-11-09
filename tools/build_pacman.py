@@ -49,10 +49,23 @@ LABEL_COL = 38             # room for Mon/Wed/Fri left of the grid
 HEADER_FONT = 14
 LABEL_FONT = 12
 
-# GitHub standard 5-step contribution greens (level 0..4)
+# High-vibrancy 5-step contribution greens (level 0..4)
+# Explicitly tuned for high contrast and rich saturation so squares are unmistakable green
 GREEN_RAMPS = {
-    "dark": ("#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"),
-    "light": ("#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"),
+    "dark": (
+        "#18261e",  # empty day (subtle dark emerald matrix tile)
+        "#238636",  # level 1 (vibrant GitHub emerald green)
+        "#2ea043",  # level 2 (bright medium green)
+        "#3fb950",  # level 3 (electric bright green)
+        "#56d364",  # level 4 (neon bright green)
+    ),
+    "light": (
+        "#e6f0e9",  # empty day (clean light mint tile)
+        "#2da44e",  # level 1 (crisp vibrant green)
+        "#22863a",  # level 2 (rich forest green)
+        "#176f2c",  # level 3 (deep green)
+        "#0f4c1e",  # level 4 (bold dark green)
+    ),
 }
 
 # Share of the way from the card's background to its foreground, per level.
