@@ -381,20 +381,10 @@ def build(theme: str) -> str:
     width = 1018
     height = round(CHROME_H + 2 * (MARGIN + half))
 
-    json_src = ROOT / "assets" / f"ascii-art-{theme}.json"
-    if json_src.exists():
-        colored_rows = json.loads(json_src.read_text(encoding="utf-8"))
-        art_tspans = "\n".join(
-            f'<tspan x="{MARGIN}" y="{art_y0 + i * art_line:.2f}">'
-            + "".join(f'<tspan fill="{col}">{esc(text)}</tspan>' for text, col in row)
-            + "</tspan>"
-            for i, row in enumerate(colored_rows)
-        )
-    else:
-        art_tspans = "\n".join(
-            f'<tspan x="{MARGIN}" y="{art_y0 + i * art_line:.2f}">{esc(line)}</tspan>'
-            for i, line in enumerate(art)
-        )
+    art_tspans = "\n".join(
+        f'<tspan x="{MARGIN}" y="{art_y0 + i * art_line:.2f}">{esc(line)}</tspan>'
+        for i, line in enumerate(art)
+    )
 
     divider_x = MARGIN + ART_COL_WIDTH + GUTTER / 2
 
