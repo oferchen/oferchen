@@ -11,6 +11,7 @@ Enhancements:
 
 from __future__ import annotations
 
+import colorsys
 import io
 import json
 import os
@@ -36,7 +37,7 @@ RAMP_LIGHT_BG = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;
 RAMP_DARK_BG = RAMP_LIGHT_BG[::-1]
 
 
-def hex_round(r: int, g: int, b: int, step: int = 36) -> str:
+def hex_round(r: int, g: int, b: int, step: int = 28) -> str:
     """Quantize RGB channels to a smooth retro terminal palette step."""
     qr = min(255, max(0, round(r / step) * step))
     qg = min(255, max(0, round(g / step) * step))
@@ -46,41 +47,55 @@ def hex_round(r: int, g: int, b: int, step: int = 36) -> str:
 
 def color_for_dark(r: int, g: int, b: int) -> str:
     """Map natural RGB values to a vibrant high-contrast palette on #0d1117 background."""
-    # Background white / light cream
-    if r > 225 and g > 225 and b > 225:
+    # Pure studio background (white/off-white)
+    if r > 238 and g > 238 and b > 238:
         return "#21262d"
-    # Warm skin tone: red dominant, green medium, blue lower
-    if r > 130 and g > 85 and r > b + 20:
-        r_boost = min(255, int(r * 1.20))
-        g_boost = min(255, int(g * 1.05))
-        b_boost = int(b * 0.85)
-        return hex_round(r_boost, g_boost, b_boost, step=36)
-    # Cool / blue / denim / cyan
-    if b > r and b > 45:
-        return hex_round(int(r * 0.70), int(g * 1.10), min(255, int(b * 1.35)), step=36)
-    # Hair / deep shadows: lift to visible zinc/slate on #0d1117
-    lum = r * 0.299 + g * 0.587 + b * 0.114
-    if lum < 55:
-        return "#52525b"
-    return hex_round(r, g, b, step=36)
+
+    lum = 0.299 * r + 0.587 * g + 0.114 * b
+
+    # White of the eyes, sclera, specular reflections & glints
+    # High luminance in facial region must be CRISP WHITE, never mud brown
+    if lum > 185 and min(r, g) > 175 and b > 115:
+        return "#f8fafc"
+
+    # Deep shadows & dark hair: lift slightly above #0d1117 so texture is visible
+    if lum < 45:
+        return "#475569"
+
+    # True color for skin, clothing, denim, hair:
+    # Use HLS to preserve natural hue without distortion
+    h, l, s = colorsys.rgb_to_hls(r / 255.0, g / 255.0, b / 255.0)
+    l_adapted = min(max(l, 0.35), 0.88)
+    s_adapted = min(1.0, s * 1.10)
+
+    nr, ng, nb = colorsys.hls_to_rgb(h, l_adapted, s_adapted)
+    return hex_round(int(nr * 255), int(ng * 255), int(nb * 255), step=28)
 
 
 def color_for_light(r: int, g: int, b: int) -> str:
     """Map natural RGB values to a rich deep palette on pure white #ffffff background."""
-    # Background
-    if r > 225 and g > 225 and b > 225:
+    # Pure studio background
+    if r > 238 and g > 238 and b > 238:
         return "#d0d7de"
-    # Warm skin tone: deepen for crisp contrast on pure white
-    if r > 130 and g > 85 and r > b + 20:
-        return hex_round(int(r * 0.72), int(g * 0.52), int(b * 0.35), step=36)
-    # Cool / blue / denim
-    if b > r and b > 45:
-        return hex_round(int(r * 0.35), int(g * 0.55), min(255, int(b * 0.85)), step=36)
-    # Hair / deep shadows
-    lum = r * 0.299 + g * 0.587 + b * 0.114
-    if lum < 60:
-        return "#18181b"
-    return hex_round(int(r * 0.65), int(g * 0.65), int(b * 0.65), step=36)
+
+    lum = 0.299 * r + 0.587 * g + 0.114 * b
+
+    # White of the eyes, sclera & highlights on white background
+    # Keep as clean neutral cool slate, NEVER warm mud brown
+    if lum > 185 and min(r, g) > 175 and b > 115:
+        return "#475569"
+
+    # Deep shadows & dark hair
+    if lum < 50:
+        return "#0f172a"
+
+    # True color: preserve exact hue, scale lightness for crisp contrast on white
+    h, l, s = colorsys.rgb_to_hls(r / 255.0, g / 255.0, b / 255.0)
+    l_adapted = min(max(l * 0.65, 0.18), 0.52)
+    s_adapted = min(1.0, s * 1.15)
+
+    nr, ng, nb = colorsys.hls_to_rgb(h, l_adapted, s_adapted)
+    return hex_round(int(nr * 255), int(ng * 255), int(nb * 255), step=28)
 
 
 def fetch_avatar_bytes() -> bytes | None:
