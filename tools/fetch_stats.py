@@ -43,7 +43,7 @@ def fetch_linkedin_stats() -> dict:
         "followers": "3,232",
         "connections": "500+",
         "headline": "Sr. DevOps, Platform & AI Infra",
-        "top_certs": ["CKA", "CKAD", "Vault", "Terraform", "AWS-SAA", "PCAP"],
+        "top_certs": ["CKA", "CKAD", "Vault", "Terraform", "AWS-SAA"],
     }
     try:
         import urllib.request
@@ -91,8 +91,6 @@ def fetch_linkedin_stats() -> dict:
                 found_certs.append("Terraform")
             elif "AWS Certified" in clean or "Solutions Architect" in clean:
                 found_certs.append("AWS-SAA")
-            elif "PCAP" in clean:
-                found_certs.append("PCAP")
         if found_certs:
             stats["top_certs"] = list(dict.fromkeys(found_certs))
 
@@ -389,7 +387,7 @@ def main() -> None:
         "streak_longest": streak_max,
         "linkedin_followers": li_stats.get("followers", "3,232"),
         "linkedin_connections": li_stats.get("connections", "500+"),
-        "linkedin_certs": ", ".join(li_stats.get("top_certs", ["CKA", "CKAD", "Vault", "Terraform", "AWS-SAA", "PCAP"])),
+        "linkedin_certs": ", ".join(li_stats.get("top_certs", ["CKA", "CKAD", "Vault", "Terraform", "AWS-SAA"])),
         "linkedin_headline": li_stats.get("headline", "Sr. DevOps, Platform & AI Infra"),
         "avatar_url": meta.get("avatarUrl", f"https://github.com/{LOGIN}.png?size=460"),
         "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),

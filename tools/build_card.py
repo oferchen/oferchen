@@ -93,14 +93,14 @@ TITLE = "ofer@chen"
 INFO = [
     ("OS", "RHEL, Rocky, Debian, Talos, Yocto"),
     ("Uptime", None),
-    ("Host", "Ra'anana, Center District, IL"),
+    ("Host", "Central District, IL"),
     ("Kernel", "Sr. DevOps, Platform & AI Infra"),
     ("Virt.GPU", "KVM/QEMU, NVIDIA MIG/vGPU, PCIe"),
     ("Languages.Code", "Rust, Go, Python, Bash, C/C++"),
     ("Languages.IaC", "Terraform, OpenTofu, Crossplane"),
     ("Focus.Cloud", "K8s (CKA/CKAD), Cilium, Vault"),
     ("Focus.Net", "EVPN-VXLAN, GoBGP/RTBH, Juniper"),
-    ("Certs.Verified", "CKA, CKAD, Vault, TF, AWS-SAA, PCAP"),
+    ("Certs.Verified", "CKA, CKAD, Vault, Terraform, AWS-SAA"),
 ]
 
 PROD_METRICS = [
@@ -219,7 +219,7 @@ def load_stats() -> dict:
         "rsync_stars": "113", "rsync_forks": "5", "rsync_ver": "v0.4.2",
         "streak_current": "19", "streak_longest": "64",
         "linkedin_followers": "3,232", "linkedin_connections": "500+",
-        "linkedin_certs": "CKA, CKAD, Vault, TF, AWS-SAA, PCAP",
+        "linkedin_certs": "CKA, CKAD, Vault, Terraform, AWS-SAA",
     }
     if not STATS_SRC.exists():
         return defaults
