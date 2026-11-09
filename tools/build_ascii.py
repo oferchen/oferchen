@@ -1,22 +1,29 @@
-"""Convert the GitHub user's profile picture into 87x47 ASCII art portraits
-for both Dark Mode and Light Mode, supporting both plain monochrome text
-and rich multi-color ANSI/terminal color spans (assets/ascii-art-*.json).
+"""Convert the GitHub user's Cookie Monster profile picture (1000x1000 RGBA master)
+into 87x47 ASCII art portraits for both Dark Mode and Light Mode, supporting both
+plain text (assets/ascii-art*.txt) and True-Color ANSI RLE spans (assets/ascii-art-*.json).
 
-Enhancements:
-- UnsharpMask edge enhancement + adaptive contrast so facial contours stay razor-sharp at 87x47.
-- Color quantization + Run-Length Encoding (RLE) to sample authentic RGB tones from the avatar.
-- Contrast adaptation: lifted shadow highlights for dark mode, deepened tones for light mode.
-- Exact 0.54 cell aspect ratio (87 cols x 47 rows).
+Key capabilities:
+- Uses 1000x1000 RGBA master with explicit alpha segmentation and spherical eyeball
+  geometry so the pure white sclera of Cookie Monster's googly eyes never collides
+  with the external studio background or gets tinted brown by compression noise.
+- Region-aware glyph density and color mapping for:
+  1. External terminal background (subtle '.' dots)
+  2. Googly eyeballs: crisp circular rim contour, pure snow-white/ice-silver 3D sclera,
+     and high-contrast off-center black pupils with specular catchlights
+  3. Shaggy Sesame Street blue fur with 5-level highlight/shadow depth
+  4. Wide-open mouth cavity
+  5. Golden chocolate-chip cookie with dark chocolate chips
 """
 
 from __future__ import annotations
 
-import colorsys
 import io
 import json
+import math
 import os
+from collections import deque
 from pathlib import Path
-from PIL import Image, ImageOps, ImageEnhance, ImageFilter
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
@@ -32,75 +39,17 @@ LOGIN = os.environ.get("GH_LOGIN", "oferchen")
 COLS = 87
 ROWS = 47
 
-# 69-level high-detail character ramp (no space character so outer columns never collapse)
-RAMP_LIGHT_BG = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.`"
-RAMP_DARK_BG = RAMP_LIGHT_BG[::-1]
-
-
-def hex_round(r: int, g: int, b: int, step: int = 28) -> str:
-    """Quantize RGB channels to a smooth retro terminal palette step."""
-    qr = min(255, max(0, round(r / step) * step))
-    qg = min(255, max(0, round(g / step) * step))
-    qb = min(255, max(0, round(b / step) * step))
-    return f"#{qr:02x}{qg:02x}{qb:02x}"
-
-
-def color_for_dark(r: int, g: int, b: int) -> str:
-    """Map natural RGB values to a vibrant high-contrast palette on #0d1117 background."""
-    # Pure studio background (white/off-white)
-    if r > 238 and g > 238 and b > 238:
-        return "#21262d"
-
-    lum = 0.299 * r + 0.587 * g + 0.114 * b
-
-    # White of the eyes, sclera, specular reflections & glints
-    # High luminance in facial region must be CRISP WHITE, never mud brown
-    if lum > 185 and min(r, g) > 175 and b > 115:
-        return "#f8fafc"
-
-    # Deep shadows & dark hair: lift slightly above #0d1117 so texture is visible
-    if lum < 45:
-        return "#475569"
-
-    # True color for skin, clothing, denim, hair:
-    # Use HLS to preserve natural hue without distortion
-    h, l, s = colorsys.rgb_to_hls(r / 255.0, g / 255.0, b / 255.0)
-    l_adapted = min(max(l, 0.35), 0.88)
-    s_adapted = min(1.0, s * 1.10)
-
-    nr, ng, nb = colorsys.hls_to_rgb(h, l_adapted, s_adapted)
-    return hex_round(int(nr * 255), int(ng * 255), int(nb * 255), step=28)
-
-
-def color_for_light(r: int, g: int, b: int) -> str:
-    """Map natural RGB values to a rich deep palette on pure white #ffffff background."""
-    # Pure studio background
-    if r > 238 and g > 238 and b > 238:
-        return "#d0d7de"
-
-    lum = 0.299 * r + 0.587 * g + 0.114 * b
-
-    # White of the eyes, sclera & highlights on white background
-    # Keep as clean neutral cool slate, NEVER warm mud brown
-    if lum > 185 and min(r, g) > 175 and b > 115:
-        return "#475569"
-
-    # Deep shadows & dark hair
-    if lum < 50:
-        return "#0f172a"
-
-    # True color: preserve exact hue, scale lightness for crisp contrast on white
-    h, l, s = colorsys.rgb_to_hls(r / 255.0, g / 255.0, b / 255.0)
-    l_adapted = min(max(l * 0.65, 0.18), 0.52)
-    s_adapted = min(1.0, s * 1.15)
-
-    nr, ng, nb = colorsys.hls_to_rgb(h, l_adapted, s_adapted)
-    return hex_round(int(nr * 255), int(ng * 255), int(nb * 255), step=28)
+# Textured character ramps (no spaces so outer columns never collapse)
+RAMP_FUR_DARK = ".:;i!lI><~+_-?][}{1)(|/\\tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
+RAMP_FUR_LIGHT = RAMP_FUR_DARK[::-1]
+RAMP_SCLERA_DARK = "oO0Q#MW8%B@$"
+RAMP_SCLERA_LIGHT = ".:;~+oO0Q"
+RAMP_DENSE = "#MW&8%B@$"
 
 
 def fetch_avatar_bytes() -> bytes | None:
     if LOCAL_AVATAR.exists():
-        print(f"Using local avatar: {LOCAL_AVATAR}")
+        print(f"Using local high-res avatar master: {LOCAL_AVATAR}")
         return LOCAL_AVATAR.read_bytes()
 
     import urllib.request
@@ -127,53 +76,249 @@ def fetch_avatar_bytes() -> bytes | None:
     return None
 
 
-def image_to_ascii_and_spans(
-    img: Image.Image,
-    ramp: str,
-    color_fn,
+def ensure_master_rgba(img: Image.Image) -> Image.Image:
+    """Ensure a 1000x1000 RGBA master with clean background alpha & eye sphere separation."""
+    W, H = 1000, 1000
+    if img.size == (W, H) and img.mode == "RGBA":
+        a_min, _ = img.getchannel("A").getextrema()
+        if a_min == 0:
+            return img
+
+    rgb = img.convert("RGB").resize((W, H), Image.Resampling.LANCZOS)
+    rgb = rgb.filter(ImageFilter.UnsharpMask(radius=1.8, percent=135, threshold=2))
+    pix = rgb.load()
+
+    cx1, cy1, r1 = 273.9, 234.8, 134.8
+    cx2, cy2, r2 = 543.5, 143.5, 134.8
+
+    bg = [[False] * W for _ in range(H)]
+    q = deque([(0, 0), (W - 1, 0), (0, H // 3)])
+    for sx, sy in list(q):
+        bg[sy][sx] = True
+
+    while q:
+        x, y = q.popleft()
+        for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
+            if 0 <= nx < W and 0 <= ny < H and not bg[ny][nx]:
+                d1 = math.hypot(nx - cx1, ny - cy1)
+                d2 = math.hypot(nx - cx2, ny - cy2)
+                if d1 <= r1 or d2 <= r2:
+                    continue
+                r, g, b = pix[nx, ny]
+                lum = 0.299 * r + 0.587 * g + 0.114 * b
+                if lum > 222 and (b - r) < 20:
+                    bg[ny][nx] = True
+                    q.append((nx, ny))
+
+    out = Image.new("RGBA", (W, H))
+    opix = out.load()
+    for y in range(H):
+        for x in range(W):
+            r, g, b = pix[x, y]
+            lum = 0.299 * r + 0.587 * g + 0.114 * b
+            d1 = math.hypot(x - cx1, y - cy1)
+            d2 = math.hypot(x - cx2, y - cy2)
+            in_eye1 = d1 <= r1
+            in_eye2 = d2 <= r2
+            in_eye = in_eye1 or in_eye2
+            if bg[y][x] and not in_eye:
+                opix[x, y] = (255, 255, 255, 0)
+            else:
+                opix[x, y] = (r, g, b, 255)
+    return out
+
+
+def build_portraits(
+    master: Image.Image,
     cols: int = COLS,
     rows: int = ROWS,
-) -> tuple[str, list[list[tuple[str, str]]]]:
-    gray = ImageOps.autocontrast(img.convert("L"), cutoff=1)
-    gray = gray.filter(ImageFilter.UnsharpMask(radius=1.6, percent=145, threshold=2))
-    gray = ImageEnhance.Contrast(gray).enhance(1.3)
+) -> tuple[str, list[list[tuple[str, str]]], str, list[list[tuple[str, str]]]]:
+    W, H = master.size
+    pix = master.load()
+
+    # Enhanced local contrast map for fur and cookie texture
+    gray = ImageOps.autocontrast(master.convert("L"), cutoff=1)
+    gray = gray.filter(ImageFilter.UnsharpMask(radius=1.6, percent=150, threshold=2))
+    gray = ImageEnhance.Contrast(gray).enhance(1.25)
     resized_gray = gray.resize((cols, rows), Image.Resampling.LANCZOS)
 
-    rgb = ImageEnhance.Color(img.convert("RGB")).enhance(1.25)
-    resized_rgb = rgb.resize((cols, rows), Image.Resampling.LANCZOS)
+    # Normalized eyeball & pupil geometry in 1000x1000 master space
+    cx1, cy1, r1 = 273.9, 234.8, 134.8
+    cx2, cy2, r2 = 543.5, 143.5, 134.8
+    # Pupil centers for subtle specular catchlight
+    px1_c, py1_c = 313.6, 262.3
+    px2_c, py2_c = 524.6, 169.1
 
-    plain_lines = []
-    lines_runs = []
-    n = len(ramp) - 1
+    dark_lines: list[str] = []
+    light_lines: list[str] = []
+    dark_runs_all: list[list[tuple[str, str]]] = []
+    light_runs_all: list[list[tuple[str, str]]] = []
 
     for y in range(rows):
-        row_chars = []
-        row_colors = []
+        d_chars: list[str] = []
+        d_cols: list[str] = []
+        l_chars: list[str] = []
+        l_cols: list[str] = []
+
+        py = min(H - 1, (y + 0.5) * H / rows)
+        iy = int(py)
+
         for x in range(cols):
+            px = min(W - 1, (x + 0.5) * W / cols)
+            ix = int(px)
+
+            r, g, b, a = pix[ix, iy]
+            lum = 0.299 * r + 0.587 * g + 0.114 * b
             glum = resized_gray.getpixel((x, y))
-            char = ramp[round((glum / 255.0) * n)]
-            r, g, b = resized_rgb.getpixel((x, y))
-            col = color_fn(r, g, b)
-            row_chars.append(char)
-            row_colors.append(col)
 
-        plain_lines.append("".join(row_chars))
+            d1 = math.hypot(px - cx1, py - cy1)
+            d2 = math.hypot(px - cx2, py - cy2)
+            in_eye1 = d1 <= r1
+            in_eye2 = d2 <= r2
+            in_eye = in_eye1 or in_eye2
 
-        # Run-length encode consecutive matching colors
-        runs: list[tuple[str, str]] = []
-        cur_col = row_colors[0]
-        cur_text = [row_chars[0]]
-        for c, col in zip(row_chars[1:], row_colors[1:]):
-            if col == cur_col:
-                cur_text.append(c)
+            # 1. External Background
+            if a < 128 and not in_eye:
+                d_chars.append(".")
+                d_cols.append("#21262d")
+                l_chars.append(".")
+                l_cols.append("#d8dee4")
+                continue
+
+            # 2. Googly Eyeballs (Sclera, Circular Rim, and Black Pupils)
+            if in_eye and not (b - r > 22 and lum < 175 and py > 205):
+                # Check if inside the dark googly pupil
+                if r < 115 and g < 115 and b < 115 and (b - r) < 20:
+                    # Specular glint at upper-left of each pupil
+                    glint1 = math.hypot(px - (px1_c - 15), py - (py1_c - 15)) < 14
+                    glint2 = math.hypot(px - (px2_c - 16), py - (py2_c - 16)) < 15
+                    if glint1 or glint2:
+                        d_chars.append("*")
+                        d_cols.append("#e2e8f0")
+                        l_chars.append("*")
+                        l_cols.append("#64748b")
+                    else:
+                        d_chars.append("@")
+                        d_cols.append("#1e293b")
+                        l_chars.append("@")
+                        l_cols.append("#090d16")
+                    continue
+
+                # Determine normalized radial position on the active eyeball sphere
+                if in_eye1 and (not in_eye2 or d1 < d2):
+                    dn = d1 / r1
+                    nx_s = (px - cx1) / r1
+                    ny_s = (py - cy1) / r1
+                    rim_zone = (dn >= 0.87 and py < 340)
+                else:
+                    dn = d2 / r2
+                    nx_s = (px - cx2) / r2
+                    ny_s = (py - cy2) / r2
+                    rim_zone = (dn >= 0.87 and py < 255)
+
+                # Seam where the two eyeballs touch
+                seam_zone = (abs(d1 - d2) < 13.5 and d1 <= r1 and d2 <= r2)
+
+                if rim_zone or seam_zone:
+                    # Crisp circular eyeball boundary
+                    d_chars.append("O")
+                    d_cols.append("#94a3b8")
+                    l_chars.append("O")
+                    l_cols.append("#334155")
+                else:
+                    # Pure white of the eyes (sclera) with smooth 3D sphere shading
+                    sphere_shade = max(0.0, min(1.0, 1.0 - 0.35 * math.hypot(nx_s + 0.28, ny_s + 0.28)))
+                    d_idx = min(len(RAMP_SCLERA_DARK) - 1, int(sphere_shade * (len(RAMP_SCLERA_DARK) - 1)))
+                    d_chars.append(RAMP_SCLERA_DARK[d_idx])
+                    d_cols.append("#ffffff" if sphere_shade > 0.42 else "#e2e8f0")
+
+                    l_idx = min(len(RAMP_SCLERA_LIGHT) - 1, int((1.0 - sphere_shade) * (len(RAMP_SCLERA_LIGHT) - 1)))
+                    l_chars.append(RAMP_SCLERA_LIGHT[l_idx])
+                    l_cols.append("#cbd5e1" if sphere_shade > 0.45 else "#94a3b8")
+                continue
+
+            # 3. Chocolate Chip Cookie (lower-right warm golden region)
+            if px > 500 and py > 540 and (r - b) > 16:
+                n_fur = len(RAMP_FUR_DARK) - 1
+                if lum < 105:
+                    # Dark chocolate chip or baked crevice
+                    d_chars.append("@")
+                    d_cols.append("#78350f")
+                    l_chars.append("@")
+                    l_cols.append("#451a03")
+                else:
+                    c_idx_d = max(28, min(n_fur, round((glum / 255.0) * n_fur)))
+                    c_idx_l = max(30, min(n_fur - 4, round((glum / 255.0) * n_fur)))
+                    d_chars.append(RAMP_FUR_DARK[c_idx_d])
+                    l_chars.append(RAMP_FUR_DARK[c_idx_l])
+                    if lum > 185:
+                        d_cols.append("#fbbf24")
+                        l_cols.append("#d97706")
+                    elif lum > 145:
+                        d_cols.append("#f59e0b")
+                        l_cols.append("#b45309")
+                    else:
+                        d_cols.append("#d97706")
+                        l_cols.append("#92400e")
+                continue
+
+            # 4. Wide-Open Black Mouth Cavity (& deep dark chin crease)
+            if lum < 48 and (b - r) < 22 and 330 < py < 920:
+                d_chars.append(":" if lum < 25 else "+")
+                d_cols.append("#1e293b" if py < 820 else "#161b22")
+                l_chars.append("@" if lum < 25 else "#")
+                l_cols.append("#090d16" if py < 820 else "#1e293b")
+                continue
+
+            # 5. Iconic Cookie Monster Blue Fur
+            n_fur = len(RAMP_FUR_DARK) - 1
+            f_idx_d = max(20, min(n_fur, round((glum / 255.0) * n_fur)))
+            f_idx_l = max(22, min(n_fur, round(((255 - glum) / 255.0) * n_fur)))
+            d_chars.append(RAMP_FUR_DARK[f_idx_d])
+            l_chars.append(RAMP_FUR_DARK[f_idx_l])
+
+            if lum < 55:
+                d_cols.append("#0369a1")
+                l_cols.append("#0c4a6e")
+            elif lum < 88:
+                d_cols.append("#0284c7")
+                l_cols.append("#075985")
+            elif lum < 122:
+                d_cols.append("#0ea5e9")
+                l_cols.append("#0369a1")
+            elif lum < 155:
+                d_cols.append("#38bdf8")
+                l_cols.append("#0284c7")
             else:
-                runs.append(("".join(cur_text), cur_col))
-                cur_col = col
-                cur_text = [c]
-        runs.append(("".join(cur_text), cur_col))
-        lines_runs.append(runs)
+                d_cols.append("#7dd3fc")
+                l_cols.append("#0ea5e9")
 
-    return "\n".join(plain_lines) + "\n", lines_runs
+        dark_lines.append("".join(d_chars))
+        light_lines.append("".join(l_chars))
+        dark_runs_all.append(_rle_row(d_chars, d_cols))
+        light_runs_all.append(_rle_row(l_chars, l_cols))
+
+    return (
+        "\n".join(dark_lines) + "\n",
+        dark_runs_all,
+        "\n".join(light_lines) + "\n",
+        light_runs_all,
+    )
+
+
+def _rle_row(chars: list[str], cols: list[str]) -> list[tuple[str, str]]:
+    runs: list[tuple[str, str]] = []
+    cur_col = cols[0]
+    cur_text = [chars[0]]
+    for c, col in zip(chars[1:], cols[1:]):
+        if col == cur_col:
+            cur_text.append(c)
+        else:
+            runs.append(("".join(cur_text), cur_col))
+            cur_col = col
+            cur_text = [c]
+    runs.append(("".join(cur_text), cur_col))
+    return runs
 
 
 def main() -> None:
@@ -182,21 +327,11 @@ def main() -> None:
         print("No avatar image available; keeping existing ASCII art files.")
         return
 
-    img = Image.open(io.BytesIO(data))
-    if img.mode in ("RGBA", "LA") or (img.mode == "P" and "transparency" in img.info):
-        rgba = img.convert("RGBA")
-        bg_dark = Image.new("RGBA", rgba.size, (22, 27, 34, 255))
-        bg_light = Image.new("RGBA", rgba.size, (255, 255, 255, 255))
-        img_dark = Image.alpha_composite(bg_dark, rgba)
-        img_light = Image.alpha_composite(bg_light, rgba)
-    else:
-        img_dark = img
-        img_light = img
+    raw_img = Image.open(io.BytesIO(data))
+    master = ensure_master_rgba(raw_img)
 
     ASSETS.mkdir(exist_ok=True)
-
-    dark_txt, dark_spans = image_to_ascii_and_spans(img_dark, RAMP_DARK_BG, color_for_dark, COLS, ROWS)
-    light_txt, light_spans = image_to_ascii_and_spans(img_light, RAMP_LIGHT_BG, color_for_light, COLS, ROWS)
+    dark_txt, dark_spans, light_txt, light_spans = build_portraits(master, COLS, ROWS)
 
     ASCII_DARK_OUT.write_text(dark_txt, encoding="utf-8")
     ASCII_LIGHT_OUT.write_text(light_txt, encoding="utf-8")
@@ -205,8 +340,8 @@ def main() -> None:
 
     dark_span_count = sum(len(r) for r in dark_spans)
     light_span_count = sum(len(r) for r in light_spans)
-    print(f"Wrote {ASCII_DARK_OUT.name} and {ASCII_DARK_JSON.name} ({dark_span_count} color spans)")
-    print(f"Wrote {ASCII_LIGHT_OUT.name} and {ASCII_LIGHT_JSON.name} ({light_span_count} color spans)")
+    print(f"Wrote {ASCII_DARK_OUT.name} and {ASCII_DARK_JSON.name} ({dark_span_count} RLE color spans)")
+    print(f"Wrote {ASCII_LIGHT_OUT.name} and {ASCII_LIGHT_JSON.name} ({light_span_count} RLE color spans)")
 
 
 if __name__ == "__main__":

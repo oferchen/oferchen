@@ -16,6 +16,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ASCII_SRC = ROOT / "assets" / "ascii-art.txt"
 ASCII_SRC_LIGHT = ROOT / "assets" / "ascii-art-light.txt"
+ASCII_JSON_DARK = ROOT / "assets" / "ascii-art-dark.json"
+ASCII_JSON_LIGHT = ROOT / "assets" / "ascii-art-light.json"
 STATS_SRC = ROOT / "cache" / "stats.json"
 
 CAREER_START = dt.date(2010, 1, 1)
@@ -40,6 +42,7 @@ CHROME_H = 34  # Terminal titlebar height
 THEMES = {
     "dark": {
         "art_src": ASCII_SRC,
+        "art_json": ASCII_JSON_DARK,
         "bg": "#0d1117",
         "chrome_bg": "#161b22",
         "border": "#30363d",
@@ -64,6 +67,7 @@ THEMES = {
     },
     "light": {
         "art_src": ASCII_SRC_LIGHT,
+        "art_json": ASCII_JSON_LIGHT,
         "bg": "#ffffff",
         "chrome_bg": "#f6f8fa",
         "border": "#d0d7de",
@@ -381,11 +385,32 @@ def build(theme: str) -> str:
     width = 1018
     height = round(CHROME_H + 2 * (MARGIN + half))
 
-    art_tspans = "\n".join(
-        f'<tspan x="{MARGIN}" y="{art_y0 + i * art_line:.2f}">{esc(line)}</tspan>'
-        for i, line in enumerate(art)
-    )
+    art_css_lines: list[str] = []
+    json_src: Path | None = c.get("art_json")
+    if json_src and json_src.exists():
+        rows_runs: list[list[list[str]]] = json.loads(json_src.read_text(encoding="utf-8"))
+        color_to_cls: dict[str, str] = {}
+        row_elems: list[str] = []
+        for i, runs in enumerate(rows_runs):
+            inner: list[str] = []
+            for text_seg, hex_col in runs:
+                cls_name = color_to_cls.get(hex_col)
+                if not cls_name:
+                    cls_name = f"a{len(color_to_cls)}"
+                    color_to_cls[hex_col] = cls_name
+                    art_css_lines.append(f".{cls_name} {{fill: {hex_col};}}")
+                inner.append(f'<tspan class="{cls_name}">{esc(text_seg)}</tspan>')
+            row_elems.append(
+                f'<tspan x="{MARGIN}" y="{art_y0 + i * art_line:.2f}">{"".join(inner)}</tspan>'
+            )
+        art_tspans = "\n".join(row_elems)
+    else:
+        art_tspans = "\n".join(
+            f'<tspan x="{MARGIN}" y="{art_y0 + i * art_line:.2f}">{esc(line)}</tspan>'
+            for i, line in enumerate(art)
+        )
 
+    art_palette_css = "\n".join(art_css_lines)
     divider_x = MARGIN + ART_COL_WIDTH + GUTTER / 2
 
     return f"""<?xml version='1.0' encoding='UTF-8'?>
@@ -412,6 +437,7 @@ def build(theme: str) -> str:
 .promptUser {{fill: {c['prompt_user']}; font-weight: bold;}}
 .promptDir {{fill: {c['prompt_dir']}; font-weight: bold;}}
 .promptCmd {{fill: {c['prompt_cmd']};}}
+{art_palette_css}
 text, tspan {{white-space: pre;}}
 </style>
 <!-- Outer Card Background & Border -->
@@ -426,12 +452,12 @@ text, tspan {{white-space: pre;}}
 <text x="{width / 2:g}" y="{CHROME_H / 2 + 4.5:g}" font-size="13px" fill="{c['dots']}" text-anchor="middle">ofer@chen: ~/infrastructure — neofetch --live-telemetry (zsh)</text>
 <!-- Subtle Vertical Column Divider -->
 <line x1="{divider_x:g}" y1="{CHROME_H + 12}" x2="{divider_x:g}" y2="{height - 12}" stroke="{c['border']}" stroke-width="1" stroke-dasharray="3,4"/>
-<!-- Left Column: 87x47 ASCII Artwork / Portrait -->
-<text fill="{c['art']}" font-size="{art_font:.2f}px" class="ascii">
+<!-- Left Column: 87x47 True-Color ANSI ASCII Portrait -->
+<text fill="{c['art']}" font-size="{art_font:.2f}px" class="ascii" xml:space="preserve">
 {art_tspans}
 </text>
 <!-- Right Column: Neofetch Telemetry Panel -->
-<text fill="{c['fg']}" font-size="{PANEL_FONT:g}px">
+<text fill="{c['fg']}" font-size="{PANEL_FONT:g}px" xml:space="preserve">
 {chr(10).join(panel_lines)}
 </text>
 </svg>
