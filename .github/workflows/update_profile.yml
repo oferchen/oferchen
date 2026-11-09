@@ -1,0 +1,49 @@
+name: Update Profile SVGs
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'tools/**'
+      - 'assets/**'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Fetch live GitHub stats & contribution calendar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_LOGIN: oferchen
+        run: python tools/fetch_stats.py
+
+      - name: Build Neofetch Card, Link Buttons, and Pac-Man Board SVGs
+        run: |
+          python tools/build_card.py
+          python tools/build_links.py
+          python tools/build_pacman.py
+
+      - name: Commit and push updated SVGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add *.svg cache/*.json
+          git diff --staged --quiet || git commit -m "chore: update live profile stats and SVGs [skip ci]"
+          git push
