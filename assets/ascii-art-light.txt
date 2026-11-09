@@ -1,13 +1,47 @@
-        .------------------------.
-        |   [o_O] OFER CHEN      |
-        |   SR. DEVOPS & AI INFRA|
-        '------------------------'
-                   \
-                    \   ^__^
-                     \  (oo)\_______
-                        (__)\       )\/\\
-                            ||----w |
-                            ||     ||
-        ________________________________
-        [::] RUST • GO • K8S • GPU • BGP
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@@@@@@@@@@@@@@@@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$@@@@@BBBBBBBBBBBBBBBBBBBBB@@@@@$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$@@@@BBBBBB%%%%%%%%%%%%%%%%%%%BBBBBB@@@@$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$@@@@BBBB%%%%%8888888888888888888%%%%%BBBB@@@@$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$@@@BBBB%%%888888&&&&&&&&&&&&&&&&&888888%%%%BBB@@@$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$@@@BBB%%%8888&&&&&&WWWWWWWWWWWWWWWW&&&&&8888%%%BBB@@@$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$@@@BBB%%8888&&&&WWWWWWMMM#######MMMMWWWWW&&&&8888%%%BB@@@$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$@@BBB%%888&&&&WWWWMM##***************##MMWWWWW&&&888%%BBB@@@$$$$$$$$$$$$$
+$$$$$$$$$$$$@@@BB%%888&&&WWWWMM#***********************##MMWWW&&&888%%BBB@@$$$$$$$$$$$$
+$$$$$$$$$$$@@BBB%%888&&WWWMM##************ooo*************#MMWWW&&&88%%%BB@@$$$$$$$$$$$
+$$$$$$$$$$@@BB%%888&&WWWMMM#*********ooooo****oooo*********##MMWWW&&888%%BB@@$$$$$$$$$$
+$$$$$$$$$@@BB%%888&&WWMMM##*ooooooooo#MMM*ooo*#MM#*oooooooo**##MMWW&&888%%BB@@$$$$$$$$$
+$$$$$$$$@@BB%%888&&WWMM###***######M#dCj1-~<<-{fYq*M######****##MMWW&&&88%%BB@@$$$$$$$$
+$$$$$$$@@BB%%888&&WWMM###**obdddbbdU{I.``````````:]zqbbdddbo***##MMWW&&&88%%BB@@$$$$$$$
+$$$$$$$@@BB%%88&&WWMM##***axI::,^^'```````....``````'^^,::;|k***##MMWW&&888%BBB@$$$$$$$
+$$$$$$@@BB%%88&&WWMM###*o*OI```'?1}}{{1(-'````~)){{{}1["````Y*o**##MMWW&&88%%BB@@$$$$$$
+$$$$$$@@BB%%88&&WWM###**oor...`^}|rUQYf(?'````~(/zQCn|1:`..`)hoo*###MMWW&888%%B@@$$$$$$
+$$$$$@@BB%%88&&WWMM##**ook{``````_mX1L0l```````^YZ)nq1````.`+qoo**##MMWW&&88%%BB@@$$$$$
+$$$$$@@BB%%88&&WWMM##**oob[`.```.>vu|cxI.``.``."tX\rX-.```.`>woo**###MWW&&88%%BB@@$$$$$
+$$$$$@@BB%%88&&WWM###*ooak1````````.^``````^.`````^'``````.`+qoao**##MMW&&888%BB@@$$$$$
+$$$$$@@BB%%88&&WWM###*ooaax.`````..```.````,^```.```..````.`(kaoo**##MMW&&888%BB@@$$$$$
+$$$$$@@BB%%88&&WWM###*ooaaOl```````.``..``'''``..``````````"Uaaoo**##MMW&&888%BB@@$$$$$
+$$$$$@@BB%%88&&WWMM##**oaakf:""""^````````````````````"""",1paao**###MWW&&88%%BB@@$$$$$
+$$$$$@@BB%%88&&WWMM##**ooahC/||||(-;.'i<<~+++~<<i``,+)||||\Ykaao**##MMWW&&88%%BB@@$$$$$
+$$$$$$@@BB%888&&WWM###**oaawn|\\\\/\[-(jxxrrrxxr\-?|/\\\\|jOaao**###MMWW&888%%B@@$$$$$$
+$$$$$$@@BB%%88&&WWMM###**oaaOr||\\|\|1]][}{1{}[]]{|\|\\||fLhaoo**##MMWW&&88%%BB@@$$$$$$
+$$$$$$$@@BB%%88&&WWMM##***ooaqzt||\\\|){}[[[[[}{1|\\\||/vmhooo**##MMWW&&888%BBB@$$$$$$$
+$$$$$$$@@BB%%888&&WWMM###**ooohZzf\||\\\||(((|||\\|||tv0kooo***##MMWW&&&88%%BB@@$$$$$$$
+$$$$$$$$@@BB%%888&&WWMM###**oooohqQzj||\\\///\\\||fcLwhoooo**###MMWW&&&88%%BB@@$$$$$$$$
+$$$$$$$$$@@BB%%888&&WWMMM##*****#M##Q]<+_?????-_<_Y*#M#*****###MMWW&&888%%BB@@$$$$$$$$$
+$$$$$$$$$$@@BB%%888&&WWWMMM###*mXXXXf<IIIIIIIIIIIi\XXXX0a####MMWWW&&888%%BB@@$$$$$$$$$$
+$$$$$$$$$$$@@BBB%%88&&&&&WM*kqOc?,^",Illllllllllll,"^"+n0qkoMW&&&&&88%%%BB@@$$$$$$$$$$$
+$$$$$$$$$$$$@@@BB%%%%8&#hpOLUYYUX|!",;IIIIIIIIIIII:"I1cUYYUCOqk*W8%%%%BBB@@$$$$$$$$$$$$
+$$$$$$$$$$$$$$@@BB8MapOCUYYYYUUUUUx_,""""""""""""""<fYUUUUUYYYUC0qh#8BB@@@$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$@@#ZCUYYYUUUUUUUUUUUc1I^"""""""""":[vUUYUUUUUUUUYYYYCOoB@$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$8mYYUUUUUUUUUUUUUUYUYf<"""""""""i\XUYUUUUUUUUUUUUUUYY0W$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$kJUUUUUUUUUUUUUUUUUYUUv[;^"""",-xUUYUUUUUUUUUUUUUUUUUUp@$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$W0YUUUUUUUUUUUUUUUUUUUYUX\i"""l)zUUUUUUUUUUUUUUUUUUUUUYC*$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$@qUUUUUUUUUUUUUUUUUUUUUUYUUn-;~jYUYUUUUUUUUUUUUUUUUUUUUUYZ%$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$*CYUUUUUUUUUUUUUUUUUUUUUUUUUzjvUUUUUUUUUUUUUUUUUUUUUUUUUUUh$$$$$$$$$$$$$$
+$$$$$$$$$$$$$8OYUUUUUUUUUUUUUUUUUUUUUUUUUYUJUYUUUUUUUUUUUUUUUUUUUUUUUUUYLW$$$$$$$$$$$$$
+$$$$$$$$$$$$$dUUUUUUUUUUUUUUUUUUUUUUUUUUUUUYYUUUUUUUUUUUUUUUUUUUUUUUUUUUYwB$$$$$$$$$$$$
+$$$$$$$$$$$$#CYUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUJa$$$$$$$$$$$$
+$$$$$$$$$$$BZYUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUYQ&$$$$$$$$$$$
+$$$$$$$$$$$bUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUq@$$$$$$$$$$
+$$$$$$$$$$WLYUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUYJo$$$$$$$$$$

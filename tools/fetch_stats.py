@@ -1,17 +1,8 @@
 """Fetch GitHub statistics into cache/: stats.json for the card, calendar.json
 for the Pac-Man board.
 
-Split from tools/build_card.py on purpose: this half is the slow, network-bound,
-rate-limited part, so it caches aggressively and can fail without taking the
-card down (build_card.py falls back to placeholders when the cache is absent).
-
-Lines-of-code is the expensive figure -- it walks every commit you authored on
-each repo's default branch. cache/loc.json memoises that per repo, keyed by the
-branch head OID, so an unchanged repo costs one cheap field in the repo query
-instead of a full history walk.
-
-Requires a GITHUB_TOKEN in the environment (the Actions-provided token is
-enough for public data).
+Also fetches `avatarUrl` so `tools/build_ascii.py` can convert the live GitHub
+profile picture into `assets/ascii-art.txt` and `assets/ascii-art-light.txt`.
 
 Usage:
     GITHUB_TOKEN=... python tools/fetch_stats.py
@@ -42,23 +33,23 @@ session = requests.Session()
 
 
 def query(document: str, variables: dict, attempt: int = 0) -> dict:
-    """POST a GraphQL document, retrying once on a secondary rate limit."""
+    """POST a GraphQL document, retrying on secondary rate limits or transient 5xx."""
     resp = session.post(
         ENDPOINT,
         json={"query": document, "variables": variables},
         headers={"Authorization": f"bearer {TOKEN}"},
         timeout=30,
     )
-    if resp.status_code in (403, 429) and attempt < 3:
-        wait = int(resp.headers.get("Retry-After", 60))
-        print(f"  rate limited, sleeping {wait}s", file=sys.stderr)
+    if resp.status_code in (403, 429, 502, 503, 504) and attempt < 3:
+        wait = int(resp.headers.get("Retry-After", 15 * (attempt + 1)))
+        print(f"  HTTP {resp.status_code}, sleeping {wait}s", file=sys.stderr)
         time.sleep(wait)
         return query(document, variables, attempt + 1)
 
     resp.raise_for_status()
     payload = resp.json()
     if "errors" in payload:
-        raise SystemExit(f"GraphQL error: {json.dumps(payload['errors'], indent=2)}")
+        raise RuntimeError(f"GraphQL error: {json.dumps(payload['errors'], indent=2)}")
     return payload["data"]
 
 
@@ -67,6 +58,7 @@ query($login:String!, $after:String) {
   user(login:$login) {
     id
     createdAt
+    avatarUrl(size:460)
     followers { totalCount }
     repositories(ownerAffiliations:OWNER, isFork:false, first:100, after:$after) {
       totalCount
@@ -81,10 +73,6 @@ query($login:String!, $after:String) {
 }
 """
 
-# The same last-year calendar GitHub draws on the profile. Anything the
-# profile hides from visitors -- private contributions, unless the owner opts
-# in -- this token cannot see either, so the board always matches the graph
-# rendered directly beneath it.
 CALENDAR_Q = """
 query($login:String!) {
   user(login:$login) {
@@ -114,8 +102,6 @@ query($login:String!) {
 }
 """
 
-# contributionsCollection is capped at one year per call, so this gets asked
-# once per year the account has existed.
 COMMITS_Q = """
 query($login:String!, $from:DateTime!, $to:DateTime!) {
   user(login:$login) {
@@ -145,7 +131,6 @@ query($owner:String!, $name:String!, $authorId:ID!, $after:String) {
 
 
 def fetch_repos() -> tuple[dict, list[dict]]:
-    """Return (user_meta, repos). Paginates through every owned, non-fork repo."""
     repos: list[dict] = []
     meta: dict = {}
     after = None
@@ -155,6 +140,7 @@ def fetch_repos() -> tuple[dict, list[dict]]:
             meta = {
                 "id": data["id"],
                 "createdAt": data["createdAt"],
+                "avatarUrl": data.get("avatarUrl", f"https://github.com/{LOGIN}.png?size=460"),
                 "followers": data["followers"]["totalCount"],
                 "repos": data["repositories"]["totalCount"],
             }
@@ -166,7 +152,6 @@ def fetch_repos() -> tuple[dict, list[dict]]:
 
 
 def fetch_commit_total(created_at: str) -> int:
-    """Sum contributions year by year from account creation to now."""
     start = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
     now = datetime.now(timezone.utc)
     total = 0
@@ -175,7 +160,7 @@ def fetch_commit_total(created_at: str) -> int:
         try:
             next_year = cursor.replace(year=cursor.year + 1)
         except ValueError:
-            next_year = cursor.replace(year=cursor.year + 1, day=28)  # Feb 29
+            next_year = cursor.replace(year=cursor.year + 1, day=28)
         end = min(next_year, now)
         c = query(COMMITS_Q, {
             "login": LOGIN,
@@ -188,7 +173,6 @@ def fetch_commit_total(created_at: str) -> int:
 
 
 def fetch_loc(repos: list[dict], author_id: str) -> tuple[int, int]:
-    """Total additions/deletions authored across all repos, memoised by head OID."""
     cache = json.loads(LOC_CACHE.read_text(encoding="utf-8")) if LOC_CACHE.exists() else {}
     added = deleted = 0
     walked = reused = 0
@@ -198,7 +182,7 @@ def fetch_loc(repos: list[dict], author_id: str) -> tuple[int, int]:
         target = (repo.get("defaultBranchRef") or {}).get("target") or {}
         head = target.get("oid")
         if not head:
-            continue  # empty repo, nothing to walk
+            continue
 
         hit = cache.get(name)
         if hit and hit.get("oid") == head:
@@ -210,18 +194,27 @@ def fetch_loc(repos: list[dict], author_id: str) -> tuple[int, int]:
         owner, short = name.split("/", 1)
         r_add = r_del = 0
         after = None
-        while True:
-            target = query(HISTORY_Q, {
-                "owner": owner, "name": short,
-                "authorId": author_id, "after": after,
-            })["repository"]["defaultBranchRef"]["target"]
-            hist = target["history"]
-            for node in hist["nodes"]:
-                r_add += node["additions"]
-                r_del += node["deletions"]
-            if not hist["pageInfo"]["hasNextPage"]:
-                break
-            after = hist["pageInfo"]["endCursor"]
+        try:
+            while True:
+                repo_data = query(HISTORY_Q, {
+                    "owner": owner, "name": short,
+                    "authorId": author_id, "after": after,
+                }).get("repository") or {}
+                branch_ref = repo_data.get("defaultBranchRef") or {}
+                target_obj = branch_ref.get("target") or {}
+                hist = target_obj.get("history")
+                if not hist:
+                    break
+                for node in hist.get("nodes") or []:
+                    if node:
+                        r_add += node.get("additions") or 0
+                        r_del += node.get("deletions") or 0
+                if not hist["pageInfo"]["hasNextPage"]:
+                    break
+                after = hist["pageInfo"]["endCursor"]
+        except Exception as exc:
+            print(f"  skipping LOC walk on {name}: {exc}", file=sys.stderr)
+            continue
 
         cache[name] = {"oid": head, "added": r_add, "deleted": r_del}
         added += r_add
@@ -236,7 +229,6 @@ def fetch_loc(repos: list[dict], author_id: str) -> tuple[int, int]:
 
 
 def fetch_calendar() -> dict:
-    """Weeks as seven weekday slots (0 = Sunday), None where a day doesn't exist yet."""
     cal = query(CALENDAR_Q, {"login": LOGIN})["user"]["contributionsCollection"]["contributionCalendar"]
     weeks = []
     for week in cal["weeks"]:
@@ -273,6 +265,7 @@ def main() -> None:
         "loc": added - deleted,
         "added": added,
         "deleted": deleted,
+        "avatar_url": meta.get("avatarUrl", f"https://github.com/{LOGIN}.png?size=460"),
         "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
 
