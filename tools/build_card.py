@@ -44,20 +44,22 @@ THEMES = {
         "chrome_bg": "#161b22",
         "border": "#30363d",
         "fg": "#e6edf3",
-        "art": "#58a6ff",          # Electric terminal cyan-blue for ASCII art
-        "key": "#38bdf8",          # Electric Cyan keys (high-tech terminal feel)
-        "section": "#f59e0b",      # Warm Amber/Gold section titles
+        "art": "#00d2d3",          # Arcade Inky Cyan for ASCII portrait
+        "key": "#00d2d3",          # Inky Cyan keys (high-tech terminal feel)
+        "section": "#ff9f43",      # Clyde Orange section titles
         "value": "#e6edf3",        # Pure crisp terminal white for values
-        "highlight": "#34d399",    # Vibrant mint green for special badges
-        "star": "#fbbf24",         # Rich gold for stars
-        "add": "#3fb950",          # Bright neon emerald
-        "del": "#f85149",          # Vibrant coral red
+        "highlight": "#3fb950",    # Pellet Emerald Green
+        "star": "#facc15",         # Arcade Pac-Man Yellow for stars
+        "add": "#3fb950",          # Bright Pellet Emerald Green
+        "del": "#ff4757",          # Blinky Red for deletions
+        "pinky": "#ff70a6",        # Pinky Pink for highlights & contributions
+        "clyde": "#ff9f43",        # Clyde Orange
         "dots": "#2d333b",         # Sleek subtle terminal dots
         "badge_bg": "#1f2937",
         "label": "#8b949e",
-        "prompt_user": "#34d399",  # Mint green
-        "prompt_dir": "#38bdf8",   # Cyan
-        "prompt_cmd": "#fbbf24",   # Amber gold
+        "prompt_user": "#3fb950",  # Green
+        "prompt_dir": "#00d2d3",   # Cyan
+        "prompt_cmd": "#facc15",   # Pac-Man Yellow
         "pacman": "#facc15",       # Arcade gold Pac-Man
     },
     "light": {
@@ -66,21 +68,23 @@ THEMES = {
         "chrome_bg": "#f6f8fa",
         "border": "#d0d7de",
         "fg": "#1f2328",
-        "art": "#0969da",          # Deep denim blue for ASCII portrait
-        "key": "#0969da",          # Deep denim blue keys
-        "section": "#b08800",      # Refined warm amber/bronze titles
+        "art": "#0284c7",          # Inky Cyan (high-contrast deep cyan)
+        "key": "#0284c7",          # Inky Cyan keys
+        "section": "#d35400",      # Clyde Orange section titles
         "value": "#1f2328",        # Deep charcoal values (maximum readability)
-        "highlight": "#1a7f37",    # Rich emerald green
-        "star": "#b08800",         # Warm gold
-        "add": "#1a7f37",          # Deep emerald green
-        "del": "#cf222e",          # Crisp crimson red
+        "highlight": "#1a7f37",    # Pellet Deep Emerald Green
+        "star": "#ca8a04",         # Arcade Pac-Man Gold
+        "add": "#1a7f37",          # Pellet Deep Emerald Green
+        "del": "#d63031",          # Blinky Red
+        "pinky": "#d81b60",        # Pinky Pink
+        "clyde": "#d35400",        # Clyde Orange
         "dots": "#d8dee4",         # Clean soft gray dots
         "badge_bg": "#eaeef2",
         "label": "#57606a",
-        "prompt_user": "#0969da",  # Blue
-        "prompt_dir": "#6f42c1",   # Royal purple
-        "prompt_cmd": "#1a7f37",   # Emerald green
-        "pacman": "#d4a72c",       # Arcade gold Pac-Man
+        "prompt_user": "#1a7f37",  # Green
+        "prompt_dir": "#0284c7",   # Cyan
+        "prompt_cmd": "#ca8a04",   # Pac-Man Gold
+        "pacman": "#ca8a04",       # Arcade gold Pac-Man
     },
 }
 
@@ -259,13 +263,13 @@ def build_panel(x: int, y0: float) -> tuple[list[str], int]:
             rows.append(
                 Row().text(". ", cls="cc").key(key).text(":")
                 .text(" ", cls="cc").fill().text(" ", cls="cc")
-                .text(uptime(), cls="hlColor", eid="age_data")
+                .text(uptime(), cls="starColor", eid="age_data")
             )
         elif key == "Certs.Verified":
             rows.append(
                 Row().text(". ", cls="cc").key(key).text(":")
                 .text(" ", cls="cc").fill().text(" ", cls="cc")
-                .text(val, cls="hlColor")
+                .text(val, cls="addColor")
             )
         else:
             rows.append(info_row(key, val))
@@ -282,14 +286,14 @@ def build_panel(x: int, y0: float) -> tuple[list[str], int]:
         .text(" ", cls="cc").fill().text(" ", cls="cc")
         .value("in/0ferchen")
         .text(f" ({st['linkedin_followers']} followers", cls="addColor")
-        .text(" | ").text(f"{st['linkedin_connections']} conn", cls="starColor").text(")")
+        .text(" | ").text(f"{st['linkedin_connections']} conn", cls="pinkyColor").text(")")
     )
     rows.append(info_row("Flagship", "github.com/oferchen/rsync (Rust)"))
     rows.append(
         Row().text(". ", cls="cc").key("oc-rsync.Spec").text(":")
         .text(" ", cls="cc").fill().text(" ", cls="cc")
         .text(f"{st['rsync_stars']}★", cls="starColor")
-        .text(f" {st['rsync_forks']}⑂", cls="hlColor")
+        .text(f" {st['rsync_forks']}⑂", cls="clydeColor")
         .text(" | SIMD • io_uring • QUIC", cls="value")
     )
 
@@ -299,7 +303,7 @@ def build_panel(x: int, y0: float) -> tuple[list[str], int]:
         Row().text(". ", cls="cc").key("Repos").text(":")
         .text(" ", cls="cc").fill(eid="repo_data_dots").text(" ", cls="cc")
         .value(st["repos"], "repo_data")
-        .text(" {").text("Contributed", cls="key").text(": ")
+        .text(" {").text("Contributed", cls="pinkyColor").text(": ")
         .value(st["contrib"], "contrib_data").text("}")
         .text(" | ").key("Stars").text(":")
         .text(" ", cls="cc").fill(eid="star_data_dots").text(" ", cls="cc")
@@ -319,11 +323,11 @@ def build_panel(x: int, y0: float) -> tuple[list[str], int]:
         Row().text(". ", cls="cc").key("Streak.Active").text(":")
         .text(" ", cls="cc").fill().text(" ", cls="cc")
         .text(f"{st['streak_current']}d", cls="addColor")
-        .text(" (").text("Max", cls="key").text(": ")
+        .text(" (").text("Max", cls="pinkyColor").text(": ")
         .value(f"{st['streak_longest']}d").text(")")
         .text(" | ").key("Issues").text(":")
         .text(" ", cls="cc").fill().text(" ", cls="cc")
-        .value(st["issues"])
+        .text(st["issues"], cls="clydeColor")
     )
     rows.append(
         Row().text(". ", cls="cc").key("Lines of Code").text(":")
@@ -397,11 +401,13 @@ def build(theme: str) -> str:
 .key {{fill: {c['key']};}}
 .section {{fill: {c['section']}; font-weight: bold;}}
 .value {{fill: {c['value']};}}
-.title {{fill: {c['section']}; font-weight: bold;}}
+.title {{fill: {c['star']}; font-weight: bold;}}
 .addColor {{fill: {c['add']}; font-weight: bold;}}
 .delColor {{fill: {c['del']}; font-weight: bold;}}
 .starColor {{fill: {c['star']}; font-weight: bold;}}
 .hlColor {{fill: {c['highlight']}; font-weight: bold;}}
+.pinkyColor {{fill: {c['pinky']}; font-weight: bold;}}
+.clydeColor {{fill: {c['clyde']}; font-weight: bold;}}
 .cc {{fill: {c['dots']};}}
 .promptUser {{fill: {c['prompt_user']}; font-weight: bold;}}
 .promptDir {{fill: {c['prompt_dir']}; font-weight: bold;}}

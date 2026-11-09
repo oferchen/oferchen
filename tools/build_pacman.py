@@ -78,16 +78,32 @@ OUTRO = 1.8                # empty calendar and the final total, before the rese
 EAT_AHEAD = 5              # px: a day vanishes as the mouth reaches it
 CHOMP = 0.24               # one open-half-shut-half mouth cycle
 
-# The chasers: three Claudes, each trailing Pac-Man by some days and each with
-# its own trait on top of the walk. Stride lengths differ on purpose -- three
-# identical loops started together would march in perfect lock-step.
+# Authentic Pac-Man Arcade Ghost Color Schemes (Blinky, Pinky, Inky, Clyde)
+GHOST_COLORS = {
+    "dark": {
+        "blinky": "#ff4757",  # Arcade Red (Shadow)
+        "pinky": "#ff70a6",   # Arcade Pink (Speedy)
+        "inky": "#00d2d3",    # Arcade Cyan (Bashful)
+        "clyde": "#ff9f43",   # Arcade Orange (Pokey)
+    },
+    "light": {
+        "blinky": "#d63031",  # High-contrast Arcade Red
+        "pinky": "#d81b60",   # High-contrast Arcade Pink
+        "inky": "#0284c7",    # High-contrast Arcade Cyan
+        "clyde": "#d35400",   # High-contrast Arcade Orange
+    },
+}
+
+# The chasers: the 4 iconic Pac-Man arcade ghosts, each trailing Pac-Man by some
+# days and each with its own trait on top of the walk. Stride lengths differ on purpose.
 CAST = (
-    # (days behind, trait, seconds per stride)
-    (5, "blink", 0.34),
-    (8, "wave", 0.30),
-    (11, "hop", 0.38),
+    # (days behind, trait, seconds per stride, ghost_id)
+    (4, "blink", 0.34, "blinky"),
+    (7, "wave", 0.30, "pinky"),
+    (10, "blink", 0.36, "inky"),
+    (13, "hop", 0.38, "clyde"),
 )
-TRAIL = tuple(lag for lag, _, _ in CAST)
+TRAIL = tuple(lag for lag, _, _, _ in CAST)
 WAVE = 0.28                # one arms-down, arms-up cycle
 BLINK_EVERY = 2.4          # eyes shut for a beat once per this many seconds
 
@@ -413,7 +429,7 @@ def build(theme: str, cal: dict) -> str:
         return (f'<path d="{layer[a]}">{loop("opacity", ["1", "0"], dur)}</path>'
                 f'<path d="{layer[b]}" opacity="0">{loop("opacity", ["0", "1"], dur)}</path>')
 
-    for lag, trait, stride in CAST:
+    for lag, trait, stride, ghost_id in CAST:
         keys, _ = tl.motion(lag)
         parts = [f'<path d="{layer["body"]}"/>', flip("legs_a", "legs_b", stride)]
         parts.append(flip("arms_down", "arms_up", WAVE) if trait == "wave"
@@ -430,7 +446,8 @@ def build(theme: str, cal: dict) -> str:
             body = (f'<g><animateTransform attributeName="transform" type="translate" '
                     f'values="0,0;0,{-CLAWD_PX[1]:g}" keyTimes="0;0.5" dur="{stride}s" '
                     f'calcMode="discrete" repeatCount="indefinite"/>{body}</g>')
-        sprites.append(f'<g>{anim_translate(tl, keys)}<g fill="{CLAUDE_CORAL[theme]}">{body}</g></g>')
+        ghost_color = GHOST_COLORS[theme][ghost_id]
+        sprites.append(f'<g>{anim_translate(tl, keys)}<g fill="{ghost_color}">{body}</g></g>')
 
     keys, heads = tl.motion(0)
     rot = (f'<animateTransform attributeName="transform" type="rotate" '

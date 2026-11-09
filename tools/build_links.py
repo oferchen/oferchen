@@ -127,11 +127,14 @@ def envelope() -> str:
     return f'<g>{rattle}<path d="{path(ENVELOPE)}"/></g>'
 
 
-# Dedicated brand & category accents for the link buttons
+# Dedicated brand & category accents for the link buttons, color-matched to the Pac-Man arcade cast:
+# - Portfolio (Flagship OC-RSYNC): Clyde Orange
+# - LinkedIn: Inky Cyan
+# - Email: Pinky Pink
 LINK_ACCENTS = {
-    "portfolio": {"dark": "#f59e0b", "light": "#b08800"},  # Rust flagship amber/orange
-    "linkedin": {"dark": "#0a66c2", "light": "#0a66c2"},   # Official LinkedIn brand blue
-    "email": {"dark": "#3fb950", "light": "#1a7f37"},      # Terminal emerald green
+    "portfolio": {"dark": "#ff9f43", "light": "#d35400"},  # Clyde Orange
+    "linkedin": {"dark": "#00d2d3", "light": "#0284c7"},   # Inky Cyan
+    "email": {"dark": "#ff70a6", "light": "#d81b60"},      # Pinky Pink
 }
 
 # (file name, label, icon)
