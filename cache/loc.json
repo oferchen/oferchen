@@ -1,0 +1,57 @@
+{
+  "oferchen/ChatGPT-Fun": {
+    "added": 0,
+    "deleted": 0,
+    "oid": "0b3a745b9b867fb2c5ffe1b95eadd4ad612967db"
+  },
+  "oferchen/POC-CVE-2023-32233": {
+    "added": 2,
+    "deleted": 0,
+    "oid": "936b552830b05d2c22c39bb923db7ace955eeb94"
+  },
+  "oferchen/frr_socket": {
+    "added": 969,
+    "deleted": 2,
+    "oid": "409f378a8c2058792ba3d9872dd88c4e4595e8fd"
+  },
+  "oferchen/hclalign": {
+    "added": 62530,
+    "deleted": 38510,
+    "oid": "01b9d09602642c2990e545bdba889549e02a5b79"
+  },
+  "oferchen/inventory": {
+    "added": 4043,
+    "deleted": 1158,
+    "oid": "edafd7a4ce67f01a747410c6d72ccdc1831f2a14"
+  },
+  "oferchen/killer-sh-vagrant": {
+    "added": 99,
+    "deleted": 71,
+    "oid": "a27c950b7946ab26a335738fd9bb8e6f0c836ee3"
+  },
+  "oferchen/lvmsync_go": {
+    "added": 141776,
+    "deleted": 69742,
+    "oid": "599bac553e01faffb989bd7b90e2c04aba1f7419"
+  },
+  "oferchen/oferchen": {
+    "added": 5160,
+    "deleted": 1013,
+    "oid": "f00afdc138d1e7cf727888ca6ab948465739f830"
+  },
+  "oferchen/rsync": {
+    "added": 1503227,
+    "deleted": 440402,
+    "oid": "0513379f333711d23cec226c0acd814af4783a74"
+  },
+  "oferchen/snippets": {
+    "added": 817,
+    "deleted": 0,
+    "oid": "7ce369849707567511a020a553240d4053590fb6"
+  },
+  "oferchen/tunnel_manager": {
+    "added": 2119,
+    "deleted": 872,
+    "oid": "00fc790cd05e612a28279cb89ddc46532895d414"
+  }
+}
