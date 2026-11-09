@@ -483,9 +483,10 @@ text, tspan {{white-space: pre;}}
 .px {{shape-rendering: crispEdges;}}
 </style>
 <defs><rect id="d" width="{CELL}" height="{CELL}" rx="{RADIUS}"/></defs>
-<rect width="{CANVAS_W}px" height="{height:g}px" fill="{c['bg']}" rx="15"/>
+<rect x="0.5" y="0.5" width="{CANVAS_W - 1}px" height="{height - 1:g}px" fill="{c['bg']}" stroke="{c['border']}" stroke-width="1" rx="14"/>
 <text y="{header_y:g}" font-size="{HEADER_FONT}px" fill="{c['fg']}">{"".join(number)}</text>
 <text x="{words_x:g}" y="{header_y:g}" font-size="{HEADER_FONT}px" fill="{c['fg']}"> contributions in the last year</text>
+<text x="{CANVAS_W - MARGIN:g}" y="{header_y:g}" font-size="12px" fill="{c['value']}" text-anchor="end">⚡ LIVE SMIL ARCADE ENGINE • 53W TELEMETRY</text>
 <g font-size="{LABEL_FONT}px" fill="{c['dots']}">{months}{days}
 <text x="{swatch_x - 6:g}" y="{legend_y:g}" text-anchor="end">Less</text>
 <text x="{grid_right - more_w:g}" y="{legend_y:g}">More</text>

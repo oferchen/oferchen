@@ -1,11 +1,11 @@
-"""Fetch GitHub statistics into cache/: stats.json for the card, calendar.json
-for the Pac-Man board.
+"""Fetch comprehensive GitHub telemetry into cache/stats.json and cache/calendar.json.
 
-Also fetches `avatarUrl` so `tools/build_ascii.py` can convert the live GitHub
-profile picture into `assets/ascii-art.txt` and `assets/ascii-art-light.txt`.
-
-Usage:
-    GITHUB_TOKEN=... python tools/fetch_stats.py
+Expanded metrics:
+- Repos, Contributed Repos, Total Stars, Total Forks, Followers
+- All-time Commits, Pull Requests (PRs), Issues
+- Net Lines of Code (LOC), Additions (++), Deletions (--) cached per repo OID
+- Flagship `oferchen/rsync` (`oc-rsync`) live stars, forks, and latest release version
+- Current & Longest contribution streaks
 """
 
 from __future__ import annotations
@@ -33,7 +33,6 @@ session = requests.Session()
 
 
 def query(document: str, variables: dict, attempt: int = 0) -> dict:
-    """POST a GraphQL document, retrying on secondary rate limits or transient 5xx."""
     resp = session.post(
         ENDPOINT,
         json={"query": document, "variables": variables},
@@ -60,12 +59,19 @@ query($login:String!, $after:String) {
     createdAt
     avatarUrl(size:460)
     followers { totalCount }
+    pullRequests { totalCount }
+    issues { totalCount }
     repositories(ownerAffiliations:OWNER, isFork:false, first:100, after:$after) {
       totalCount
       pageInfo { hasNextPage endCursor }
       nodes {
+        name
         nameWithOwner
         stargazerCount
+        forkCount
+        releases(first:1, orderBy:{field:CREATED_AT, direction:DESC}) {
+          nodes { tagName }
+        }
         defaultBranchRef { target { ... on Commit { oid } } }
       }
     }
@@ -142,6 +148,8 @@ def fetch_repos() -> tuple[dict, list[dict]]:
                 "createdAt": data["createdAt"],
                 "avatarUrl": data.get("avatarUrl", f"https://github.com/{LOGIN}.png?size=460"),
                 "followers": data["followers"]["totalCount"],
+                "prs": (data.get("pullRequests") or {}).get("totalCount", 0),
+                "issues": (data.get("issues") or {}).get("totalCount", 0),
                 "repos": data["repositories"]["totalCount"],
             }
         repos.extend(data["repositories"]["nodes"])
@@ -228,19 +236,39 @@ def fetch_loc(repos: list[dict], author_id: str) -> tuple[int, int]:
     return added, deleted
 
 
-def fetch_calendar() -> dict:
+def fetch_calendar() -> tuple[dict, int, int]:
     cal = query(CALENDAR_Q, {"login": LOGIN})["user"]["contributionsCollection"]["contributionCalendar"]
     weeks = []
+    flat_days = []
     for week in cal["weeks"]:
         slots: list[dict | None] = [None] * 7
         for day in week["contributionDays"]:
-            slots[day["weekday"]] = {
+            entry = {
                 "date": day["date"],
                 "count": day["contributionCount"],
                 "level": LEVELS[day["contributionLevel"]],
             }
+            slots[day["weekday"]] = entry
+            flat_days.append(entry)
         weeks.append(slots)
-    return {"total": cal["totalContributions"], "weeks": weeks}
+
+    # Calculate longest and current streaks within the 53-week window
+    longest = cur = 0
+    for d in flat_days:
+        if d["count"] > 0:
+            cur += 1
+            if cur > longest:
+                longest = cur
+        else:
+            cur = 0
+    # If today has 0 commits so far, check if yesterday had an active streak
+    if cur == 0 and len(flat_days) >= 2 and flat_days[-2]["count"] > 0:
+        idx = len(flat_days) - 2
+        while idx >= 0 and flat_days[idx]["count"] > 0:
+            cur += 1
+            idx -= 1
+
+    return {"total": cal["totalContributions"], "weeks": weeks}, cur, longest
 
 
 def main() -> None:
@@ -252,19 +280,41 @@ def main() -> None:
     print(f"  repos: {meta['repos']} | followers: {meta['followers']}")
 
     stars = sum(r["stargazerCount"] for r in repos)
+    forks = sum(r.get("forkCount", 0) for r in repos)
+
+    # Extract flagship oc-rsync metrics
+    rsync_stars, rsync_forks, rsync_ver = 113, 5, "v0.4.2"
+    for r in repos:
+        if r.get("name") == "rsync":
+            rsync_stars = r.get("stargazerCount", rsync_stars)
+            rsync_forks = r.get("forkCount", rsync_forks)
+            rel_nodes = ((r.get("releases") or {}).get("nodes")) or []
+            if rel_nodes and rel_nodes[0].get("tagName"):
+                rsync_ver = rel_nodes[0]["tagName"]
+            break
+
     contrib = query(CONTRIB_Q, {"login": LOGIN})["user"]["repositoriesContributedTo"]["totalCount"]
     commits = fetch_commit_total(meta["createdAt"])
     added, deleted = fetch_loc(repos, meta["id"])
+    calendar, streak_cur, streak_max = fetch_calendar()
 
     stats = {
         "repos": meta["repos"],
         "contrib": contrib,
         "stars": stars,
+        "forks": forks,
         "commits": commits,
+        "prs": meta["prs"],
+        "issues": meta["issues"],
         "followers": meta["followers"],
         "loc": added - deleted,
         "added": added,
         "deleted": deleted,
+        "rsync_stars": rsync_stars,
+        "rsync_forks": rsync_forks,
+        "rsync_ver": rsync_ver,
+        "streak_current": streak_cur,
+        "streak_longest": streak_max,
         "avatar_url": meta.get("avatarUrl", f"https://github.com/{LOGIN}.png?size=460"),
         "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
@@ -273,7 +323,6 @@ def main() -> None:
     STATS_OUT.write_text(json.dumps(stats, indent=2), encoding="utf-8")
     print(json.dumps(stats, indent=2))
 
-    calendar = fetch_calendar()
     CALENDAR_OUT.write_text(json.dumps(calendar, indent=1), encoding="utf-8")
     print(f"  calendar: {len(calendar['weeks'])} weeks, {calendar['total']} contributions")
 

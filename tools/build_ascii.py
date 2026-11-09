@@ -1,12 +1,9 @@
 """Convert the GitHub user's profile picture into 87x47 ASCII art portraits
 for both Dark Mode (assets/ascii-art.txt) and Light Mode (assets/ascii-art-light.txt).
 
-Matches the exact 0.54 cell aspect ratio expected by build_card.py (87 cols x 47 rows)[cite: 6].
-If `assets/avatar.png` is present locally, it uses that image; otherwise it downloads
-the live GitHub profile avatar via https://github.com/<login>.png (or avatar_url from cache/stats.json).
-
-Usage:
-    python tools/build_ascii.py
+Enhancements:
+- UnsharpMask edge enhancement + adaptive contrast so facial contours or HUD details stay razor-sharp at 87x47.
+- Exact 0.54 cell aspect ratio (87 cols x 47 rows).
 """
 
 from __future__ import annotations
@@ -15,7 +12,7 @@ import io
 import json
 import os
 from pathlib import Path
-from PIL import Image, ImageOps, ImageEnhance
+from PIL import Image, ImageOps, ImageEnhance, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
@@ -26,12 +23,10 @@ ASCII_LIGHT_OUT = ASSETS / "ascii-art-light.txt"
 
 LOGIN = os.environ.get("GH_LOGIN", "oferchen")
 
-# 87 columns x 47 rows reproduces the exact 0.54 cell aspect ratio (47 / 87 = 0.5402)
-# documented in build_card.py so a square avatar renders with zero vertical distortion[cite: 6].
 COLS = 87
 ROWS = 47
 
-# 69-level high-detail character ramp (no space character so load_art() never trims outer columns)
+# 69-level high-detail character ramp (no space character so outer columns never collapse)
 RAMP_LIGHT_BG = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.`"
 RAMP_DARK_BG = RAMP_LIGHT_BG[::-1]
 
@@ -67,7 +62,8 @@ def fetch_avatar_bytes() -> bytes | None:
 
 def image_to_ascii(img: Image.Image, ramp: str, cols: int = COLS, rows: int = ROWS) -> str:
     gray = ImageOps.autocontrast(img.convert("L"), cutoff=1)
-    gray = ImageEnhance.Contrast(gray).enhance(1.25)
+    gray = gray.filter(ImageFilter.UnsharpMask(radius=1.6, percent=145, threshold=2))
+    gray = ImageEnhance.Contrast(gray).enhance(1.3)
     resized = gray.resize((cols, rows), Image.Resampling.LANCZOS)
 
     pixels = list(resized.getdata())
@@ -103,7 +99,7 @@ def main() -> None:
 
     ASCII_DARK_OUT.write_text(dark_txt, encoding="utf-8")
     ASCII_LIGHT_OUT.write_text(light_txt, encoding="utf-8")
-    print(f"Wrote {ASCII_DARK_OUT.name} and {ASCII_LIGHT_OUT.name} ({COLS}x{ROWS} portrait grid)")
+    print(f"Wrote {ASCII_DARK_OUT.name} and {ASCII_LIGHT_OUT.name} ({COLS}x{ROWS} grid)")
 
 
 if __name__ == "__main__":
