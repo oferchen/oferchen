@@ -127,11 +127,18 @@ def envelope() -> str:
     return f'<g>{rattle}<path d="{path(ENVELOPE)}"/></g>'
 
 
-# (file name, label, accent, icon)
+# Dedicated brand & category accents for the link buttons
+LINK_ACCENTS = {
+    "portfolio": {"dark": "#f59e0b", "light": "#b08800"},  # Rust flagship amber/orange
+    "linkedin": {"dark": "#0a66c2", "light": "#0a66c2"},   # Official LinkedIn brand blue
+    "email": {"dark": "#3fb950", "light": "#1a7f37"},      # Terminal emerald green
+}
+
+# (file name, label, icon)
 LINKS = (
-    ("portfolio", "OC-RSYNC", "key", monitor),
-    ("linkedin", "LINKEDIN", "value", linkedin),
-    ("email", "EMAIL", "coral", envelope),
+    ("portfolio", "OC-RSYNC", monitor),
+    ("linkedin", "LINKEDIN", linkedin),
+    ("email", "EMAIL", envelope),
 )
 
 
@@ -143,8 +150,8 @@ def stepped(x: float, y: float, w: float, h: float) -> str:
 
 def build(theme: str, slot: int) -> str:
     c = THEMES[theme]
-    _, label, accent_key, icon = LINKS[slot]
-    accent = CLAUDE_CORAL[theme] if accent_key == "coral" else c[accent_key]
+    name, label, icon = LINKS[slot]
+    accent = LINK_ACCENTS[name][theme]
 
     x = slot * GAP / 3
     icon_w = 10 * PX

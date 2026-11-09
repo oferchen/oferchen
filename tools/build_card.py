@@ -40,19 +40,47 @@ CHROME_H = 34  # Terminal titlebar height
 THEMES = {
     "dark": {
         "art_src": ASCII_SRC,
-        "bg": "#0d1117", "chrome_bg": "#161b22", "border": "#30363d",
-        "fg": "#c9d1d9", "art": "#58a6ff",
-        "key": "#ff7b72", "section": "#f0883e", "value": "#79c0ff",
-        "add": "#3fb950", "del": "#f85149", "dots": "#484f58",
+        "bg": "#0d1117",
+        "chrome_bg": "#161b22",
+        "border": "#30363d",
+        "fg": "#e6edf3",
+        "art": "#58a6ff",          # Electric terminal cyan-blue for ASCII art
+        "key": "#38bdf8",          # Electric Cyan keys (high-tech terminal feel)
+        "section": "#f59e0b",      # Warm Amber/Gold section titles
+        "value": "#e6edf3",        # Pure crisp terminal white for values
+        "highlight": "#34d399",    # Vibrant mint green for special badges
+        "star": "#fbbf24",         # Rich gold for stars
+        "add": "#3fb950",          # Bright neon emerald
+        "del": "#f85149",          # Vibrant coral red
+        "dots": "#2d333b",         # Sleek subtle terminal dots
         "badge_bg": "#1f2937",
+        "label": "#8b949e",
+        "prompt_user": "#34d399",  # Mint green
+        "prompt_dir": "#38bdf8",   # Cyan
+        "prompt_cmd": "#fbbf24",   # Amber gold
+        "pacman": "#facc15",       # Arcade gold Pac-Man
     },
     "light": {
         "art_src": ASCII_SRC_LIGHT,
-        "bg": "#ffffff", "chrome_bg": "#f6f8fa", "border": "#d0d7de",
-        "fg": "#24292f", "art": "#0550ae",
-        "key": "#cf222e", "section": "#bc4c00", "value": "#0550ae",
-        "add": "#1a7f37", "del": "#cf222e", "dots": "#8c959f",
+        "bg": "#ffffff",
+        "chrome_bg": "#f6f8fa",
+        "border": "#d0d7de",
+        "fg": "#1f2328",
+        "art": "#0969da",          # Deep denim blue for ASCII portrait
+        "key": "#0969da",          # Deep denim blue keys
+        "section": "#b08800",      # Refined warm amber/bronze titles
+        "value": "#1f2328",        # Deep charcoal values (maximum readability)
+        "highlight": "#1a7f37",    # Rich emerald green
+        "star": "#b08800",         # Warm gold
+        "add": "#1a7f37",          # Deep emerald green
+        "del": "#cf222e",          # Crisp crimson red
+        "dots": "#d8dee4",         # Clean soft gray dots
         "badge_bg": "#eaeef2",
+        "label": "#57606a",
+        "prompt_user": "#0969da",  # Blue
+        "prompt_dir": "#6f42c1",   # Royal purple
+        "prompt_cmd": "#1a7f37",   # Emerald green
+        "pacman": "#d4a72c",       # Arcade gold Pac-Man
     },
 }
 
@@ -228,7 +256,17 @@ def build_panel(x: int, y0: float) -> tuple[list[str], int]:
             continue
         key, val = item
         if key == "Uptime":
-            rows.append(info_row(key, uptime(), eid="age_data"))
+            rows.append(
+                Row().text(". ", cls="cc").key(key).text(":")
+                .text(" ", cls="cc").fill().text(" ", cls="cc")
+                .text(uptime(), cls="hlColor", eid="age_data")
+            )
+        elif key == "Certs.Verified":
+            rows.append(
+                Row().text(". ", cls="cc").key(key).text(":")
+                .text(" ", cls="cc").fill().text(" ", cls="cc")
+                .text(val, cls="hlColor")
+            )
         else:
             rows.append(info_row(key, val))
 
@@ -244,13 +282,14 @@ def build_panel(x: int, y0: float) -> tuple[list[str], int]:
         .text(" ", cls="cc").fill().text(" ", cls="cc")
         .value("in/0ferchen")
         .text(f" ({st['linkedin_followers']} followers", cls="addColor")
-        .text(" | ").text(f"{st['linkedin_connections']} conn", cls="value").text(")")
+        .text(" | ").text(f"{st['linkedin_connections']} conn", cls="starColor").text(")")
     )
     rows.append(info_row("Flagship", "github.com/oferchen/rsync (Rust)"))
     rows.append(
         Row().text(". ", cls="cc").key("oc-rsync.Spec").text(":")
         .text(" ", cls="cc").fill().text(" ", cls="cc")
-        .text(f"{st['rsync_stars']}★ {st['rsync_forks']}⑂", cls="addColor")
+        .text(f"{st['rsync_stars']}★", cls="starColor")
+        .text(f" {st['rsync_forks']}⑂", cls="hlColor")
         .text(" | SIMD • io_uring • QUIC", cls="value")
     )
 
@@ -264,7 +303,7 @@ def build_panel(x: int, y0: float) -> tuple[list[str], int]:
         .value(st["contrib"], "contrib_data").text("}")
         .text(" | ").key("Stars").text(":")
         .text(" ", cls="cc").fill(eid="star_data_dots").text(" ", cls="cc")
-        .value(st["stars"], "star_data")
+        .text(st["stars"], cls="starColor", eid="star_data")
     )
     rows.append(
         Row().text(". ", cls="cc").key("Commits").text(":")
@@ -307,10 +346,10 @@ def build_panel(x: int, y0: float) -> tuple[list[str], int]:
     y = y0 + (len(rows) + 0.85) * PANEL_LINE
     out.append(
         f'<tspan x="{x}" y="{y:g}">'
-        f'<tspan class="key">ofer@chen</tspan><tspan class="cc">:</tspan>'
-        f'<tspan class="value">~/infra</tspan><tspan class="cc">$ </tspan>'
-        f'<tspan class="addColor">cargo test --release &amp;&amp; kubectl get nodes </tspan>'
-        f'<tspan class="value">█'
+        f'<tspan class="promptUser">ofer@chen</tspan><tspan class="cc">:</tspan>'
+        f'<tspan class="promptDir">~/infra</tspan><tspan class="cc">$ </tspan>'
+        f'<tspan class="promptCmd">cargo test --release &amp;&amp; kubectl get nodes </tspan>'
+        f'<tspan class="key">█'
         f'<animate attributeName="opacity" values="1;0" dur="1.06s"'
         f' calcMode="discrete" repeatCount="indefinite"/>'
         f'</tspan></tspan>'
@@ -361,7 +400,12 @@ def build(theme: str) -> str:
 .title {{fill: {c['section']}; font-weight: bold;}}
 .addColor {{fill: {c['add']}; font-weight: bold;}}
 .delColor {{fill: {c['del']}; font-weight: bold;}}
+.starColor {{fill: {c['star']}; font-weight: bold;}}
+.hlColor {{fill: {c['highlight']}; font-weight: bold;}}
 .cc {{fill: {c['dots']};}}
+.promptUser {{fill: {c['prompt_user']}; font-weight: bold;}}
+.promptDir {{fill: {c['prompt_dir']}; font-weight: bold;}}
+.promptCmd {{fill: {c['prompt_cmd']};}}
 text, tspan {{white-space: pre;}}
 </style>
 <!-- Outer Card Background & Border -->

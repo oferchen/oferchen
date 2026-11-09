@@ -445,7 +445,7 @@ def build(theme: str, cal: dict) -> str:
         for art, vis in ((PAC_OPEN, (1, 0, 0, 0)), (PAC_HALF, (0, 1, 0, 1)), (PAC_SHUT, (0, 0, 1, 0)))
     )
     sprites.append(
-        f'<g>{anim_translate(tl, keys)}<g fill="{c["key"]}">{rot}'
+        f'<g>{anim_translate(tl, keys)}<g fill="{c["pacman"]}">{rot}'
         f'<g>{idle}<path d="{sprite_path(bitmap(PAC_OPEN))}"/></g>'
         f'<g visibility="hidden">{moving}{frames}</g></g></g>'
     )
@@ -503,10 +503,10 @@ text, tspan {{white-space: pre;}}
 </style>
 <defs><rect id="d" width="{CELL}" height="{CELL}" rx="{RADIUS}"/></defs>
 <rect x="0.5" y="0.5" width="{CANVAS_W - 1}px" height="{height - 1:g}px" fill="{c['bg']}" stroke="{c['border']}" stroke-width="1" rx="14"/>
-<text y="{header_y:g}" font-size="{HEADER_FONT}px" fill="{c['fg']}">{"".join(number)}</text>
+<text y="{header_y:g}" font-size="{HEADER_FONT}px" fill="{c['add']}">{"".join(number)}</text>
 <text x="{words_x:g}" y="{header_y:g}" font-size="{HEADER_FONT}px" fill="{c['fg']}"> contributions in the last year</text>
-<text x="{CANVAS_W - MARGIN:g}" y="{header_y:g}" font-size="12px" fill="{c['value']}" text-anchor="end">⚡ LIVE SMIL ARCADE ENGINE • 53W TELEMETRY</text>
-<g font-size="{LABEL_FONT}px" fill="{c['dots']}">{months}{days}
+<text x="{CANVAS_W - MARGIN:g}" y="{header_y:g}" font-size="12px" fill="{c['section']}" text-anchor="end">⚡ LIVE SMIL ARCADE ENGINE • 53W TELEMETRY</text>
+<g font-size="{LABEL_FONT}px" fill="{c['label']}">{months}{days}
 <text x="{swatch_x - 6:g}" y="{legend_y:g}" text-anchor="end">Less</text>
 <text x="{grid_right - more_w:g}" y="{legend_y:g}">More</text>
 </g>
