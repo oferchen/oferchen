@@ -22,269 +22,6 @@
 .promptUser {fill: #3fb950; font-weight: bold;}
 .promptDir {fill: #00d2d3; font-weight: bold;}
 .promptCmd {fill: #facc15;}
-.a0 {fill: #21262d;}
-.a1 {fill: #94a3b8;}
-.a2 {fill: #ffffff;}
-.a3 {fill: #334155;}
-.a4 {fill: #607080;}
-.a5 {fill: #808090;}
-.a6 {fill: #b0b0b0;}
-.a7 {fill: #708090;}
-.a8 {fill: #a0b0b0;}
-.a9 {fill: #405060;}
-.a10 {fill: #80a0a0;}
-.a11 {fill: #708080;}
-.a12 {fill: #6090a0;}
-.a13 {fill: #5080a0;}
-.a14 {fill: #7090b0;}
-.a15 {fill: #80a0b0;}
-.a16 {fill: #8090b0;}
-.a17 {fill: #8090a0;}
-.a18 {fill: #407080;}
-.a19 {fill: #307090;}
-.a20 {fill: #4090b0;}
-.a21 {fill: #4080a0;}
-.a22 {fill: #4080b0;}
-.a23 {fill: #5090b0;}
-.a24 {fill: #70a0b0;}
-.a25 {fill: #80b0c0;}
-.a26 {fill: #90b0c0;}
-.a27 {fill: #90a0b0;}
-.a28 {fill: #a0a0b0;}
-.a29 {fill: #90a0a0;}
-.a30 {fill: #305060;}
-.a31 {fill: #c0c0d0;}
-.a32 {fill: #6080a0;}
-.a33 {fill: #205070;}
-.a34 {fill: #305070;}
-.a35 {fill: #60a0b0;}
-.a36 {fill: #70a0c0;}
-.a37 {fill: #5090a0;}
-.a38 {fill: #408090;}
-.a39 {fill: #608090;}
-.a40 {fill: #7090a0;}
-.a41 {fill: #506060;}
-.a42 {fill: #406060;}
-.a43 {fill: #306060;}
-.a44 {fill: #304070;}
-.a45 {fill: #406090;}
-.a46 {fill: #4070a0;}
-.a47 {fill: #306080;}
-.a48 {fill: #206080;}
-.a49 {fill: #307080;}
-.a50 {fill: #407090;}
-.a51 {fill: #6090b0;}
-.a52 {fill: #306070;}
-.a53 {fill: #508090;}
-.a54 {fill: #d0e0f0;}
-.a55 {fill: #207080;}
-.a56 {fill: #507090;}
-.a57 {fill: #3070a0;}
-.a58 {fill: #308090;}
-.a59 {fill: #406070;}
-.a60 {fill: #406080;}
-.a61 {fill: #307070;}
-.a62 {fill: #b0c0c0;}
-.a63 {fill: #a0c0d0;}
-.a64 {fill: #80a0c0;}
-.a65 {fill: #5080b0;}
-.a66 {fill: #508080;}
-.a67 {fill: #507080;}
-.a68 {fill: #709090;}
-.a69 {fill: #90b0b0;}
-.a70 {fill: #b0c0d0;}
-.a71 {fill: #c0d0e0;}
-.a72 {fill: #c0e0e0;}
-.a73 {fill: #90c0d0;}
-.a74 {fill: #3080a0;}
-.a75 {fill: #50a0b0;}
-.a76 {fill: #5090c0;}
-.a77 {fill: #207090;}
-.a78 {fill: #60a0c0;}
-.a79 {fill: #607070;}
-.a80 {fill: #4090c0;}
-.a81 {fill: #306090;}
-.a82 {fill: #405050;}
-.a83 {fill: #a0b0c0;}
-.a84 {fill: #206070;}
-.a85 {fill: #70b0c0;}
-.a86 {fill: #205080;}
-.a87 {fill: #505050;}
-.a88 {fill: #80b0d0;}
-.a89 {fill: #809090;}
-.a90 {fill: #707080;}
-.a91 {fill: #70b0d0;}
-.a92 {fill: #9090a0;}
-.a93 {fill: #606060;}
-.a94 {fill: #506070;}
-.a95 {fill: #70a0a0;}
-.a96 {fill: #404060;}
-.a97 {fill: #505060;}
-.a98 {fill: #707070;}
-.a99 {fill: #909090;}
-.a100 {fill: #605040;}
-.a101 {fill: #605030;}
-.a102 {fill: #608080;}
-.a103 {fill: #6090c0;}
-.a104 {fill: #b09070;}
-.a105 {fill: #ffd090;}
-.a106 {fill: #f0b070;}
-.a107 {fill: #f0c080;}
-.a108 {fill: #c0a070;}
-.a109 {fill: #705030;}
-.a110 {fill: #80b0b0;}
-.a111 {fill: #805030;}
-.a112 {fill: #f0c090;}
-.a113 {fill: #ffc080;}
-.a114 {fill: #ffb060;}
-.a115 {fill: #c0a080;}
-.a116 {fill: #908070;}
-.a117 {fill: #908090;}
-.a118 {fill: #906040;}
-.a119 {fill: #ffd0a0;}
-.a120 {fill: #ffb080;}
-.a121 {fill: #ffc090;}
-.a122 {fill: #d0a080;}
-.a123 {fill: #907050;}
-.a124 {fill: #e0c080;}
-.a125 {fill: #ffc070;}
-.a126 {fill: #ffd080;}
-.a127 {fill: #90b0d0;}
-.a128 {fill: #705040;}
-.a129 {fill: #a07050;}
-.a130 {fill: #c09060;}
-.a131 {fill: #ffe0b0;}
-.a132 {fill: #704020;}
-.a133 {fill: #a08050;}
-.a134 {fill: #b0a080;}
-.a135 {fill: #706040;}
-.a136 {fill: #604030;}
-.a137 {fill: #ffb050;}
-.a138 {fill: #f09040;}
-.a139 {fill: #d07020;}
-.a140 {fill: #d09060;}
-.a141 {fill: #b08050;}
-.a142 {fill: #a07060;}
-.a143 {fill: #e0c0a0;}
-.a144 {fill: #e0b080;}
-.a145 {fill: #e0c090;}
-.a146 {fill: #f0d0a0;}
-.a147 {fill: #c0b090;}
-.a148 {fill: #805020;}
-.a149 {fill: #ffe0a0;}
-.a150 {fill: #908040;}
-.a151 {fill: #fff0b0;}
-.a152 {fill: #f0b060;}
-.a153 {fill: #ffb070;}
-.a154 {fill: #f0a050;}
-.a155 {fill: #e09040;}
-.a156 {fill: #e0a060;}
-.a157 {fill: #d0a060;}
-.a158 {fill: #907040;}
-.a159 {fill: #706060;}
-.a160 {fill: #807070;}
-.a161 {fill: #908080;}
-.a162 {fill: #b0a090;}
-.a163 {fill: #d0c0a0;}
-.a164 {fill: #c0c0a0;}
-.a165 {fill: #707060;}
-.a166 {fill: #ffe090;}
-.a167 {fill: #ffc060;}
-.a168 {fill: #c07030;}
-.a169 {fill: #c08050;}
-.a170 {fill: #c08040;}
-.a171 {fill: #e0b070;}
-.a172 {fill: #ffd070;}
-.a173 {fill: #d08040;}
-.a174 {fill: #d09040;}
-.a175 {fill: #806050;}
-.a176 {fill: #606050;}
-.a177 {fill: #405070;}
-.a178 {fill: #705020;}
-.a179 {fill: #e09050;}
-.a180 {fill: #f0b050;}
-.a181 {fill: #e09020;}
-.a182 {fill: #f0b040;}
-.a183 {fill: #f0a030;}
-.a184 {fill: #f0a040;}
-.a185 {fill: #d0a070;}
-.a186 {fill: #807050;}
-.a187 {fill: #506080;}
-.a188 {fill: #a0c0c0;}
-.a189 {fill: #50a0c0;}
-.a190 {fill: #40a0c0;}
-.a191 {fill: #b09060;}
-.a192 {fill: #3080b0;}
-.a193 {fill: #304060;}
-.a194 {fill: #606040;}
-.a195 {fill: #e08020;}
-.a196 {fill: #905020;}
-.a197 {fill: #c0e0f0;}
-.a198 {fill: #c0a060;}
-.a199 {fill: #e0a070;}
-.a200 {fill: #e0a040;}
-.a201 {fill: #a05020;}
-.a202 {fill: #a06020;}
-.a203 {fill: #906030;}
-.a204 {fill: #908050;}
-.a205 {fill: #50a0d0;}
-.a206 {fill: #60b0d0;}
-.a207 {fill: #3090c0;}
-.a208 {fill: #2080a0;}
-.a209 {fill: #3090b0;}
-.a210 {fill: #706030;}
-.a211 {fill: #f0d090;}
-.a212 {fill: #c08060;}
-.a213 {fill: #b08060;}
-.a214 {fill: #a08060;}
-.a215 {fill: #f0a060;}
-.a216 {fill: #ffa060;}
-.a217 {fill: #e08030;}
-.a218 {fill: #d08030;}
-.a219 {fill: #c07020;}
-.a220 {fill: #b07040;}
-.a221 {fill: #806040;}
-.a222 {fill: #c0e0ff;}
-.a223 {fill: #60a0d0;}
-.a224 {fill: #40a0d0;}
-.a225 {fill: #206090;}
-.a226 {fill: #a07040;}
-.a227 {fill: #907060;}
-.a228 {fill: #a06030;}
-.a229 {fill: #805040;}
-.a230 {fill: #30a0c0;}
-.a231 {fill: #404050;}
-.a232 {fill: #604040;}
-.a233 {fill: #d0a050;}
-.a234 {fill: #806020;}
-.a235 {fill: #505040;}
-.a236 {fill: #605050;}
-.a237 {fill: #807060;}
-.a238 {fill: #a0c0e0;}
-.a239 {fill: #4080c0;}
-.a240 {fill: #204070;}
-.a241 {fill: #804020;}
-.a242 {fill: #e0b060;}
-.a243 {fill: #d0b070;}
-.a244 {fill: #b0a070;}
-.a245 {fill: #706050;}
-.a246 {fill: #b0d0e0;}
-.a247 {fill: #807040;}
-.a248 {fill: #406050;}
-.a249 {fill: #405040;}
-.a250 {fill: #805010;}
-.a251 {fill: #e09030;}
-.a252 {fill: #d09050;}
-.a253 {fill: #b09050;}
-.a254 {fill: #908060;}
-.a255 {fill: #d0e0e0;}
-.a256 {fill: #904000;}
-.a257 {fill: #704030;}
-.a258 {fill: #504050;}
-.a259 {fill: #c0d0d0;}
-.a260 {fill: #80c0e0;}
-.a261 {fill: #809080;}
-.a262 {fill: #909070;}
 text, tspan {white-space: pre;}
 </style>
 <!-- Outer Card Background & Border -->
@@ -299,58 +36,54 @@ text, tspan {white-space: pre;}
 <text x="509" y="21.5" font-size="13px" fill="#2d333b" text-anchor="middle">ofer@chen: ~/infrastructure — neofetch --live-telemetry (zsh)</text>
 <!-- Subtle Vertical Column Divider -->
 <line x1="440" y1="46" x2="440" y2="622" stroke="#30363d" stroke-width="1" stroke-dasharray="3,4"/>
-<!-- Left Column: 87x47 True-Color ANSI ASCII Portrait -->
-<text fill="#00d2d3" font-size="7.94px" class="ascii" xml:space="preserve">
-<tspan x="16" y="133.92"><tspan class="a0">......................................'...,-/</tspan><tspan class="a1">vYJX</tspan><tspan class="a0">x)&lt;`...'..............................</tspan></tspan>
-<tspan x="16" y="142.73"><tspan class="a0">.....................................'."|</tspan><tspan class="a1">ZW$</tspan><tspan class="a2">$$$$$$</tspan><tspan class="a1">$@oU</tspan><tspan class="a0">?..'.............................</tspan></tspan>
-<tspan x="16" y="151.55"><tspan class="a0">.....................''''''.........../</tspan><tspan class="a1">#$</tspan><tspan class="a2">$$$@B@@@@@$$$</tspan><tspan class="a1">$q</tspan><tspan class="a0">+.'............................</tspan></tspan>
-<tspan x="16" y="160.36"><tspan class="a0">.................''.........'''....''</tspan><tspan class="a1">L$</tspan><tspan class="a2">$@@@$$$$$@$$$@@@$</tspan><tspan class="a1">@</tspan><tspan class="a0">|.'...........................</tspan></tspan>
-<tspan x="16" y="169.17"><tspan class="a0">...............'....,i-??+!^....'''.</tspan><tspan class="a1">U$</tspan><tspan class="a2">B$$$$%abM@$$$$$$$@$</tspan><tspan class="a1">$</tspan><tspan class="a0">].'..........................</tspan></tspan>
-<tspan x="16" y="177.98"><tspan class="a0">................'?</tspan><tspan class="a1">zb&amp;$$$$$@Mqn</tspan><tspan class="a0">&lt;....!</tspan><tspan class="a1">$</tspan><tspan class="a2">@$$$%</tspan><tspan class="a3">j!`.^&gt;v</tspan><tspan class="a2">@$$$$$$@</tspan><tspan class="a1">$k</tspan><tspan class="a0">''..........................</tspan></tspan>
-<tspan x="16" y="186.79"><tspan class="a0">...............(</tspan><tspan class="a1">h$</tspan><tspan class="a2">$$$$@@@$$$$$</tspan><tspan class="a1">$w</tspan><tspan class="a0">)</tspan><tspan class="a4">/</tspan><tspan class="a5">v</tspan><tspan class="a6">Z</tspan><tspan class="a1">@</tspan><tspan class="a2">@$@B</tspan><tspan class="a3">\.^^'...t</tspan><tspan class="a2">@@$$$$$</tspan><tspan class="a1">$B</tspan><tspan class="a0">;.'.........................</tspan></tspan>
-<tspan x="16" y="195.61"><tspan class="a0">.............,</tspan><tspan class="a1">Z$</tspan><tspan class="a2">$@@@$$$$$$@@@@$$</tspan><tspan class="a1">$k</tspan><tspan class="a7">r</tspan><tspan class="a8">C</tspan><tspan class="a1">$</tspan><tspan class="a2">@$$M</tspan><tspan class="a3">&lt;;;:^'`',</tspan><tspan class="a2">B$$$$$@</tspan><tspan class="a1">@%</tspan><tspan class="a0">i....''.....................</tspan></tspan>
-<tspan x="16" y="204.42"><tspan class="a0">...........'^</tspan><tspan class="a1">d$</tspan><tspan class="a2">@@$$$$$$$@$$$$$@@@</tspan><tspan class="a1">$C</tspan><tspan class="a9">&lt;</tspan><tspan class="a1">M$</tspan><tspan class="a2">@@@</tspan><tspan class="a3">C&gt;",....J</tspan><tspan class="a2">$@$$$$$</tspan><tspan class="a1">$o</tspan><tspan class="a10">X</tspan><tspan class="a11">j</tspan><tspan class="a4">f</tspan><tspan class="a0">&gt;....'.....'.............</tspan></tspan>
-<tspan x="16" y="213.23"><tspan class="a0">..........'.</tspan><tspan class="a1">x$</tspan><tspan class="a2">B$$$$$$$$$$$W#&amp;$$$$@</tspan><tspan class="a1">@</tspan><tspan class="a9">&lt;_</tspan><tspan class="a1">&amp;</tspan><tspan class="a2">$@$@q</tspan><tspan class="a3">\&lt;i~|</tspan><tspan class="a2">O$@$$$$$</tspan><tspan class="a1">Bh</tspan><tspan class="a12">r</tspan><tspan class="a13">\</tspan><tspan class="a14">v</tspan><tspan class="a15">z</tspan><tspan class="a16">z</tspan><tspan class="a7">ux</tspan><tspan class="a0">+;.;'.................</tspan></tspan>
-<tspan x="16" y="222.04"><tspan class="a0">..........'.</tspan><tspan class="a1">b@</tspan><tspan class="a2">@$$$$$$$@@</tspan><tspan class="a3">z&lt;,`:-</tspan><tspan class="a2">m$$@</tspan><tspan class="a1">$u</tspan><tspan class="a3">.</tspan><tspan class="a9">&lt;</tspan><tspan class="a1">h$</tspan><tspan class="a2">$$$$$$$$$$$$88*</tspan><tspan class="a1">w</tspan><tspan class="a17">u</tspan><tspan class="a18">[</tspan><tspan class="a19">[</tspan><tspan class="a20">r</tspan><tspan class="a21">(</tspan><tspan class="a22">/</tspan><tspan class="a23">r</tspan><tspan class="a24">v</tspan><tspan class="a25">Q</tspan><tspan class="a26">0</tspan><tspan class="a27">J</tspan><tspan class="a7">u</tspan><tspan class="a8">0</tspan><tspan class="a28">Q</tspan><tspan class="a29">J</tspan><tspan class="a5">v</tspan><tspan class="a0">-i'............</tspan></tspan>
-<tspan x="16" y="230.86"><tspan class="a0">............</tspan><tspan class="a1">k@</tspan><tspan class="a2">@$$$$$$@$</tspan><tspan class="a3">j......^</tspan><tspan class="a2">o$B</tspan><tspan class="a1">$L</tspan><tspan class="a3">''</tspan><tspan class="a30">,</tspan><tspan class="a4">1</tspan><tspan class="a27">z</tspan><tspan class="a31">m</tspan><tspan class="a2">aW&amp;oooaq</tspan><tspan class="a26">J</tspan><tspan class="a15">c</tspan><tspan class="a14">c</tspan><tspan class="a32">t</tspan><tspan class="a13">/</tspan><tspan class="a33">+</tspan><tspan class="a34">_</tspan><tspan class="a13">f</tspan><tspan class="a21">(</tspan><tspan class="a23">x</tspan><tspan class="a20">j</tspan><tspan class="a23">jf</tspan><tspan class="a35">v</tspan><tspan class="a36">X</tspan><tspan class="a37">f</tspan><tspan class="a38">|</tspan><tspan class="a24">z</tspan><tspan class="a32">j</tspan><tspan class="a39">/</tspan><tspan class="a40">n</tspan><tspan class="a10">zz</tspan><tspan class="a29">L</tspan><tspan class="a0">:.'..........</tspan></tspan>
-<tspan x="16" y="239.67"><tspan class="a0">..........'.</tspan><tspan class="a1">c$</tspan><tspan class="a2">B$$$$$$@$</tspan><tspan class="a3">_.`'''`.</tspan><tspan class="a2">C$$</tspan><tspan class="a1">$</tspan><tspan class="a41">]</tspan><tspan class="a3">"</tspan><tspan class="a42">&gt;</tspan><tspan class="a43">!</tspan><tspan class="a34">l</tspan><tspan class="a44">!</tspan><tspan class="a45">1</tspan><tspan class="a46">(</tspan><tspan class="a13">|</tspan><tspan class="a37">j</tspan><tspan class="a13">j</tspan><tspan class="a47">]</tspan><tspan class="a18">{</tspan><tspan class="a12">x</tspan><tspan class="a21">|</tspan><tspan class="a48">&lt;</tspan><tspan class="a49">}</tspan><tspan class="a19">{</tspan><tspan class="a47">-</tspan><tspan class="a50">({))</tspan><tspan class="a21">(</tspan><tspan class="a51">n</tspan><tspan class="a36">X</tspan><tspan class="a21">\|</tspan><tspan class="a51">n</tspan><tspan class="a36">X</tspan><tspan class="a25">L</tspan><tspan class="a21">/</tspan><tspan class="a18">)</tspan><tspan class="a12">x</tspan><tspan class="a52">+</tspan><tspan class="a18">(}</tspan><tspan class="a53">\</tspan><tspan class="a10">Y</tspan><tspan class="a11">j</tspan><tspan class="a0">:...........</tspan></tspan>
-<tspan x="16" y="248.48"><tspan class="a0">............,</tspan><tspan class="a1">*$</tspan><tspan class="a2">@$$$$$@$d</tspan><tspan class="a3">:.....!</tspan><tspan class="a2">M%</tspan><tspan class="a54">M</tspan><tspan class="a17">v</tspan><tspan class="a48">I</tspan><tspan class="a52">_</tspan><tspan class="a18">)</tspan><tspan class="a50">1</tspan><tspan class="a47">??</tspan><tspan class="a23">r</tspan><tspan class="a21">|||</tspan><tspan class="a37">f</tspan><tspan class="a19">{</tspan><tspan class="a55">]</tspan><tspan class="a50">)</tspan><tspan class="a19">{</tspan><tspan class="a21">t/</tspan><tspan class="a19">}</tspan><tspan class="a23">rr</tspan><tspan class="a37">j</tspan><tspan class="a21">t</tspan><tspan class="a38">)</tspan><tspan class="a21">\</tspan><tspan class="a13">ft</tspan><tspan class="a21">\</tspan><tspan class="a13">f/</tspan><tspan class="a47">?</tspan><tspan class="a24">Y</tspan><tspan class="a12">n</tspan><tspan class="a18">[</tspan><tspan class="a56">|</tspan><tspan class="a53">|f</tspan><tspan class="a18">}{</tspan><tspan class="a39">f</tspan><tspan class="a29">U</tspan><tspan class="a5">v</tspan><tspan class="a0">I'.........</tspan></tspan>
-<tspan x="16" y="257.29"><tspan class="a0">...........'.:</tspan><tspan class="a1">d$</tspan><tspan class="a2">@@@@@@@$h</tspan><tspan class="a3">f}</tspan><tspan class="a2">{}jmw</tspan><tspan class="a24">u</tspan><tspan class="a50">1</tspan><tspan class="a47">]</tspan><tspan class="a49">]</tspan><tspan class="a19">{</tspan><tspan class="a21">\</tspan><tspan class="a19">}</tspan><tspan class="a57">1</tspan><tspan class="a23">j</tspan><tspan class="a35">c</tspan><tspan class="a23">xj</tspan><tspan class="a51">u</tspan><tspan class="a22">t</tspan><tspan class="a21">/</tspan><tspan class="a58">)</tspan><tspan class="a19">1</tspan><tspan class="a21">(</tspan><tspan class="a13">f</tspan><tspan class="a38">)</tspan><tspan class="a13">f\/</tspan><tspan class="a50">1</tspan><tspan class="a53">\</tspan><tspan class="a37">r</tspan><tspan class="a12">x</tspan><tspan class="a40">u</tspan><tspan class="a18">1</tspan><tspan class="a52">+</tspan><tspan class="a18">1</tspan><tspan class="a59">?</tspan><tspan class="a34">+</tspan><tspan class="a53">t</tspan><tspan class="a12">r</tspan><tspan class="a39">t</tspan><tspan class="a60">}[</tspan><tspan class="a61">]</tspan><tspan class="a18">1}</tspan><tspan class="a59">]</tspan><tspan class="a40">u</tspan><tspan class="a17">c</tspan><tspan class="a29">C</tspan><tspan class="a0">~.'.......</tspan></tspan>
-<tspan x="16" y="266.11"><tspan class="a0">............!}</tspan><tspan class="a7">u</tspan><tspan class="a62">q</tspan><tspan class="a1">$$</tspan><tspan class="a2">$$$$$$</tspan><tspan class="a54">*</tspan><tspan class="a63">Q</tspan><tspan class="a25">U</tspan><tspan class="a64">c</tspan><tspan class="a26">U</tspan><tspan class="a25">v</tspan><tspan class="a37">/</tspan><tspan class="a13">t</tspan><tspan class="a23">r</tspan><tspan class="a20">fj</tspan><tspan class="a23">r</tspan><tspan class="a20">j</tspan><tspan class="a23">x</tspan><tspan class="a22">/</tspan><tspan class="a51">n</tspan><tspan class="a35">c</tspan><tspan class="a36">U</tspan><tspan class="a21">(\</tspan><tspan class="a65">f</tspan><tspan class="a51">n</tspan><tspan class="a21">/|</tspan><tspan class="a50">(</tspan><tspan class="a38">(</tspan><tspan class="a50">)</tspan><tspan class="a37">j</tspan><tspan class="a21">|</tspan><tspan class="a50">}</tspan><tspan class="a49">}</tspan><tspan class="a18">{</tspan><tspan class="a38">(</tspan><tspan class="a53">//</tspan><tspan class="a66">(</tspan><tspan class="a59">[</tspan><tspan class="a43">~</tspan><tspan class="a30">~</tspan><tspan class="a59">_</tspan><tspan class="a60">{</tspan><tspan class="a59">]?</tspan><tspan class="a60">}</tspan><tspan class="a18">}{11})</tspan><tspan class="a67">1</tspan><tspan class="a68">x</tspan><tspan class="a11">n</tspan><tspan class="a0">^'........</tspan></tspan>
-<tspan x="16" y="274.92"><tspan class="a0">.........''}</tspan><tspan class="a69">L</tspan><tspan class="a15">Y</tspan><tspan class="a64">J</tspan><tspan class="a12">u</tspan><tspan class="a15">Y</tspan><tspan class="a70">q</tspan><tspan class="a71">kdd</tspan><tspan class="a2">h*</tspan><tspan class="a72">b</tspan><tspan class="a73">C</tspan><tspan class="a35">u</tspan><tspan class="a74">(</tspan><tspan class="a21">/</tspan><tspan class="a23">n</tspan><tspan class="a51">u</tspan><tspan class="a47">[</tspan><tspan class="a48">_</tspan><tspan class="a21">\</tspan><tspan class="a35">v</tspan><tspan class="a75">n</tspan><tspan class="a20">r</tspan><tspan class="a75">n</tspan><tspan class="a76">u</tspan><tspan class="a21">|</tspan><tspan class="a65">f</tspan><tspan class="a13">t/</tspan><tspan class="a38">(</tspan><tspan class="a13">t</tspan><tspan class="a53">\</tspan><tspan class="a50">)</tspan><tspan class="a18">}</tspan><tspan class="a12">x</tspan><tspan class="a53">\</tspan><tspan class="a18">1[{</tspan><tspan class="a38">|</tspan><tspan class="a53">\</tspan><tspan class="a13">t</tspan><tspan class="a53">/</tspan><tspan class="a18">)</tspan><tspan class="a47">[</tspan><tspan class="a52">+&gt;</tspan><tspan class="a43">!i&gt;</tspan><tspan class="a52">_</tspan><tspan class="a59">?</tspan><tspan class="a67">1</tspan><tspan class="a59">]</tspan><tspan class="a30">!~</tspan><tspan class="a9">++</tspan><tspan class="a30">&gt;&lt;</tspan><tspan class="a42">]</tspan><tspan class="a41">}</tspan><tspan class="a11">f</tspan><tspan class="a0">1.'........</tspan></tspan>
-<tspan x="16" y="283.73"><tspan class="a0">........'.(</tspan><tspan class="a70">p</tspan><tspan class="a14">v</tspan><tspan class="a36">XY</tspan><tspan class="a20">j</tspan><tspan class="a21">t</tspan><tspan class="a19">{</tspan><tspan class="a77">}</tspan><tspan class="a74">|</tspan><tspan class="a78">X</tspan><tspan class="a74">|</tspan><tspan class="a19">{</tspan><tspan class="a51">cvu</tspan><tspan class="a20">f</tspan><tspan class="a23">n</tspan><tspan class="a20">j</tspan><tspan class="a78">z</tspan><tspan class="a36">Y</tspan><tspan class="a19">}</tspan><tspan class="a48">+</tspan><tspan class="a51">v</tspan><tspan class="a20">j</tspan><tspan class="a21">/</tspan><tspan class="a55">]</tspan><tspan class="a57">1</tspan><tspan class="a21">\</tspan><tspan class="a13">t</tspan><tspan class="a38">(</tspan><tspan class="a47">?</tspan><tspan class="a52">_</tspan><tspan class="a59">[</tspan><tspan class="a52">i</tspan><tspan class="a59">}</tspan><tspan class="a43">+</tspan><tspan class="a42">?</tspan><tspan class="a43">&lt;</tspan><tspan class="a52">i</tspan><tspan class="a59">]</tspan><tspan class="a30">~</tspan><tspan class="a59">-?</tspan><tspan class="a34">+!l</tspan><tspan class="a30">&gt;</tspan><tspan class="a59">?-</tspan><tspan class="a9">~+-</tspan><tspan class="a30">+~</tspan><tspan class="a9">&gt;:</tspan><tspan class="a3">''`</tspan><tspan class="a9">l</tspan><tspan class="a79">//</tspan><tspan class="a0">++&gt;^..........</tspan></tspan>
-<tspan x="16" y="292.54"><tspan class="a0">.......'.l</tspan><tspan class="a28">0</tspan><tspan class="a17">c</tspan><tspan class="a24">z</tspan><tspan class="a13">f</tspan><tspan class="a48">?</tspan><tspan class="a36">Y</tspan><tspan class="a23">r</tspan><tspan class="a74">(</tspan><tspan class="a22">\</tspan><tspan class="a80">r</tspan><tspan class="a78">v</tspan><tspan class="a20">r</tspan><tspan class="a19">{</tspan><tspan class="a81">]</tspan><tspan class="a65">fj</tspan><tspan class="a78">X</tspan><tspan class="a75">un</tspan><tspan class="a23">xxx</tspan><tspan class="a47">]</tspan><tspan class="a49">]</tspan><tspan class="a35">c</tspan><tspan class="a23">n</tspan><tspan class="a19">{</tspan><tspan class="a21">|</tspan><tspan class="a23">j</tspan><tspan class="a51">n</tspan><tspan class="a18">{</tspan><tspan class="a52">+</tspan><tspan class="a42">?</tspan><tspan class="a30">!!</tspan><tspan class="a9">-~!I</tspan><tspan class="a42">:l</tspan><tspan class="a30">!</tspan><tspan class="a9">ii</tspan><tspan class="a30">!</tspan><tspan class="a9">~</tspan><tspan class="a82">~&gt;&gt;</tspan><tspan class="a9">!&gt;;:</tspan><tspan class="a3">`.....'^</tspan><tspan class="a42">[</tspan><tspan class="a4">/\</tspan><tspan class="a0">].''.........</tspan></tspan>
-<tspan x="16" y="301.35"><tspan class="a0">......'.I</tspan><tspan class="a83">O</tspan><tspan class="a27">Y</tspan><tspan class="a18">){</tspan><tspan class="a84">&lt;</tspan><tspan class="a21">/</tspan><tspan class="a36">X</tspan><tspan class="a85">J</tspan><tspan class="a78">z</tspan><tspan class="a76">n</tspan><tspan class="a78">c</tspan><tspan class="a51">u</tspan><tspan class="a21">|\</tspan><tspan class="a46">(</tspan><tspan class="a48">_</tspan><tspan class="a86">+</tspan><tspan class="a46">)</tspan><tspan class="a78">c</tspan><tspan class="a20">tf</tspan><tspan class="a23">x</tspan><tspan class="a38">)</tspan><tspan class="a21">|\</tspan><tspan class="a50">(</tspan><tspan class="a37">j</tspan><tspan class="a18">{</tspan><tspan class="a84">&lt;</tspan><tspan class="a56">|</tspan><tspan class="a60">[</tspan><tspan class="a84">i</tspan><tspan class="a52">!</tspan><tspan class="a9">&lt;</tspan><tspan class="a30">l</tspan><tspan class="a9">l</tspan><tspan class="a30">!</tspan><tspan class="a9">&lt;~</tspan><tspan class="a30">i</tspan><tspan class="a9">i&lt;</tspan><tspan class="a42">i</tspan><tspan class="a9">i</tspan><tspan class="a82">!;;</tspan><tspan class="a87">:</tspan><tspan class="a3">^`'.....'...'..^</tspan><tspan class="a42">?</tspan><tspan class="a11">f</tspan><tspan class="a0">&gt;...........</tspan></tspan>
-<tspan x="16" y="310.17"><tspan class="a0">......'[</tspan><tspan class="a10">X</tspan><tspan class="a63">m</tspan><tspan class="a24">cz</tspan><tspan class="a48">_</tspan><tspan class="a21">\</tspan><tspan class="a25">L</tspan><tspan class="a36">X</tspan><tspan class="a88">Q0</tspan><tspan class="a51">u</tspan><tspan class="a23">j</tspan><tspan class="a21">\</tspan><tspan class="a46">)</tspan><tspan class="a21">\</tspan><tspan class="a23">j</tspan><tspan class="a22">/</tspan><tspan class="a23">x</tspan><tspan class="a65">j</tspan><tspan class="a13">t</tspan><tspan class="a19">}</tspan><tspan class="a50">(</tspan><tspan class="a13">/</tspan><tspan class="a50">1</tspan><tspan class="a33">&lt;</tspan><tspan class="a60">}{</tspan><tspan class="a84">~~+</tspan><tspan class="a47">]</tspan><tspan class="a52">~-</tspan><tspan class="a60">]</tspan><tspan class="a59">_</tspan><tspan class="a30">~</tspan><tspan class="a9">+&gt;ilI!l</tspan><tspan class="a3">`^`..............''.'.`</tspan><tspan class="a82">_</tspan><tspan class="a89">c</tspan><tspan class="a79">t</tspan><tspan class="a0">~`........</tspan></tspan>
-<tspan x="16" y="318.98"><tspan class="a0">...'`I</tspan><tspan class="a90">j</tspan><tspan class="a15">X</tspan><tspan class="a32">r</tspan><tspan class="a64">U</tspan><tspan class="a85">J</tspan><tspan class="a91">L</tspan><tspan class="a36">YUU</tspan><tspan class="a35">c</tspan><tspan class="a23">f</tspan><tspan class="a51">n</tspan><tspan class="a23">j</tspan><tspan class="a19">1</tspan><tspan class="a47">?[</tspan><tspan class="a21">/</tspan><tspan class="a51">nu</tspan><tspan class="a13">f</tspan><tspan class="a46">)</tspan><tspan class="a50">{</tspan><tspan class="a52">-~</tspan><tspan class="a47">[]?</tspan><tspan class="a18">1</tspan><tspan class="a50">1){</tspan><tspan class="a18">{</tspan><tspan class="a60">]</tspan><tspan class="a18">{</tspan><tspan class="a59">]</tspan><tspan class="a9">+&gt;i:</tspan><tspan class="a42">^</tspan><tspan class="a3">`............'''....'''''''''</tspan><tspan class="a9">i</tspan><tspan class="a11">j</tspan><tspan class="a92">X</tspan><tspan class="a93">|</tspan><tspan class="a0">^'......</tspan></tspan>
-<tspan x="16" y="327.79"><tspan class="a0">..'.f</tspan><tspan class="a29">Y</tspan><tspan class="a4">|</tspan><tspan class="a53">\</tspan><tspan class="a40">v</tspan><tspan class="a51">v</tspan><tspan class="a23">j</tspan><tspan class="a36">z</tspan><tspan class="a51">v</tspan><tspan class="a23">j</tspan><tspan class="a78">X</tspan><tspan class="a23">j</tspan><tspan class="a21">\</tspan><tspan class="a13">f</tspan><tspan class="a21">/</tspan><tspan class="a50">1</tspan><tspan class="a47">??]</tspan><tspan class="a52">?</tspan><tspan class="a34">~</tspan><tspan class="a52">_</tspan><tspan class="a60">]</tspan><tspan class="a59">?</tspan><tspan class="a9">_+</tspan><tspan class="a30">&lt;+</tspan><tspan class="a59">?]</tspan><tspan class="a34">-</tspan><tspan class="a30">~!I</tspan><tspan class="a9">,</tspan><tspan class="a3">^^.........................'''''''''.^</tspan><tspan class="a94">1</tspan><tspan class="a89">u</tspan><tspan class="a41">)</tspan><tspan class="a0">.'.....</tspan></tspan>
-<tspan x="16" y="336.60"><tspan class="a0">..'_</tspan><tspan class="a79">\</tspan><tspan class="a94">1</tspan><tspan class="a67">|</tspan><tspan class="a95">z</tspan><tspan class="a24">X</tspan><tspan class="a50">(</tspan><tspan class="a49">}</tspan><tspan class="a50">{</tspan><tspan class="a37">j</tspan><tspan class="a38">(</tspan><tspan class="a21">\(</tspan><tspan class="a19">{</tspan><tspan class="a21">\</tspan><tspan class="a13">f</tspan><tspan class="a47">]]</tspan><tspan class="a52">-</tspan><tspan class="a34">_</tspan><tspan class="a30">~i</tspan><tspan class="a9">+</tspan><tspan class="a59">-</tspan><tspan class="a30">&lt;</tspan><tspan class="a9">I;l</tspan><tspan class="a96">,</tspan><tspan class="a3">`.................................''''''''.'''</tspan><tspan class="a97">]</tspan><tspan class="a29">U</tspan><tspan class="a0">&lt;.'....</tspan></tspan>
-<tspan x="16" y="345.42"><tspan class="a0">.'"</tspan><tspan class="a98">j</tspan><tspan class="a41">{</tspan><tspan class="a84">I</tspan><tspan class="a52">_</tspan><tspan class="a67">(</tspan><tspan class="a12">j</tspan><tspan class="a40">c</tspan><tspan class="a47">??</tspan><tspan class="a50">1</tspan><tspan class="a38">)</tspan><tspan class="a20">j</tspan><tspan class="a19">}</tspan><tspan class="a48">-</tspan><tspan class="a19">{</tspan><tspan class="a49">[</tspan><tspan class="a56">|</tspan><tspan class="a60">[</tspan><tspan class="a42">-</tspan><tspan class="a9">~!:,</tspan><tspan class="a3">`...................................''''''''''''````'</tspan><tspan class="a68">x</tspan><tspan class="a7">v</tspan><tspan class="a0">''....</tspan></tspan>
-<tspan x="16" y="354.23"><tspan class="a0">'.l</tspan><tspan class="a99">X</tspan><tspan class="a27">X</tspan><tspan class="a40">n</tspan><tspan class="a50">(</tspan><tspan class="a53">\</tspan><tspan class="a47">}</tspan><tspan class="a13">f</tspan><tspan class="a38">\</tspan><tspan class="a37">r</tspan><tspan class="a23">j</tspan><tspan class="a13">t</tspan><tspan class="a49">]</tspan><tspan class="a21">\</tspan><tspan class="a49">[</tspan><tspan class="a18">1</tspan><tspan class="a59">]]</tspan><tspan class="a9">!,</tspan><tspan class="a3">'.................................'''''''''''''......'``</tspan><tspan class="a30">l</tspan><tspan class="a39">r</tspan><tspan class="a27">J</tspan><tspan class="a0">l.....</tspan></tspan>
-<tspan x="16" y="363.04"><tspan class="a0">'.</tspan><tspan class="a98">f</tspan><tspan class="a8">L</tspan><tspan class="a70">Z</tspan><tspan class="a26">Q</tspan><tspan class="a21">/</tspan><tspan class="a50">1</tspan><tspan class="a21">/|</tspan><tspan class="a22">f</tspan><tspan class="a23">rr</tspan><tspan class="a21">(</tspan><tspan class="a49">[</tspan><tspan class="a38">|</tspan><tspan class="a34">+</tspan><tspan class="a9">&lt;:</tspan><tspan class="a3">................................''..''''''''''''''''`</tspan><tspan class="a100">i</tspan><tspan class="a101">&gt;</tspan><tspan class="a100">&gt;</tspan><tspan class="a3">..`</tspan><tspan class="a59">[</tspan><tspan class="a39">j</tspan><tspan class="a40">c</tspan><tspan class="a0">-``...</tspan></tspan>
-<tspan x="16" y="371.85"><tspan class="a0">'.]</tspan><tspan class="a102">\</tspan><tspan class="a40">c</tspan><tspan class="a36">J</tspan><tspan class="a21">|</tspan><tspan class="a49">{</tspan><tspan class="a37">j</tspan><tspan class="a19">}</tspan><tspan class="a22">t</tspan><tspan class="a103">v</tspan><tspan class="a23">x</tspan><tspan class="a19">{</tspan><tspan class="a53">/</tspan><tspan class="a43">+</tspan><tspan class="a3">^.....................................'''''''.....'''`"</tspan><tspan class="a104">U</tspan><tspan class="a105">M</tspan><tspan class="a106">d</tspan><tspan class="a107">h</tspan><tspan class="a108">L</tspan><tspan class="a109">+</tspan><tspan class="a82">&lt;</tspan><tspan class="a7">x</tspan><tspan class="a12">x</tspan><tspan class="a15">J</tspan><tspan class="a0">[.'...</tspan></tspan>
-<tspan x="16" y="380.66"><tspan class="a0">'.f</tspan><tspan class="a8">O</tspan><tspan class="a110">C</tspan><tspan class="a35">z</tspan><tspan class="a74">(</tspan><tspan class="a53">f</tspan><tspan class="a52">?-</tspan><tspan class="a18">1</tspan><tspan class="a56">)</tspan><tspan class="a13">t</tspan><tspan class="a52">_</tspan><tspan class="a30">;</tspan><tspan class="a3">^......................................'''..''.....''''</tspan><tspan class="a111">}</tspan><tspan class="a112">h</tspan><tspan class="a113">*</tspan><tspan class="a114">pp</tspan><tspan class="a113">o</tspan><tspan class="a112">k</tspan><tspan class="a115">Q</tspan><tspan class="a116">x</tspan><tspan class="a117">u</tspan><tspan class="a0">}l`....</tspan></tspan>
-<tspan x="16" y="389.48"><tspan class="a0">.'`i</tspan><tspan class="a70">d</tspan><tspan class="a14">v</tspan><tspan class="a21">\</tspan><tspan class="a56">|</tspan><tspan class="a30">I</tspan><tspan class="a3">^</tspan><tspan class="a9">!</tspan><tspan class="a82">&gt;</tspan><tspan class="a42">!</tspan><tspan class="a3">^.......................................'.....''''...'`'.</tspan><tspan class="a118">(</tspan><tspan class="a119">W</tspan><tspan class="a113">o</tspan><tspan class="a114">b</tspan><tspan class="a120">ahk</tspan><tspan class="a121">M*</tspan><tspan class="a122">Z</tspan><tspan class="a0">:.'....</tspan></tspan>
-<tspan x="16" y="398.29"><tspan class="a0">..'^</tspan><tspan class="a11">r</tspan><tspan class="a71">d</tspan><tspan class="a16">v</tspan><tspan class="a32">r</tspan><tspan class="a59">}</tspan><tspan class="a3">^......................................'`'''......''''.''..^</tspan><tspan class="a123">t</tspan><tspan class="a124">b</tspan><tspan class="a105">&amp;</tspan><tspan class="a125">ao</tspan><tspan class="a105">B</tspan><tspan class="a119">%</tspan><tspan class="a105">W</tspan><tspan class="a113">*</tspan><tspan class="a125">*</tspan><tspan class="a126">M</tspan><tspan class="a124">h</tspan><tspan class="a0">&gt;..'..</tspan></tspan>
-<tspan x="16" y="407.10"><tspan class="a0">.&lt;t</tspan><tspan class="a79">/</tspan><tspan class="a7">x</tspan><tspan class="a27">X</tspan><tspan class="a127">0</tspan><tspan class="a35">c</tspan><tspan class="a32">j</tspan><tspan class="a52">,</tspan><tspan class="a3">'...........................................'''''''''`..</tspan><tspan class="a128">{</tspan><tspan class="a129">j</tspan><tspan class="a130">X</tspan><tspan class="a131">$</tspan><tspan class="a113">*</tspan><tspan class="a125">*</tspan><tspan class="a113">W</tspan><tspan class="a125">h</tspan><tspan class="a107">bb</tspan><tspan class="a112">*</tspan><tspan class="a119">W</tspan><tspan class="a121">M</tspan><tspan class="a126">W</tspan><tspan class="a119">%</tspan><tspan class="a112">o</tspan><tspan class="a0">/^..'</tspan></tspan>
-<tspan x="16" y="415.91"><tspan class="a0">.''!</tspan><tspan class="a11">x</tspan><tspan class="a83">Q</tspan><tspan class="a64">Y</tspan><tspan class="a51">v</tspan><tspan class="a13">\</tspan><tspan class="a34">l</tspan><tspan class="a3">'.......................'''.........'.</tspan><tspan class="a132">;</tspan><tspan class="a133">x</tspan><tspan class="a134">C</tspan><tspan class="a135">{</tspan><tspan class="a101">&gt;</tspan><tspan class="a3">^...''.....</tspan><tspan class="a136">!</tspan><tspan class="a104">z</tspan><tspan class="a112">h</tspan><tspan class="a105">W8</tspan><tspan class="a125">M</tspan><tspan class="a137">p</tspan><tspan class="a114">b</tspan><tspan class="a138">Q</tspan><tspan class="a139">r</tspan><tspan class="a140">C</tspan><tspan class="a141">u</tspan><tspan class="a142">r</tspan><tspan class="a115">C</tspan><tspan class="a143">d</tspan><tspan class="a144">w</tspan><tspan class="a145">h</tspan><tspan class="a146">W</tspan><tspan class="a131">%</tspan><tspan class="a147">m</tspan><tspan class="a0">[`.</tspan></tspan>
-<tspan x="16" y="424.73"><tspan class="a0">...:]</tspan><tspan class="a70">q</tspan><tspan class="a21">|</tspan><tspan class="a19">{</tspan><tspan class="a23">x</tspan><tspan class="a39">t</tspan><tspan class="a3">`.''''.''....''...'''..............'.</tspan><tspan class="a148">&gt;</tspan><tspan class="a124">b</tspan><tspan class="a105">%%</tspan><tspan class="a149">%</tspan><tspan class="a107">o</tspan><tspan class="a144">q</tspan><tspan class="a129">r</tspan><tspan class="a128">[</tspan><tspan class="a136">l</tspan><tspan class="a3">``</tspan><tspan class="a101">~</tspan><tspan class="a135">[</tspan><tspan class="a101">?</tspan><tspan class="a109">?</tspan><tspan class="a150">t</tspan><tspan class="a146">#</tspan><tspan class="a151">@</tspan><tspan class="a105">8&amp;@</tspan><tspan class="a126">W</tspan><tspan class="a152">q</tspan><tspan class="a153">h</tspan><tspan class="a154">m</tspan><tspan class="a155">L</tspan><tspan class="a156">Z</tspan><tspan class="a157">C</tspan><tspan class="a158">/</tspan><tspan class="a100">-</tspan><tspan class="a159">{</tspan><tspan class="a160">tt</tspan><tspan class="a161">u</tspan><tspan class="a162">0</tspan><tspan class="a163">p</tspan><tspan class="a164">w</tspan><tspan class="a165">t</tspan><tspan class="a0">&lt;</tspan></tspan>
-<tspan x="16" y="433.54"><tspan class="a0">....</tspan><tspan class="a102">j</tspan><tspan class="a63">q</tspan><tspan class="a25">Q</tspan><tspan class="a35">c</tspan><tspan class="a51">x</tspan><tspan class="a14">v</tspan><tspan class="a67">|</tspan><tspan class="a3">^....''..........................'',</tspan><tspan class="a144">w</tspan><tspan class="a166">%</tspan><tspan class="a167">*o</tspan><tspan class="a125">oo</tspan><tspan class="a113">o</tspan><tspan class="a156">C</tspan><tspan class="a168">f</tspan><tspan class="a169">c</tspan><tspan class="a170">n</tspan><tspan class="a171">Z</tspan><tspan class="a105">oM</tspan><tspan class="a113">a</tspan><tspan class="a126">M*</tspan><tspan class="a166">8</tspan><tspan class="a126">&amp;</tspan><tspan class="a172">*</tspan><tspan class="a125">o</tspan><tspan class="a113">#a</tspan><tspan class="a106">p</tspan><tspan class="a153">ab</tspan><tspan class="a152">p</tspan><tspan class="a173">X</tspan><tspan class="a174">Y</tspan><tspan class="a130">J</tspan><tspan class="a175">)</tspan><tspan class="a176">[</tspan><tspan class="a9">_</tspan><tspan class="a177">?-</tspan><tspan class="a9">~~</tspan><tspan class="a97">_</tspan><tspan class="a79">)</tspan><tspan class="a89">v</tspan></tspan>
-<tspan x="16" y="442.35"><tspan class="a0">.',f</tspan><tspan class="a27">L</tspan><tspan class="a26">L</tspan><tspan class="a51">v</tspan><tspan class="a21">t</tspan><tspan class="a78">X</tspan><tspan class="a85">J</tspan><tspan class="a35">v</tspan><tspan class="a51">u</tspan><tspan class="a53">t</tspan><tspan class="a42">[</tspan><tspan class="a30">!</tspan><tspan class="a3">,.''''''''''''''''''...........</tspan><tspan class="a178">?</tspan><tspan class="a149">%</tspan><tspan class="a125">M</tspan><tspan class="a167">o</tspan><tspan class="a114">k</tspan><tspan class="a113">*</tspan><tspan class="a126">W</tspan><tspan class="a113">o</tspan><tspan class="a125">h</tspan><tspan class="a179">QL</tspan><tspan class="a153">d</tspan><tspan class="a121">M</tspan><tspan class="a125">a</tspan><tspan class="a180">m</tspan><tspan class="a125">a</tspan><tspan class="a126">&amp;</tspan><tspan class="a167">a</tspan><tspan class="a181">c</tspan><tspan class="a182">m</tspan><tspan class="a183">0</tspan><tspan class="a184">w</tspan><tspan class="a137">d</tspan><tspan class="a152">q</tspan><tspan class="a154">O</tspan><tspan class="a125">a</tspan><tspan class="a153">b</tspan><tspan class="a114">k</tspan><tspan class="a155">Q</tspan><tspan class="a154">m</tspan><tspan class="a106">b</tspan><tspan class="a185">O</tspan><tspan class="a186">|</tspan><tspan class="a165">(</tspan><tspan class="a94">}</tspan><tspan class="a187">{</tspan><tspan class="a9">_</tspan><tspan class="a30">:;</tspan><tspan class="a9">_</tspan><tspan class="a42">?</tspan></tspan>
-<tspan x="16" y="451.16"><tspan class="a0">..:&gt;]</tspan><tspan class="a188">O</tspan><tspan class="a38">)</tspan><tspan class="a21">/</tspan><tspan class="a78">v</tspan><tspan class="a189">vu</tspan><tspan class="a190">x</tspan><tspan class="a85">C</tspan><tspan class="a78">z</tspan><tspan class="a51">u</tspan><tspan class="a32">r</tspan><tspan class="a59">]</tspan><tspan class="a3">:".'.......'.......'^``^^</tspan><tspan class="a9">,:</tspan><tspan class="a87">I</tspan><tspan class="a3">,</tspan><tspan class="a191">z</tspan><tspan class="a149">@</tspan><tspan class="a125">#</tspan><tspan class="a167">a</tspan><tspan class="a137">b</tspan><tspan class="a114">b</tspan><tspan class="a126">&amp;</tspan><tspan class="a105">%</tspan><tspan class="a113">M</tspan><tspan class="a125">o</tspan><tspan class="a113">*</tspan><tspan class="a125">*</tspan><tspan class="a152">q</tspan><tspan class="a105">&amp;W</tspan><tspan class="a126">W</tspan><tspan class="a105">&amp;%</tspan><tspan class="a167">k</tspan><tspan class="a137">d</tspan><tspan class="a184">w</tspan><tspan class="a167">ha</tspan><tspan class="a125">o</tspan><tspan class="a113">M</tspan><tspan class="a167">a</tspan><tspan class="a125">a</tspan><tspan class="a167">h</tspan><tspan class="a114">hk</tspan><tspan class="a155">L</tspan><tspan class="a113">a</tspan><tspan class="a108">J</tspan><tspan class="a100">]</tspan><tspan class="a82">~</tspan><tspan class="a9">&lt;_]~</tspan><tspan class="a30">&lt;</tspan><tspan class="a67">|</tspan></tspan>
-<tspan x="16" y="459.97"><tspan class="a0">....{</tspan><tspan class="a28">C</tspan><tspan class="a63">w</tspan><tspan class="a85">X</tspan><tspan class="a35">z</tspan><tspan class="a78">X</tspan><tspan class="a189">n</tspan><tspan class="a192">\</tspan><tspan class="a74">(</tspan><tspan class="a22">t</tspan><tspan class="a189">u</tspan><tspan class="a76">n</tspan><tspan class="a51">uv</tspan><tspan class="a56">|</tspan><tspan class="a18">{)</tspan><tspan class="a59">]</tspan><tspan class="a34">i</tspan><tspan class="a30">i!l</tspan><tspan class="a193">;!</tspan><tspan class="a34">;</tspan><tspan class="a30">&lt;_&lt;~i+</tspan><tspan class="a34">_-</tspan><tspan class="a18">{</tspan><tspan class="a50">(1)</tspan><tspan class="a47">[]</tspan><tspan class="a52">-</tspan><tspan class="a82">_</tspan><tspan class="a194">+</tspan><tspan class="a145">d</tspan><tspan class="a105">8</tspan><tspan class="a126">8</tspan><tspan class="a125">#</tspan><tspan class="a114">ha</tspan><tspan class="a125">#</tspan><tspan class="a172">W</tspan><tspan class="a167">o</tspan><tspan class="a113">M</tspan><tspan class="a125">#</tspan><tspan class="a126">W</tspan><tspan class="a105">&amp;</tspan><tspan class="a126">M</tspan><tspan class="a105">M</tspan><tspan class="a113">**</tspan><tspan class="a105">88</tspan><tspan class="a113">#WW</tspan><tspan class="a125">*</tspan><tspan class="a126">W</tspan><tspan class="a149">@</tspan><tspan class="a105">8</tspan><tspan class="a126">W</tspan><tspan class="a114">k</tspan><tspan class="a125">a</tspan><tspan class="a114">b</tspan><tspan class="a195">c</tspan><tspan class="a173">z</tspan><tspan class="a196">}</tspan><tspan class="a128">]</tspan><tspan class="a79">(</tspan><tspan class="a9">+i+l+</tspan><tspan class="a102">t</tspan></tspan>
-<tspan x="16" y="468.79"><tspan class="a0">..'.}</tspan><tspan class="a72">a</tspan><tspan class="a197">M</tspan><tspan class="a85">C</tspan><tspan class="a78">z</tspan><tspan class="a91">0</tspan><tspan class="a78">v</tspan><tspan class="a20">t</tspan><tspan class="a80">x</tspan><tspan class="a78">v</tspan><tspan class="a189">u</tspan><tspan class="a20">f</tspan><tspan class="a78">vY</tspan><tspan class="a76">nn</tspan><tspan class="a78">cY</tspan><tspan class="a23">n</tspan><tspan class="a78">X</tspan><tspan class="a23">xux</tspan><tspan class="a21">|\</tspan><tspan class="a23">x</tspan><tspan class="a51">u</tspan><tspan class="a23">r</tspan><tspan class="a21">|</tspan><tspan class="a50">)</tspan><tspan class="a19">}</tspan><tspan class="a50">11</tspan><tspan class="a47">]</tspan><tspan class="a19">{{</tspan><tspan class="a38">(</tspan><tspan class="a19">1</tspan><tspan class="a81">[</tspan><tspan class="a60">]</tspan><tspan class="a9">!</tspan><tspan class="a194">}</tspan><tspan class="a146">#</tspan><tspan class="a125">#W*#</tspan><tspan class="a167">ao</tspan><tspan class="a125">#M#</tspan><tspan class="a126">WB&amp;</tspan><tspan class="a125">#h</tspan><tspan class="a156">O</tspan><tspan class="a198">C</tspan><tspan class="a108">C</tspan><tspan class="a199">Z</tspan><tspan class="a152">d</tspan><tspan class="a125">o</tspan><tspan class="a167">h</tspan><tspan class="a125">a*</tspan><tspan class="a105">%</tspan><tspan class="a126">#</tspan><tspan class="a114">b</tspan><tspan class="a184">m</tspan><tspan class="a180">q</tspan><tspan class="a200">L</tspan><tspan class="a174">J</tspan><tspan class="a201">1</tspan><tspan class="a202">\</tspan><tspan class="a203">1</tspan><tspan class="a204">j</tspan><tspan class="a165">|</tspan><tspan class="a93">1</tspan><tspan class="a9">!</tspan><tspan class="a30">l</tspan><tspan class="a59">]</tspan><tspan class="a9">_</tspan></tspan>
-<tspan x="16" y="477.60"><tspan class="a0">'';</tspan><tspan class="a92">U</tspan><tspan class="a83">0</tspan><tspan class="a127">L</tspan><tspan class="a36">U</tspan><tspan class="a91">JC</tspan><tspan class="a78">X</tspan><tspan class="a189">v</tspan><tspan class="a80">j</tspan><tspan class="a205">z</tspan><tspan class="a206">C</tspan><tspan class="a190">n</tspan><tspan class="a80">xx</tspan><tspan class="a207">t</tspan><tspan class="a192">/</tspan><tspan class="a74">(</tspan><tspan class="a208">{</tspan><tspan class="a209">/</tspan><tspan class="a192">|</tspan><tspan class="a189">un</tspan><tspan class="a78">z</tspan><tspan class="a23">r</tspan><tspan class="a57">}{</tspan><tspan class="a74">(</tspan><tspan class="a209">/</tspan><tspan class="a78">X</tspan><tspan class="a74">|</tspan><tspan class="a48">-</tspan><tspan class="a21">|</tspan><tspan class="a74">\</tspan><tspan class="a21">\</tspan><tspan class="a77">]</tspan><tspan class="a19">1</tspan><tspan class="a47">?</tspan><tspan class="a86">&lt;</tspan><tspan class="a50">1</tspan><tspan class="a18">)</tspan><tspan class="a9">+</tspan><tspan class="a82">i</tspan><tspan class="a210">~</tspan><tspan class="a211">*</tspan><tspan class="a126">&amp;</tspan><tspan class="a167">aa</tspan><tspan class="a125">M</tspan><tspan class="a167">a</tspan><tspan class="a125">*</tspan><tspan class="a167">a</tspan><tspan class="a125">M</tspan><tspan class="a126">MW</tspan><tspan class="a125">##*</tspan><tspan class="a152">d</tspan><tspan class="a168">r</tspan><tspan class="a212">z</tspan><tspan class="a213">v</tspan><tspan class="a123">f</tspan><tspan class="a214">n</tspan><tspan class="a213">v</tspan><tspan class="a130">C</tspan><tspan class="a215">mw</tspan><tspan class="a152">p</tspan><tspan class="a154">O</tspan><tspan class="a138">0</tspan><tspan class="a154">Z</tspan><tspan class="a216">p</tspan><tspan class="a138">Q</tspan><tspan class="a217">z</tspan><tspan class="a218">z</tspan><tspan class="a219">t</tspan><tspan class="a202">)</tspan><tspan class="a220">f</tspan><tspan class="a221">1</tspan><tspan class="a128">?</tspan><tspan class="a87">-</tspan><tspan class="a94">{</tspan><tspan class="a9">-</tspan><tspan class="a30">,</tspan></tspan>
-<tspan x="16" y="486.41"><tspan class="a0">'.</tspan><tspan class="a17">v</tspan><tspan class="a222">@</tspan><tspan class="a64">U</tspan><tspan class="a57">1</tspan><tspan class="a74">)</tspan><tspan class="a76">n</tspan><tspan class="a206">J</tspan><tspan class="a223">z</tspan><tspan class="a189">n</tspan><tspan class="a205">z</tspan><tspan class="a189">u</tspan><tspan class="a207">j</tspan><tspan class="a224">u</tspan><tspan class="a205">v</tspan><tspan class="a189">u</tspan><tspan class="a80">x</tspan><tspan class="a207">t</tspan><tspan class="a76">n</tspan><tspan class="a78">zY</tspan><tspan class="a206">U</tspan><tspan class="a78">v</tspan><tspan class="a22">t</tspan><tspan class="a57">}</tspan><tspan class="a225">_</tspan><tspan class="a81">]</tspan><tspan class="a21">|</tspan><tspan class="a22">t</tspan><tspan class="a192">|</tspan><tspan class="a189">v</tspan><tspan class="a20">t</tspan><tspan class="a19">[</tspan><tspan class="a50">(</tspan><tspan class="a49">[</tspan><tspan class="a47">???</tspan><tspan class="a34">&gt;+</tspan><tspan class="a9">-i</tspan><tspan class="a30">,</tspan><tspan class="a82">"</tspan><tspan class="a178">^</tspan><tspan class="a144">p</tspan><tspan class="a113">W</tspan><tspan class="a167">o</tspan><tspan class="a125">MMo</tspan><tspan class="a126">&amp;WW#</tspan><tspan class="a125">a</tspan><tspan class="a152">d</tspan><tspan class="a114">k</tspan><tspan class="a154">m</tspan><tspan class="a156">m</tspan><tspan class="a169">z</tspan><tspan class="a226">t</tspan><tspan class="a227">f</tspan><tspan class="a93">{1</tspan><tspan class="a165">(</tspan><tspan class="a135">{</tspan><tspan class="a118">(</tspan><tspan class="a220">x</tspan><tspan class="a169">z</tspan><tspan class="a130">XU</tspan><tspan class="a212">Xc</tspan><tspan class="a140">JL</tspan><tspan class="a157">0</tspan><tspan class="a202">|1</tspan><tspan class="a228">\</tspan><tspan class="a118">|</tspan><tspan class="a229">}</tspan><tspan class="a159">1</tspan><tspan class="a41">}</tspan><tspan class="a82">__</tspan></tspan>
-<tspan x="16" y="495.22"><tspan class="a0">'?</tspan><tspan class="a54">*</tspan><tspan class="a73">m</tspan><tspan class="a88">Q</tspan><tspan class="a76">x</tspan><tspan class="a20">t</tspan><tspan class="a78">Xcc</tspan><tspan class="a189">vzc</tspan><tspan class="a230">r</tspan><tspan class="a224">n</tspan><tspan class="a205">z</tspan><tspan class="a76">ux</tspan><tspan class="a57">1</tspan><tspan class="a21">\</tspan><tspan class="a23">r</tspan><tspan class="a21">|</tspan><tspan class="a50">)1</tspan><tspan class="a19">{</tspan><tspan class="a50">)</tspan><tspan class="a19">{}</tspan><tspan class="a60">1</tspan><tspan class="a47">]</tspan><tspan class="a19">}</tspan><tspan class="a36">U</tspan><tspan class="a19">{</tspan><tspan class="a33">&gt;</tspan><tspan class="a30">+</tspan><tspan class="a42">-</tspan><tspan class="a9">+:"</tspan><tspan class="a82">,</tspan><tspan class="a231">"</tspan><tspan class="a82">;</tspan><tspan class="a231">!</tspan><tspan class="a3">^</tspan><tspan class="a96">i</tspan><tspan class="a232">&lt;</tspan><tspan class="a141">u</tspan><tspan class="a113">o</tspan><tspan class="a137">d</tspan><tspan class="a167">a</tspan><tspan class="a137">b</tspan><tspan class="a125">*</tspan><tspan class="a105">%</tspan><tspan class="a125">o</tspan><tspan class="a180">w</tspan><tspan class="a125">a</tspan><tspan class="a113">M</tspan><tspan class="a114">d</tspan><tspan class="a105">W</tspan><tspan class="a152">b</tspan><tspan class="a233">Q</tspan><tspan class="a170">u</tspan><tspan class="a234">]</tspan><tspan class="a100">&lt;</tspan><tspan class="a235">-!</tspan><tspan class="a82">!</tspan><tspan class="a41">?</tspan><tspan class="a82">&lt;!</tspan><tspan class="a87">l</tspan><tspan class="a82">!i&lt;</tspan><tspan class="a87">~</tspan><tspan class="a236">?</tspan><tspan class="a237">|</tspan><tspan class="a135">}}</tspan><tspan class="a101">+~</tspan><tspan class="a100">?</tspan><tspan class="a236">]</tspan><tspan class="a93">{</tspan><tspan class="a41">]</tspan><tspan class="a87">~!</tspan></tspan>
-<tspan x="16" y="504.04"><tspan class="a0">I</tspan><tspan class="a89">z</tspan><tspan class="a238">p</tspan><tspan class="a88">C</tspan><tspan class="a76">rx</tspan><tspan class="a20">tf</tspan><tspan class="a80">x</tspan><tspan class="a189">vc</tspan><tspan class="a190">n</tspan><tspan class="a189">v</tspan><tspan class="a190">x</tspan><tspan class="a192">|</tspan><tspan class="a239">t</tspan><tspan class="a57">1</tspan><tspan class="a48">_</tspan><tspan class="a33">I</tspan><tspan class="a240">^</tspan><tspan class="a3">'^</tspan><tspan class="a9">-</tspan><tspan class="a34">!&lt;</tspan><tspan class="a60">{</tspan><tspan class="a50">)</tspan><tspan class="a52">-</tspan><tspan class="a84">!</tspan><tspan class="a52">!</tspan><tspan class="a94">|</tspan><tspan class="a9">~</tspan><tspan class="a3">^`</tspan><tspan class="a9">:</tspan><tspan class="a82">!:</tspan><tspan class="a3">`'''`</tspan><tspan class="a231">:</tspan><tspan class="a9">_-</tspan><tspan class="a3">`</tspan><tspan class="a241">!</tspan><tspan class="a107">a</tspan><tspan class="a125">h*</tspan><tspan class="a126">&amp;&amp;W</tspan><tspan class="a172">#</tspan><tspan class="a125">o</tspan><tspan class="a152">d</tspan><tspan class="a242">w</tspan><tspan class="a156">O</tspan><tspan class="a243">m</tspan><tspan class="a185">O</tspan><tspan class="a115">0</tspan><tspan class="a244">J</tspan><tspan class="a214">x</tspan><tspan class="a245">1</tspan><tspan class="a93">{</tspan><tspan class="a79">(</tspan><tspan class="a59">[</tspan><tspan class="a30">!</tspan><tspan class="a9">&lt;&lt;&gt;</tspan><tspan class="a82">l!^!</tspan><tspan class="a3">`</tspan><tspan class="a82">^</tspan><tspan class="a87">;";</tspan><tspan class="a82">l!</tspan><tspan class="a97">?</tspan><tspan class="a82">&gt;</tspan><tspan class="a9">!;^</tspan></tspan>
-<tspan x="16" y="512.85"><tspan class="a0">`</tspan><tspan class="a83">0</tspan><tspan class="a246">k</tspan><tspan class="a91">J</tspan><tspan class="a76">x</tspan><tspan class="a80">x</tspan><tspan class="a189">v</tspan><tspan class="a209">ft</tspan><tspan class="a189">v</tspan><tspan class="a190">ux</tspan><tspan class="a189">v</tspan><tspan class="a207">jj</tspan><tspan class="a80">n</tspan><tspan class="a22">t</tspan><tspan class="a47">[</tspan><tspan class="a86">"</tspan><tspan class="a193">:</tspan><tspan class="a9">,&lt;+</tspan><tspan class="a3">`"</tspan><tspan class="a9">~</tspan><tspan class="a30">&gt;</tspan><tspan class="a43">;</tspan><tspan class="a3">^</tspan><tspan class="a82">I:</tspan><tspan class="a3">.''``''.'``'"</tspan><tspan class="a193">:</tspan><tspan class="a87">"</tspan><tspan class="a3">`</tspan><tspan class="a226">r</tspan><tspan class="a113">M</tspan><tspan class="a125">M</tspan><tspan class="a126">W</tspan><tspan class="a125">#</tspan><tspan class="a167">aa</tspan><tspan class="a137">b</tspan><tspan class="a125">o</tspan><tspan class="a157">C</tspan><tspan class="a202">(</tspan><tspan class="a226">f</tspan><tspan class="a247">(</tspan><tspan class="a176">{</tspan><tspan class="a93">{</tspan><tspan class="a4">((</tspan><tspan class="a59">?[</tspan><tspan class="a56">(</tspan><tspan class="a60">}</tspan><tspan class="a30">&lt;</tspan><tspan class="a9">&lt;</tspan><tspan class="a82">&lt;i</tspan><tspan class="a87">-</tspan><tspan class="a82">i&lt;</tspan><tspan class="a9">~+_+</tspan><tspan class="a177">_</tspan><tspan class="a59">?]</tspan><tspan class="a60">{</tspan><tspan class="a56">|</tspan><tspan class="a59">-</tspan><tspan class="a33">"</tspan><tspan class="a34">I</tspan></tspan>
-<tspan x="16" y="521.66"><tspan class="a0">l</tspan><tspan class="a70">q</tspan><tspan class="a246">k</tspan><tspan class="a91">J</tspan><tspan class="a223">Y</tspan><tspan class="a205">z</tspan><tspan class="a189">u</tspan><tspan class="a190">r</tspan><tspan class="a20">jt</tspan><tspan class="a22">\</tspan><tspan class="a23">n</tspan><tspan class="a21">|</tspan><tspan class="a57">1</tspan><tspan class="a22">\</tspan><tspan class="a57">{</tspan><tspan class="a21">\</tspan><tspan class="a18">1</tspan><tspan class="a33">;</tspan><tspan class="a9">~-I</tspan><tspan class="a3">'</tspan><tspan class="a96">;</tspan><tspan class="a231">l</tspan><tspan class="a82">^</tspan><tspan class="a9">:</tspan><tspan class="a248">!:</tspan><tspan class="a82">&gt;I,</tspan><tspan class="a3">`</tspan><tspan class="a235">``</tspan><tspan class="a3">``'`'</tspan><tspan class="a249">^</tspan><tspan class="a3">''</tspan><tspan class="a82">`</tspan><tspan class="a9">"</tspan><tspan class="a82">"</tspan><tspan class="a3">.</tspan><tspan class="a250">I</tspan><tspan class="a112">o</tspan><tspan class="a113">W#MM</tspan><tspan class="a153">h</tspan><tspan class="a114">h</tspan><tspan class="a113">#</tspan><tspan class="a251">Y</tspan><tspan class="a138">Q</tspan><tspan class="a154">w</tspan><tspan class="a252">J</tspan><tspan class="a253">c</tspan><tspan class="a133">n</tspan><tspan class="a254">j</tspan><tspan class="a175">)</tspan><tspan class="a100">_</tspan><tspan class="a235">I</tspan><tspan class="a87">!</tspan><tspan class="a9">!</tspan><tspan class="a96">I</tspan><tspan class="a9">~</tspan><tspan class="a82">lI&lt;!</tspan><tspan class="a9">~</tspan><tspan class="a59">]?</tspan><tspan class="a30">~</tspan><tspan class="a34">-</tspan><tspan class="a59">-</tspan><tspan class="a30">+</tspan><tspan class="a34">-</tspan><tspan class="a52">-</tspan><tspan class="a59">]</tspan><tspan class="a39">f</tspan><tspan class="a34">&gt;</tspan><tspan class="a84">:</tspan></tspan>
-<tspan x="16" y="530.47"><tspan class="a255">*</tspan><tspan class="a63">q</tspan><tspan class="a85">C</tspan><tspan class="a91">Q</tspan><tspan class="a206">Y</tspan><tspan class="a189">v</tspan><tspan class="a192">\</tspan><tspan class="a22">/t</tspan><tspan class="a21">|</tspan><tspan class="a47">?</tspan><tspan class="a86">l</tspan><tspan class="a34">+</tspan><tspan class="a56">(</tspan><tspan class="a18">[</tspan><tspan class="a33">+</tspan><tspan class="a50">|</tspan><tspan class="a86">-</tspan><tspan class="a34">~&lt;</tspan><tspan class="a67">\</tspan><tspan class="a30">l</tspan><tspan class="a9">,</tspan><tspan class="a96">;</tspan><tspan class="a231">,</tspan><tspan class="a82">"</tspan><tspan class="a9">",</tspan><tspan class="a42">:;</tspan><tspan class="a82">i</tspan><tspan class="a9">,</tspan><tspan class="a82">^`</tspan><tspan class="a3">''`</tspan><tspan class="a235">`</tspan><tspan class="a3">'</tspan><tspan class="a82">^:"</tspan><tspan class="a3">`</tspan><tspan class="a87">:</tspan><tspan class="a82">,</tspan><tspan class="a3">```</tspan><tspan class="a108">0</tspan><tspan class="a119">%</tspan><tspan class="a121">MM</tspan><tspan class="a113">a</tspan><tspan class="a153">ba</tspan><tspan class="a106">b</tspan><tspan class="a152">q</tspan><tspan class="a114">dhp</tspan><tspan class="a215">w</tspan><tspan class="a171">m</tspan><tspan class="a144">d</tspan><tspan class="a157">Q</tspan><tspan class="a170">c</tspan><tspan class="a250">?</tspan><tspan class="a256">:</tspan><tspan class="a257">;</tspan><tspan class="a258">:</tspan><tspan class="a231">&lt;</tspan><tspan class="a82">:l</tspan><tspan class="a9">;l</tspan><tspan class="a30">I&lt;</tspan><tspan class="a34">I</tspan><tspan class="a33">";</tspan><tspan class="a30">+</tspan><tspan class="a52">?_</tspan><tspan class="a33">l:</tspan><tspan class="a30">~</tspan><tspan class="a59">-</tspan><tspan class="a34">:</tspan></tspan>
-<tspan x="16" y="539.29"><tspan class="a259">b</tspan><tspan class="a24">z</tspan><tspan class="a85">J</tspan><tspan class="a260">O</tspan><tspan class="a91">C</tspan><tspan class="a80">x</tspan><tspan class="a22">\tf</tspan><tspan class="a19">}</tspan><tspan class="a34">+&lt;</tspan><tspan class="a9">+</tspan><tspan class="a30">I</tspan><tspan class="a3">,</tspan><tspan class="a30">]</tspan><tspan class="a60">{{}</tspan><tspan class="a59">?</tspan><tspan class="a30">!</tspan><tspan class="a9">i</tspan><tspan class="a82">,</tspan><tspan class="a87">,^</tspan><tspan class="a82">"</tspan><tspan class="a9">`;,`</tspan><tspan class="a82">^`</tspan><tspan class="a3">''`</tspan><tspan class="a235">"^</tspan><tspan class="a3">'`</tspan><tspan class="a82">;</tspan><tspan class="a9">~</tspan><tspan class="a82">I^,</tspan><tspan class="a9">;;</tspan><tspan class="a82">_</tspan><tspan class="a87">}</tspan><tspan class="a261">n</tspan><tspan class="a162">Q</tspan><tspan class="a262">u</tspan><tspan class="a116">u</tspan><tspan class="a254">nj</tspan><tspan class="a186">/|</tspan><tspan class="a204">r</tspan><tspan class="a108">Q</tspan><tspan class="a107">h</tspan><tspan class="a157">0</tspan><tspan class="a171">q</tspan><tspan class="a108">C</tspan><tspan class="a191">X</tspan><tspan class="a122">Z</tspan><tspan class="a185">O</tspan><tspan class="a157">Q</tspan><tspan class="a196">[</tspan><tspan class="a148">I</tspan><tspan class="a100">~</tspan><tspan class="a87">i!</tspan><tspan class="a82">I</tspan><tspan class="a9">&lt;</tspan><tspan class="a30">!</tspan><tspan class="a34">;</tspan><tspan class="a59">?</tspan><tspan class="a177">+</tspan><tspan class="a34">&gt;</tspan><tspan class="a50">1</tspan><tspan class="a47">}</tspan><tspan class="a19">}</tspan><tspan class="a21">\</tspan><tspan class="a52">_</tspan><tspan class="a34">_+</tspan><tspan class="a177">_</tspan><tspan class="a30">!</tspan></tspan>
+<!-- Left Column: 87x47 ASCII Artwork / Portrait -->
+<text fill="#00d2d3" font-size="7.94px" class="ascii">
+<tspan x="16" y="151.55">                                            dwa</tspan>
+<tspan x="16" y="160.36">                                         Wf_:`"!r</tspan>
+<tspan x="16" y="169.17">                                 hk#     )i-_!"..|       $%</tspan>
+<tspan x="16" y="177.98">                                BC?r$   h~1[?~;^'"* @$$$$%8</tspan>
+<tspan x="16" y="186.79">                                  n"Q$   x&lt;~~I'..jWB%%%&amp;MMdCda</tspan>
+<tspan x="16" y="195.61">                          #oM   @@8;:Q8@  0\~i&lt;}coMM*akbpQ1-|(xO#B</tspan>
+<tspan x="16" y="204.42">                        x&gt;,`:~0 B%B(.:ua8B$$B%&amp;W#aabqw0Uf&lt;&gt;|?{((xcJwYbakM</tspan>
+<tspan x="16" y="213.23">                       \..'^,.`bBoMr'..~xUZdkqwmOJufj{{ll1?|1)1fn1-/1?(\\U</tspan>
+<tspan x="16" y="222.04">                       &gt;.`":,^.XBaa~.:,^`+??))&gt;+\],~+l?~-_-\x[?\rX}-\I]&lt;}xY</tspan>
+<tspan x="16" y="230.86">                       O,.'...;qaqt^l-_!!|]??)~i_~{}~|(){-[1{}1}!u\&lt;]?)&lt;+)tU</tspan>
+<tspan x="16" y="239.67">                     B8&amp;w)&gt;~+\ZQt-&gt;i~[&lt;+)f|(t}}_+-1_1[}+[|(t_:_il{(1~&lt;i+~!f\Z</tspan>
+<tspan x="16" y="248.48">             Wqa$$$$@&amp;*hwJvxcj{{|{)()|}\fv-]1/[]-?_(]&lt;&gt;+?}}?&lt;:;l+&gt;i&lt;~+++&gt;-?1Z</tspan>
+<tspan x="16" y="257.29">           BL\r\n0Z000mQct-[\t&lt;I]f\)/t?1}}?{[-&lt;\[+&lt;~][1}-&lt;I,^",li+i^Ill;!il&gt;b</tspan>
+<tspan x="16" y="266.11">          8X/nu){~&lt;]x]+rf/1\1jn&lt;;f)}i+[{?!l~^+;!:,&lt;;!!I"",il;;lIII^..."[Oamq</tspan>
+<tspan x="16" y="274.92">          o\x1in(?](t(~i1)x\\|(\&gt;if\~](/~;i",!;``'^,,^^:;;,^:^^'.....'`+)[%</tspan>
+<tspan x="16" y="283.73">         d/-+,{rvj\j/][?I;-j{1|-]}?|~;]&lt;^`,`^^,,"":""^'`'''.............'Ij&amp;</tspan>
+<tspan x="16" y="292.54">       ddUjx;]zxzY/)]_[)}|){~]}_,~~;;I&gt;;!&gt;I:;"^^`",.''...................';j0*</tspan>
+<tspan x="16" y="301.35">      #({cvznuuf1\(+i~{\t{-+!;&lt;&gt;!++_~~i~&gt;l::^`'...........................';})p</tspan>
+<tspan x="16" y="310.17">    Wx-}jj)rt)x1]1}+ii&lt;!;!&gt;!lI:;i&lt;il,^`''...................................`[]p</tspan>
+<tspan x="16" y="318.98">   Wz{}rx-&lt;+|-[?~[)&gt;&gt;!l;^l!:^^,`'.............................................&lt;x&amp;</tspan>
+<tspan x="16" y="327.79">   q;`l?)jii+-(~l+&lt;]&lt;l;:```.............................................'''....}q</tspan>
+<tspan x="16" y="336.60">   qnt-}&lt;)]|({&lt;[&gt;_!&lt;,`......................................................'',(c</tspan>
+<tspan x="16" y="345.42">  djOX[+{]1((-&lt;[II^.....................................................!!i...~((#</tspan>
+<tspan x="16" y="354.23">  #+fv]~(~{f\~}I'.....................................................`XomdJ&lt;I||(w</tspan>
+<tspan x="16" y="363.04">  &amp;qzf?(&lt;!__{l"'....................................................''-pb00ppU)tM</tspan>
+<tspan x="16" y="371.85">    p/]]^.,;:`....................................................'''.[#dZpwmhb08</tspan>
+<tspan x="16" y="380.66">    #Oj)+'.......................................''''............'..'(q*ppWMaddbb%</tspan>
+<tspan x="16" y="389.48">  *qjjJf(`............................................''...'''''..]fuBddawmwbakoob*</tspan>
+<tspan x="16" y="398.29">    b0xt},....................................'.,jJ]&gt;`..........;upo*kQZz(z/(cmQphkpa</tspan>
+<tspan x="16" y="407.10">     w-~|1'.''...............................'.!q#*Wbmt];..i-+_|*%*aWaQqJzCz}I+{{tJ0XXM</tspan>
+<tspan x="16" y="415.91">    oCXf|f}`.................................'`ZMddpdbc1rt0kodakM*bdbd0qZOrxc_&gt;lii;:!~\</tspan>
+<tspan x="16" y="424.73">   8pcf}rvtt)+;`...'''........'...............~&amp;kpmbodqzzZhqCdadfLYLOQUdmwzCmJ-?~+l''!i</tspan>
+<tspan x="16" y="433.54">    &amp;X-}ft/(cjt|+^'..................'''''^",`v8kqZZo#kdbbL*aaoMmZCwqphwqwwwcdzi;;!~;;}</tspan>
+<tspan x="16" y="442.35">    *mOxjx\]-{t\/f}?}+II;;":"l&gt;Il;!i!+]--&lt;&gt;!I;q**bwwkapkka*aabb**baado&amp;*amqZtx+&gt;?I"l`!1</tspan>
+<tspan x="16" y="451.16">     BkcjYt{\f/1tn\\fx|x(/|?[(/(]_&lt;_+i++?+&lt;&gt;"+abhdkqpbkkh#obqUccJOdwpbMhmJQzc+}+(]_^^&lt;!</tspan>
+<tspan x="16" y="459.97">   h0nnvcrt1jc\|\{{?~}?/\r|~~-[x]l][}i_&gt;:__I"IhaqqkqdqkkabbbO)jt{\fcLC0YXJ0zjr{-1_il+&gt;.</tspan>
+<tspan x="16" y="468.79">  $on+_\uj\jt)tt/|{\jxuf1+li]}]f{i?&lt;ii&gt;,;!:'..whphkpoaahpOwCCr{)~_]~?|jrnrfuzU]-]]&lt;_&lt;l!</tspan>
+<tspan x="16" y="477.60">  *UX|}xfjfjf(\j/|_1\[-__?++-&lt;~c+:I!l`.'.`,'IIxd0pObMdCqhZomz/i,l""i:^^,;;;i?~&lt;I:i&gt;+&gt;;:</tspan>
+<tspan x="16" y="486.41"> a0c(|{1|tf|t(]1_I`...&gt;;l--&gt;:;1i..`,^....'^!&gt;':bwdo*okdOQJLJUc|++?~,;::`,."..'.'^^!"^'.</tspan>
+<tspan x="16" y="495.22"> *0c||t1{t/|t))\{+'`.;i..l;^."^............''.'takabqpZdz+1-~~??i~?~:;:"i::lil!!&gt;&lt;+]!.^</tspan>
+<tspan x="16" y="504.04"> &amp;Zvxj/(({]/?_}_}]^Ii`.'`.`,':^'.............'.:hhbkhwwkxXLuft(_;`"^^I"^I:;&gt;ili!Ii&gt;&lt;),.</tspan>
+<tspan x="16" y="512.85">*Luznt[}{]i,!}-l]!;I1^''.''``^,........''..''...C#hkpZqmQZq0LLmXfi.'':`"```:^.`l&lt;!"';!'</tspan>
+<tspan x="16" y="521.66">mjvUv|[{)+I:l^'~?-~&lt;,:''...`'.........'`I^'``"&lt;_tX//|)}])XqYQcjCJX&lt;';"^`:"^il,__+[l!Il,</tspan>
 </text>
 <!-- Right Column: Neofetch Telemetry Panel -->
-<text fill="#e6edf3" font-size="15px" xml:space="preserve">
+<text fill="#e6edf3" font-size="15px">
 <tspan x="450" y="65"><tspan class="title">ofer@chen</tspan> -<tspan class="cc">—————————————————————————————————————————————————</tspan>-</tspan>
 <tspan x="450" y="84"><tspan class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> </tspan><tspan class="cc">.....................</tspan><tspan class="cc"> </tspan><tspan class="value">RHEL, Rocky, Debian, Talos, Yocto</tspan></tspan>
 <tspan x="450" y="103"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> </tspan><tspan class="cc">.......................</tspan><tspan class="cc"> </tspan><tspan class="starColor" id="age_data">16 years, 10 months, 9 days</tspan></tspan>
@@ -364,7 +97,7 @@ text, tspan {white-space: pre;}
 <tspan x="450" y="255"><tspan class="cc">. </tspan><tspan class="key">Certs</tspan>.<tspan class="key">Verified</tspan>:<tspan class="cc"> </tspan><tspan class="cc">......</tspan><tspan class="cc"> </tspan><tspan class="addColor">CKA, CKAD, Vault, Terraform, AWS-SAA</tspan></tspan>
 <tspan x="450" y="274" class="cc">.</tspan>
 <tspan x="450" y="293"><tspan class="section">- Production Impact &amp; Scale</tspan> -<tspan class="cc">———————————————————————————————</tspan>-</tspan>
-<tspan x="450" y="312"><tspan class="cc">. </tspan><tspan class="key">Impact</tspan>.<tspan class="key">BUM_Filter</tspan>:<tspan class="cc"> </tspan><tspan class="cc">......</tspan><tspan class="cc"> </tspan><tspan class="value">-90% Traffic (GoBGP/RTBH IPv4/v6)</tspan></tspan>
+<tspan x="450" y="312"><tspan class="cc">. </tspan><tspan class="key">Impact</tspan>.<tspan class="key">BUM_Filter</tspan>:<tspan class="cc"> </tspan><tspan class="cc">..........</tspan><tspan class="cc"> </tspan><tspan class="value">-90% BUM Traffic (GoBGP/RTBH)</tspan></tspan>
 <tspan x="450" y="331"><tspan class="cc">. </tspan><tspan class="key">Impact</tspan>.<tspan class="key">AI_Inference</tspan>:<tspan class="cc"> </tspan><tspan class="cc">......</tspan><tspan class="cc"> </tspan><tspan class="value">Multi-GPU LLM &amp; Diffusion WebUI</tspan></tspan>
 <tspan x="450" y="350"><tspan class="cc">. </tspan><tspan class="key">Impact</tspan>.<tspan class="key">IaC_Fleet</tspan>:<tspan class="cc"> </tspan><tspan class="cc">.......</tspan><tspan class="cc"> </tspan><tspan class="value">Zero Drift (100s HVs / 1000s VMs)</tspan></tspan>
 <tspan x="450" y="369" class="cc">.</tspan>
@@ -376,9 +109,9 @@ text, tspan {white-space: pre;}
 <tspan x="450" y="483" class="cc">.</tspan>
 <tspan x="450" y="502"><tspan class="section">- Live GitHub Telemetry</tspan> -<tspan class="cc">———————————————————————————————————</tspan>-</tspan>
 <tspan x="450" y="521"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="repo_data_dots">.........</tspan><tspan class="cc"> </tspan><tspan class="value" id="repo_data">11</tspan> {<tspan class="pinkyColor">Contributed</tspan>: <tspan class="value" id="contrib_data">3</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="star_data_dots">.........</tspan><tspan class="cc"> </tspan><tspan class="starColor" id="star_data">184</tspan></tspan>
-<tspan x="450" y="540"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="commit_data_dots">......</tspan><tspan class="cc"> </tspan><tspan class="value" id="commit_data">20,046</tspan> | <tspan class="key">PRs</tspan>: <tspan class="value" id="pr_data">10,054</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="follower_data_dots">......</tspan><tspan class="cc"> </tspan><tspan class="value" id="follower_data">55</tspan></tspan>
-<tspan x="450" y="559"><tspan class="cc">. </tspan><tspan class="key">Streak</tspan>.<tspan class="key">Active</tspan>:<tspan class="cc"> </tspan><tspan class="cc">........</tspan><tspan class="cc"> </tspan><tspan class="addColor">3d</tspan> (<tspan class="pinkyColor">Max</tspan>: <tspan class="value">26d</tspan>) | <tspan class="key">Issues</tspan>:<tspan class="cc"> </tspan><tspan class="cc">........</tspan><tspan class="cc"> </tspan><tspan class="clydeColor">67</tspan></tspan>
-<tspan x="450" y="578"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="loc_data_dots">.......</tspan><tspan class="cc"> </tspan><tspan class="value" id="loc_data">1,169,908</tspan> ( <tspan class="addColor" id="loc_add">1,723,114</tspan><tspan class="addColor">++</tspan>, <tspan class="delColor" id="loc_del">553,206</tspan><tspan class="delColor">--</tspan> )</tspan>
+<tspan x="450" y="540"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="commit_data_dots">......</tspan><tspan class="cc"> </tspan><tspan class="value" id="commit_data">20,043</tspan> | <tspan class="key">PRs</tspan>: <tspan class="value" id="pr_data">10,053</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="follower_data_dots">......</tspan><tspan class="cc"> </tspan><tspan class="value" id="follower_data">55</tspan></tspan>
+<tspan x="450" y="559"><tspan class="cc">. </tspan><tspan class="key">Streak</tspan>.<tspan class="key">Active</tspan>:<tspan class="cc"> </tspan><tspan class="cc">........</tspan><tspan class="cc"> </tspan><tspan class="addColor">2d</tspan> (<tspan class="pinkyColor">Max</tspan>: <tspan class="value">26d</tspan>) | <tspan class="key">Issues</tspan>:<tspan class="cc"> </tspan><tspan class="cc">........</tspan><tspan class="cc"> </tspan><tspan class="clydeColor">67</tspan></tspan>
+<tspan x="450" y="578"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc"> </tspan><tspan class="cc" id="loc_data_dots">.......</tspan><tspan class="cc"> </tspan><tspan class="value" id="loc_data">1,169,294</tspan> ( <tspan class="addColor" id="loc_add">1,721,675</tspan><tspan class="addColor">++</tspan>, <tspan class="delColor" id="loc_del">552,381</tspan><tspan class="delColor">--</tspan> )</tspan>
 <tspan x="450" y="613.15"><tspan class="promptUser">ofer@chen</tspan><tspan class="cc">:</tspan><tspan class="promptDir">~/infra</tspan><tspan class="cc">$ </tspan><tspan class="promptCmd">cargo test --release &amp;&amp; kubectl get nodes </tspan><tspan class="key">█<animate attributeName="opacity" values="1;0" dur="1.06s" calcMode="discrete" repeatCount="indefinite"/></tspan></tspan>
 </text>
 </svg>

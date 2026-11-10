@@ -16,8 +16,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ASCII_SRC = ROOT / "assets" / "ascii-art.txt"
 ASCII_SRC_LIGHT = ROOT / "assets" / "ascii-art-light.txt"
-ASCII_JSON_DARK = ROOT / "assets" / "ascii-art-dark.json"
-ASCII_JSON_LIGHT = ROOT / "assets" / "ascii-art-light.json"
 STATS_SRC = ROOT / "cache" / "stats.json"
 
 CAREER_START = dt.date(2010, 1, 1)
@@ -42,7 +40,6 @@ CHROME_H = 34  # Terminal titlebar height
 THEMES = {
     "dark": {
         "art_src": ASCII_SRC,
-        "art_json": ASCII_JSON_DARK,
         "bg": "#0d1117",
         "chrome_bg": "#161b22",
         "border": "#30363d",
@@ -67,7 +64,6 @@ THEMES = {
     },
     "light": {
         "art_src": ASCII_SRC_LIGHT,
-        "art_json": ASCII_JSON_LIGHT,
         "bg": "#ffffff",
         "chrome_bg": "#f6f8fa",
         "border": "#d0d7de",
@@ -108,17 +104,10 @@ INFO = [
 ]
 
 PROD_METRICS = [
-    ("Impact.BUM_Filter", "-90% Traffic (GoBGP/RTBH IPv4/v6)"),
+    ("Impact.BUM_Filter", "-90% BUM Traffic (GoBGP/RTBH)"),
     ("Impact.AI_Inference", "Multi-GPU LLM & Diffusion WebUI"),
     ("Impact.IaC_Fleet", "Zero Drift (100s HVs / 1000s VMs)"),
 ]
-
-CONTACT = [
-    ("Email", "oferchen@gmail.com"),
-    ("LinkedIn", "linkedin.com/in/0ferchen"),
-    ("Flagship", "github.com/oferchen/rsync (Rust)"),
-]
-
 
 def esc(text: str) -> str:
     return html.escape(text, quote=False)
@@ -215,29 +204,22 @@ def uptime(today: dt.date | None = None) -> str:
     return f"{plural(years,'year')}, {plural(months,'month')}, {plural(days,'day')}"
 
 
-def load_stats() -> dict:
-    defaults = {
-        "repos": "119", "contrib": "142", "stars": "1,200", "forks": "84",
-        "commits": "4,850", "prs": "318", "issues": "145", "followers": "56",
-        "loc": "342,800", "added": "489,200", "deleted": "146,400",
-        "rsync_stars": "113", "rsync_forks": "5", "rsync_ver": "v0.4.2",
-        "streak_current": "19", "streak_longest": "64",
-        "linkedin_followers": "3,232", "linkedin_connections": "500+",
-        "linkedin_certs": "CKA, CKAD, Vault, Terraform, AWS-SAA",
-    }
+STAT_KEYS = (
+    "repos", "contrib", "stars", "forks", "commits", "prs", "issues", "followers",
+    "loc", "added", "deleted", "rsync_stars", "rsync_forks", "rsync_ver",
+    "streak_current", "streak_longest", "linkedin_followers", "linkedin_connections",
+)
+
+
+def load_stats() -> dict[str, str]:
+    """Load real telemetry; never render placeholder numbers on a public profile."""
     if not STATS_SRC.exists():
-        return defaults
+        raise SystemExit(f"{STATS_SRC} missing -- run tools/fetch_stats.py first")
     raw = json.loads(STATS_SRC.read_text(encoding="utf-8"))
-    out = {}
-    for k, dv in defaults.items():
-        val = raw.get(k)
-        if isinstance(val, int):
-            out[k] = f"{val:,}"
-        elif isinstance(val, str) and val:
-            out[k] = val
-        else:
-            out[k] = dv
-    return out
+    missing = [k for k in STAT_KEYS if raw.get(k) in (None, "")]
+    if missing:
+        raise SystemExit(f"{STATS_SRC} lacks {', '.join(missing)} -- rerun tools/fetch_stats.py")
+    return {k: f"{raw[k]:,}" if isinstance(raw[k], int) else str(raw[k]) for k in STAT_KEYS}
 
 
 def load_art(src: Path) -> list[str]:
@@ -385,32 +367,11 @@ def build(theme: str) -> str:
     width = 1018
     height = round(CHROME_H + 2 * (MARGIN + half))
 
-    art_css_lines: list[str] = []
-    json_src: Path | None = c.get("art_json")
-    if json_src and json_src.exists():
-        rows_runs: list[list[list[str]]] = json.loads(json_src.read_text(encoding="utf-8"))
-        color_to_cls: dict[str, str] = {}
-        row_elems: list[str] = []
-        for i, runs in enumerate(rows_runs):
-            inner: list[str] = []
-            for text_seg, hex_col in runs:
-                cls_name = color_to_cls.get(hex_col)
-                if not cls_name:
-                    cls_name = f"a{len(color_to_cls)}"
-                    color_to_cls[hex_col] = cls_name
-                    art_css_lines.append(f".{cls_name} {{fill: {hex_col};}}")
-                inner.append(f'<tspan class="{cls_name}">{esc(text_seg)}</tspan>')
-            row_elems.append(
-                f'<tspan x="{MARGIN}" y="{art_y0 + i * art_line:.2f}">{"".join(inner)}</tspan>'
-            )
-        art_tspans = "\n".join(row_elems)
-    else:
-        art_tspans = "\n".join(
-            f'<tspan x="{MARGIN}" y="{art_y0 + i * art_line:.2f}">{esc(line)}</tspan>'
-            for i, line in enumerate(art)
-        )
+    art_tspans = "\n".join(
+        f'<tspan x="{MARGIN}" y="{art_y0 + i * art_line:.2f}">{esc(line)}</tspan>'
+        for i, line in enumerate(art)
+    )
 
-    art_palette_css = "\n".join(art_css_lines)
     divider_x = MARGIN + ART_COL_WIDTH + GUTTER / 2
 
     return f"""<?xml version='1.0' encoding='UTF-8'?>
@@ -437,7 +398,6 @@ def build(theme: str) -> str:
 .promptUser {{fill: {c['prompt_user']}; font-weight: bold;}}
 .promptDir {{fill: {c['prompt_dir']}; font-weight: bold;}}
 .promptCmd {{fill: {c['prompt_cmd']};}}
-{art_palette_css}
 text, tspan {{white-space: pre;}}
 </style>
 <!-- Outer Card Background & Border -->
@@ -452,12 +412,12 @@ text, tspan {{white-space: pre;}}
 <text x="{width / 2:g}" y="{CHROME_H / 2 + 4.5:g}" font-size="13px" fill="{c['dots']}" text-anchor="middle">ofer@chen: ~/infrastructure — neofetch --live-telemetry (zsh)</text>
 <!-- Subtle Vertical Column Divider -->
 <line x1="{divider_x:g}" y1="{CHROME_H + 12}" x2="{divider_x:g}" y2="{height - 12}" stroke="{c['border']}" stroke-width="1" stroke-dasharray="3,4"/>
-<!-- Left Column: 87x47 True-Color ANSI ASCII Portrait -->
-<text fill="{c['art']}" font-size="{art_font:.2f}px" class="ascii" xml:space="preserve">
+<!-- Left Column: 87x47 ASCII Artwork / Portrait -->
+<text fill="{c['art']}" font-size="{art_font:.2f}px" class="ascii">
 {art_tspans}
 </text>
 <!-- Right Column: Neofetch Telemetry Panel -->
-<text fill="{c['fg']}" font-size="{PANEL_FONT:g}px" xml:space="preserve">
+<text fill="{c['fg']}" font-size="{PANEL_FONT:g}px">
 {chr(10).join(panel_lines)}
 </text>
 </svg>
