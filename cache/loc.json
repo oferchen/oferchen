@@ -37,12 +37,12 @@
   "oferchen/oferchen": {
     "added": 7871,
     "deleted": 3593,
-    "oid": "2cfdfdd7960b9cdf32eda863141260d5503596b1"
+    "oid": "fe80d951c7b388391aee969e82f4bb2f19392323"
   },
   "oferchen/rsync": {
-    "added": 1597391,
-    "deleted": 478559,
-    "oid": "92fc58317beb8ed0669b33266bf688abdc8c16b8"
+    "added": 1606215,
+    "deleted": 480333,
+    "oid": "d12d3468e0fafd7d0ab7bae298bc86a226ffdeab"
   },
   "oferchen/snippets": {
     "added": 817,
